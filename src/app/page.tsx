@@ -7,12 +7,14 @@ import { Section } from "@/components/Section";
 import { TechGrid } from "@/components/TechGrid";
 import { Testimonials } from "@/components/Testimonials";
 import { ContactCard } from "@/components/ContactCard";
+import { TrustedStrip } from "@/components/TrustedStrip";
 
 export default function Home() {
   return (
     <main>
       <Navbar />
       <Hero />
+      <TrustedStrip />
 
       <Container>
         <Section id="about" title="About" eyebrow="About">
@@ -74,7 +76,7 @@ export default function Home() {
           <TechGrid />
         </Section>
 
-        <Section id="projects" title="Projects" eyebrow="Projects">
+        <Section id="projects" title="Latest creations" eyebrow="Projects">
           <ProjectsGrid />
         </Section>
 
