@@ -1,65 +1,95 @@
-import Image from "next/image";
+import { Container } from "@/components/Container";
+import { Footer } from "@/components/Footer";
+import { Hero } from "@/components/Hero";
+import { Navbar } from "@/components/Navbar";
+import { ProjectsGrid } from "@/components/ProjectsGrid";
+import { Section } from "@/components/Section";
+import { TechGrid } from "@/components/TechGrid";
+import { Testimonials } from "@/components/Testimonials";
+import { ContactCard } from "@/components/ContactCard";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main>
+      <Navbar />
+      <Hero />
+
+      <Container>
+        <Section id="about" title="About" eyebrow="About">
+          <div className="grid gap-4 lg:grid-cols-5">
+            <div className="glow-ring glass relative overflow-hidden rounded-2xl p-6 lg:col-span-3">
+              <div className="absolute -right-10 -top-10 h-48 w-48 rounded-full bg-fuchsia-500/20 blur-[55px]" />
+              <div className="relative">
+                <div className="text-sm font-semibold text-white/90">
+                  Ange morphism
+                </div>
+                <p className="muted mt-2 text-sm leading-6">
+                  I design and build modern web experiences—balancing strong
+                  aesthetics with performance and maintainability.
+                </p>
+
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {["HTML", "CSS", "JavaScript", "React", "Node.js", "MongoDB"].map(
+                    (t) => (
+                      <span
+                        key={t}
+                        className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/75"
+                      >
+                        {t}
+                      </span>
+                    ),
+                  )}
+                </div>
+              </div>
+            </div>
+
+            <div className="glow-ring glass grid gap-4 rounded-2xl p-6 lg:col-span-2">
+              <div>
+                <div className="text-sm font-semibold text-white/90">
+                  Quick stats
+                </div>
+                <div className="muted mt-2 text-sm">
+                  UI/UX • Development • Branding
+                </div>
+              </div>
+              <div className="grid grid-cols-3 gap-3">
+                <div className="glass rounded-xl p-3 text-center">
+                  <div className="text-lg font-semibold">+30</div>
+                  <div className="muted mt-1 text-xs">Projects</div>
+                </div>
+                <div className="glass rounded-xl p-3 text-center">
+                  <div className="text-lg font-semibold">5★</div>
+                  <div className="muted mt-1 text-xs">Reviews</div>
+                </div>
+                <div className="glass rounded-xl p-3 text-center">
+                  <div className="text-lg font-semibold">24/7</div>
+                  <div className="muted mt-1 text-xs">Support</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Section>
+
+        <Section title="Technologies" eyebrow="Technologies">
+          <TechGrid />
+        </Section>
+
+        <Section id="projects" title="Projects" eyebrow="Projects">
+          <ProjectsGrid />
+        </Section>
+
+        <Section title="Testimonials" eyebrow="Testimonials">
+          <Testimonials />
+        </Section>
+
+        <Section id="contact" title="Contact" eyebrow="Contact">
+          <ContactCard />
+        </Section>
+
+        <div id="blog" className="pb-10" />
+      </Container>
+
+      <Footer />
+    </main>
   );
 }
