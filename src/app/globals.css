@@ -84,3 +84,8 @@ input:focus, textarea:focus {
   border-color: #00FF66 !important;
   box-shadow: 0 0 0 2px rgba(0, 255, 102, 0.15);
 }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-100% / 3)); }
+}
