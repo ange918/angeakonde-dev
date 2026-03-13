@@ -1,88 +1,155 @@
-import { Container } from "@/components/Container";
+"use client";
 
-export function Hero() {
+import { motion } from "framer-motion";
+
+export default function Hero() {
   return (
-    <section id="home" className="relative pt-10 sm:pt-16">
-      <Container>
-        <div className="relative overflow-hidden rounded-3xl">
-          <div className="absolute inset-0">
-            <div className="absolute left-1/2 top-[-260px] h-[620px] w-[620px] -translate-x-1/2 rounded-full bg-fuchsia-500/30 blur-[90px]" />
-            <div className="absolute left-[10%] top-[30%] h-[420px] w-[420px] rounded-full bg-cyan-400/10 blur-[80px]" />
-            <div className="absolute right-[8%] top-[55%] h-[420px] w-[420px] rounded-full bg-fuchsia-500/15 blur-[90px]" />
-          </div>
+    <section
+      id="home"
+      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-5 pt-20 text-center"
+    >
+      <div
+        className="pointer-events-none absolute inset-0"
+        aria-hidden="true"
+      >
+        <div
+          className="absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px]"
+          style={{ background: "rgba(0,255,102,0.08)" }}
+        />
+        <div
+          className="absolute right-0 bottom-0 h-[300px] w-[300px] rounded-full blur-[100px]"
+          style={{ background: "rgba(0,255,102,0.05)" }}
+        />
+        <svg
+          className="absolute inset-0 h-full w-full opacity-[0.03]"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <pattern
+              id="grid"
+              width="60"
+              height="60"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 60 0 L 0 0 0 60"
+                fill="none"
+                stroke="white"
+                strokeWidth="1"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+        </svg>
+      </div>
 
-          <div className="relative flex flex-col gap-10 px-6 py-16 sm:px-10 sm:py-20 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-xl text-center lg:text-left">
-              <div className="muted text-xs tracking-[0.38em] uppercase">
-                BigSixteen Studio
-              </div>
-              <h1 className="mt-4 text-3xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
-                Let&apos;s build{" "}
-                <span className="text-fuchsia-300">modern web apps</span>{" "}
-                powered by AI.
-              </h1>
-              <p className="muted mt-5 text-sm leading-6 sm:text-base">
-                Développeur Full‑Stack & IA basé à Cotonou. J’aide les
-                entreprises à lancer des produits digitaux premium, rapides et
-                bien pensés pour le business.
-              </p>
-              <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row lg:items-stretch">
-                <a
-                  href="#contact"
-                  className="primary-btn inline-flex h-11 items-center justify-center rounded-full px-7 text-sm font-medium text-white transition hover:brightness-110"
-                >
-                  Réserver un appel
-                </a>
-                <a
-                  href="#projects"
-                  className="inline-flex h-11 items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 text-sm font-medium text-white/85 transition hover:bg-white/10"
-                >
-                  Voir les créations
-                </a>
-              </div>
-              <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-white/60 lg:justify-start">
-                <span>+30 projets livrés</span>
-                <span className="h-1 w-1 rounded-full bg-white/40" />
-                <span>Stack: JS, React, Node, Laravel, IA</span>
-              </div>
-            </div>
+      <div className="relative z-10 max-w-4xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs"
+          style={{
+            borderColor: "rgba(0,255,102,0.3)",
+            color: "#00FF66",
+            background: "rgba(0,255,102,0.05)",
+          }}
+        >
+          <span
+            className="inline-block h-1.5 w-1.5 rounded-full"
+            style={{ background: "#00FF66" }}
+          />
+          Available for new projects
+        </motion.div>
 
-            <div className="glow-ring glass relative mt-4 w-full max-w-md rounded-3xl px-6 py-6 text-left lg:mt-0">
-              <div className="muted text-xs uppercase tracking-[0.18em]">
-                Snapshot
-              </div>
-              <div className="mt-3 text-sm font-semibold text-white/90">
-                Ange Akonde | Full‑Stack & IA
-              </div>
-              <p className="muted mt-2 text-xs leading-5">
-                Futurcraft Institut — 2e année en ingénierie logicielle. En
-                route vers JRC Digit, ma propre agence digitale.
-              </p>
-              <div className="mt-5 grid grid-cols-3 gap-3 text-xs">
-                <div className="glass rounded-2xl px-3 py-3">
-                  <div className="text-xs text-white/70">Clients cibles</div>
-                  <div className="mt-1 text-sm font-semibold">
-                    PME & agences
-                  </div>
-                </div>
-                <div className="glass rounded-2xl px-3 py-3">
-                  <div className="text-xs text-white/70">Offres</div>
-                  <div className="mt-1 text-sm font-semibold">
-                    Sites, apps, IA
-                  </div>
-                </div>
-                <div className="glass rounded-2xl px-3 py-3">
-                  <div className="text-xs text-white/70">Mode</div>
-                  <div className="mt-1 text-sm font-semibold">
-                    Freelance & CDI
-                  </div>
-                </div>
-              </div>
-            </div>
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mb-6 text-5xl font-bold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl"
+          style={{ fontFamily: "var(--font-space-grotesk)" }}
+        >
+          I build digital
+          <br />
+          <span style={{ color: "#00FF66" }}>products</span> that
+          <br />
+          matter.
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-10 text-base leading-relaxed sm:text-lg"
+          style={{ color: "rgba(255,255,255,0.45)" }}
+        >
+          Full Stack Developer — Cotonou, Benin
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.35 }}
+          className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
+        >
+          <a
+            href="#projects"
+            className="inline-flex h-12 items-center rounded-full px-8 text-sm font-semibold text-black transition-all duration-200 hover:opacity-90 hover:scale-105"
+            style={{ background: "#00FF66" }}
+          >
+            See my projects
+          </a>
+          <a
+            href="#contact"
+            className="inline-flex h-12 items-center rounded-full border px-8 text-sm font-semibold text-white transition-all duration-200 hover:border-[#00FF66] hover:text-[#00FF66]"
+            style={{ borderColor: "rgba(255,255,255,0.15)" }}
+          >
+            Contact me
+          </a>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="mt-16 flex items-center justify-center gap-8 text-xs"
+          style={{ color: "rgba(255,255,255,0.3)" }}
+        >
+          <div className="flex flex-col items-center gap-1">
+            <span className="text-2xl font-bold text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>30+</span>
+            <span>Projects</span>
           </div>
+          <div className="h-8 w-px bg-white/10" />
+          <div className="flex flex-col items-center gap-1">
+            <span className="text-2xl font-bold text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>4+</span>
+            <span>Years exp.</span>
+          </div>
+          <div className="h-8 w-px bg-white/10" />
+          <div className="flex flex-col items-center gap-1">
+            <span className="text-2xl font-bold text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>Africa</span>
+            <span>& Beyond</span>
+          </div>
+        </motion.div>
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.8 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      >
+        <div
+          className="flex h-10 w-6 items-start justify-center rounded-full border pt-2"
+          style={{ borderColor: "rgba(255,255,255,0.2)" }}
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+            className="h-1.5 w-1 rounded-full"
+            style={{ background: "#00FF66" }}
+          />
         </div>
-      </Container>
+      </motion.div>
     </section>
   );
 }
-
