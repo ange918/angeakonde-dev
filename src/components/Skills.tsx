@@ -31,9 +31,9 @@ const skills: Skill[] = [
   { name: "JavaScript", Icon: CommandLineIcon, color: "#F7DF1E" },
   { name: "TypeScript", Icon: DocumentTextIcon, color: "#3178C6" },
   { name: "React", Icon: CubeTransparentIcon, color: "#61DAFB" },
-  { name: "Next.js", Icon: GlobeAltIcon, color: "#FFFFFF" },
+  { name: "Next.js", Icon: GlobeAltIcon, color: "#00FF66" },
   { name: "Node.js", Icon: ServerIcon, color: "#339933" },
-  { name: "Express", Icon: BoltIcon, color: "#FFFFFF" },
+  { name: "Express", Icon: BoltIcon, color: "#888888" },
   { name: "Flutter", Icon: DevicePhoneMobileIcon, color: "#02569B" },
   { name: "MongoDB", Icon: CircleStackIcon, color: "#47A248" },
   { name: "Tailwind CSS", Icon: PaintBrushIcon, color: "#06B6D4" },
@@ -57,8 +57,8 @@ export default function Skills() {
             Compétences
           </p>
           <h2
-            className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: "var(--font-space-grotesk)" }}
+            className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
+            style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--c-text)" }}
           >
             Ma stack technique.
           </h2>
@@ -68,11 +68,11 @@ export default function Skills() {
       <div className="relative overflow-hidden">
         <div
           className="absolute left-0 top-0 z-10 h-full w-24 pointer-events-none"
-          style={{ background: "linear-gradient(to right, #0a0a0a, transparent)" }}
+          style={{ background: "linear-gradient(to right, var(--c-bg), transparent)" }}
         />
         <div
           className="absolute right-0 top-0 z-10 h-full w-24 pointer-events-none"
-          style={{ background: "linear-gradient(to left, #0a0a0a, transparent)" }}
+          style={{ background: "linear-gradient(to left, var(--c-bg), transparent)" }}
         />
 
         <div className="flex" style={{ animation: "marquee 28s linear infinite" }}>
@@ -81,8 +81,8 @@ export default function Skills() {
               key={i}
               className="flex shrink-0 items-center gap-3 mx-3 rounded-2xl px-6 py-4"
               style={{
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
+                background: "var(--c-surface)",
+                border: "1px solid var(--c-border-md)",
                 minWidth: "160px",
               }}
             >
@@ -93,8 +93,8 @@ export default function Skills() {
                 <skill.Icon style={{ color: skill.color, width: 18, height: 18 }} />
               </div>
               <span
-                className="text-sm font-semibold text-white whitespace-nowrap"
-                style={{ fontFamily: "var(--font-space-grotesk)" }}
+                className="text-sm font-semibold whitespace-nowrap"
+                style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--c-text)" }}
               >
                 {skill.name}
               </span>

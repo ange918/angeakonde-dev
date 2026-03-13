@@ -13,7 +13,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="bg-black text-white">
+    <main style={{ background: "var(--c-bg)", color: "var(--c-text)" }}>
       <Navbar />
       <Hero />
       <About />

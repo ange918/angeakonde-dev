@@ -8,10 +8,7 @@ export default function Hero() {
       id="home"
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-5 pt-20 text-center"
     >
-      <div
-        className="pointer-events-none absolute inset-0"
-        aria-hidden="true"
-      >
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div
           className="absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px]"
           style={{ background: "rgba(0,255,102,0.08)" }}
@@ -20,23 +17,10 @@ export default function Hero() {
           className="absolute right-0 bottom-0 h-[300px] w-[300px] rounded-full blur-[100px]"
           style={{ background: "rgba(0,255,102,0.05)" }}
         />
-        <svg
-          className="absolute inset-0 h-full w-full opacity-[0.03]"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg className="absolute inset-0 h-full w-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <pattern
-              id="grid"
-              width="60"
-              height="60"
-              patternUnits="userSpaceOnUse"
-            >
-              <path
-                d="M 60 0 L 0 0 0 60"
-                fill="none"
-                stroke="white"
-                strokeWidth="1"
-              />
+            <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" strokeWidth="1" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid)" />
@@ -55,10 +39,7 @@ export default function Hero() {
             background: "rgba(0,255,102,0.05)",
           }}
         >
-          <span
-            className="inline-block h-1.5 w-1.5 rounded-full"
-            style={{ background: "#00FF66" }}
-          />
+          <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ background: "#00FF66" }} />
           Disponible pour de nouveaux projets
         </motion.div>
 
@@ -66,8 +47,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-6 text-5xl font-bold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl"
-          style={{ fontFamily: "var(--font-space-grotesk)" }}
+          className="mb-6 text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl"
+          style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--c-text)" }}
         >
           Je crée des
           <br />
@@ -81,7 +62,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mb-10 text-base leading-relaxed sm:text-lg"
-          style={{ color: "rgba(255,255,255,0.45)" }}
+          style={{ color: "var(--c-muted)" }}
         >
           Full Stack Developer — Cotonou, Benin
         </motion.p>
@@ -101,8 +82,8 @@ export default function Hero() {
           </a>
           <a
             href="#contact"
-            className="inline-flex h-12 items-center rounded-full border px-8 text-sm font-semibold text-white transition-all duration-200 hover:border-[#00FF66] hover:text-[#00FF66]"
-            style={{ borderColor: "rgba(255,255,255,0.15)" }}
+            className="inline-flex h-12 items-center rounded-full border px-8 text-sm font-semibold transition-all duration-200 hover:border-[#00FF66] hover:text-[#00FF66]"
+            style={{ borderColor: "var(--c-border-xl)", color: "var(--c-text)" }}
           >
             Me contacter
           </a>
@@ -113,21 +94,36 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-16 flex items-center justify-center gap-8 text-xs"
-          style={{ color: "rgba(255,255,255,0.3)" }}
+          style={{ color: "var(--c-subtle)" }}
         >
           <div className="flex flex-col items-center gap-1">
-            <span className="text-2xl font-bold text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>30+</span>
+            <span
+              className="text-2xl font-bold"
+              style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--c-text)" }}
+            >
+              30+
+            </span>
             <span>Projets</span>
           </div>
-          <div className="h-8 w-px bg-white/10" />
+          <div className="h-8 w-px" style={{ background: "var(--c-border-lg)" }} />
           <div className="flex flex-col items-center gap-1">
-            <span className="text-2xl font-bold text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>4+</span>
+            <span
+              className="text-2xl font-bold"
+              style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--c-text)" }}
+            >
+              4+
+            </span>
             <span>Ans d&apos;expérience</span>
           </div>
-          <div className="h-8 w-px bg-white/10" />
+          <div className="h-8 w-px" style={{ background: "var(--c-border-lg)" }} />
           <div className="flex flex-col items-center gap-1">
-            <span className="text-2xl font-bold text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>Afrique</span>
-            <span>& Au-delà</span>
+            <span
+              className="text-2xl font-bold"
+              style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--c-text)" }}
+            >
+              Afrique
+            </span>
+            <span>&amp; Au-delà</span>
           </div>
         </motion.div>
       </div>
@@ -140,7 +136,7 @@ export default function Hero() {
       >
         <div
           className="flex h-10 w-6 items-start justify-center rounded-full border pt-2"
-          style={{ borderColor: "rgba(255,255,255,0.2)" }}
+          style={{ borderColor: "var(--c-border-2xl)" }}
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}

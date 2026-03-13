@@ -52,8 +52,8 @@ function Item({ faq }: { faq: (typeof faqs)[0] }) {
         className="flex w-full items-center justify-between px-6 py-5 text-left"
       >
         <span
-          className="pr-4 text-sm font-medium text-white"
-          style={{ fontFamily: "var(--font-space-grotesk)" }}
+          className="pr-4 text-sm font-medium"
+          style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--c-text)" }}
         >
           {faq.q}
         </span>
@@ -77,8 +77,8 @@ function Item({ faq }: { faq: (typeof faqs)[0] }) {
             <div
               className="border-t px-6 pb-5 pt-4 text-sm leading-relaxed"
               style={{
-                borderColor: "rgba(255,255,255,0.06)",
-                color: "rgba(255,255,255,0.5)",
+                borderColor: "var(--c-border-sm)",
+                color: "var(--c-card-text)",
               }}
             >
               {faq.a}
@@ -105,8 +105,8 @@ export default function FAQ() {
             FAQ
           </p>
           <h2
-            className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: "var(--font-space-grotesk)" }}
+            className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
+            style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--c-text)" }}
           >
             Questions fréquentes.
           </h2>
@@ -131,10 +131,13 @@ export default function FAQ() {
           transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="mt-10 card rounded-2xl p-8 text-center"
         >
-          <p className="mb-2 text-base font-semibold text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+          <p
+            className="mb-2 text-base font-semibold"
+            style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--c-text)" }}
+          >
             Vous avez une autre question ?
           </p>
-          <p className="mb-5 text-sm" style={{ color: "rgba(255,255,255,0.45)" }}>
+          <p className="mb-5 text-sm" style={{ color: "var(--c-muted)" }}>
             Écrivez-moi directement, je réponds en général sous 24h.
           </p>
           <a

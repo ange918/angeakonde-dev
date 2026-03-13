@@ -71,8 +71,8 @@ export default function Testimonials() {
             Témoignages
           </p>
           <h2
-            className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: "var(--font-space-grotesk)" }}
+            className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
+            style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--c-text)" }}
           >
             Ce que disent les clients.
           </h2>
@@ -81,8 +81,8 @@ export default function Testimonials() {
         <div
           className="relative overflow-hidden rounded-3xl p-8 sm:p-12"
           style={{
-            background: "rgba(255,255,255,0.03)",
-            border: "1px solid rgba(255,255,255,0.07)",
+            background: "var(--c-surface)",
+            border: "1px solid var(--c-border)",
           }}
         >
           <div
@@ -110,7 +110,7 @@ export default function Testimonials() {
               <p
                 className="mb-10 text-lg leading-relaxed sm:text-xl"
                 style={{
-                  color: "rgba(255,255,255,0.75)",
+                  color: "var(--c-dim)",
                   fontFamily: "var(--font-ibm-plex-mono)",
                 }}
               >
@@ -127,12 +127,12 @@ export default function Testimonials() {
                   </div>
                   <div>
                     <p
-                      className="font-semibold text-white"
-                      style={{ fontFamily: "var(--font-space-grotesk)" }}
+                      className="font-semibold"
+                      style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--c-text)" }}
                     >
                       {t.name}
                     </p>
-                    <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.4)" }}>
+                    <p className="text-xs mt-0.5" style={{ color: "var(--c-faint)" }}>
                       {t.role}
                     </p>
                   </div>
@@ -151,7 +151,7 @@ export default function Testimonials() {
                   className="h-1.5 rounded-full transition-all duration-300"
                   style={{
                     width: i === active ? 32 : 8,
-                    background: i === active ? "#00FF66" : "rgba(255,255,255,0.15)",
+                    background: i === active ? "#00FF66" : "var(--c-border-xl)",
                   }}
                 />
               ))}
@@ -160,22 +160,22 @@ export default function Testimonials() {
             <div className="flex gap-2">
               <button
                 onClick={prev}
-                className="flex h-10 w-10 items-center justify-center rounded-xl border transition-all duration-200 hover:border-white/20 hover:text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-xl border transition-all duration-200"
                 style={{
-                  borderColor: "rgba(255,255,255,0.08)",
-                  color: "rgba(255,255,255,0.4)",
-                  background: "rgba(255,255,255,0.03)",
+                  borderColor: "var(--c-border-md)",
+                  color: "var(--c-faint)",
+                  background: "var(--c-surface)",
                 }}
               >
                 <ChevronLeftIcon className="h-4 w-4" />
               </button>
               <button
                 onClick={next}
-                className="flex h-10 w-10 items-center justify-center rounded-xl border transition-all duration-200 hover:border-white/20 hover:text-white"
+                className="flex h-10 w-10 items-center justify-center rounded-xl border transition-all duration-200"
                 style={{
-                  borderColor: "rgba(255,255,255,0.08)",
-                  color: "rgba(255,255,255,0.4)",
-                  background: "rgba(255,255,255,0.03)",
+                  borderColor: "var(--c-border-md)",
+                  color: "var(--c-faint)",
+                  background: "var(--c-surface)",
                 }}
               >
                 <ChevronRightIcon className="h-4 w-4" />

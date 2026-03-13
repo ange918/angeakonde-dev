@@ -65,8 +65,8 @@ export default function Address() {
             Adresse
           </p>
           <h2
-            className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: "var(--font-space-grotesk)" }}
+            className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
+            style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--c-text)" }}
           >
             Où me trouver.
           </h2>
@@ -99,12 +99,12 @@ export default function Address() {
                     <a
                       href={item.href}
                       className="text-sm leading-relaxed hover:text-[#00FF66] transition-colors whitespace-pre-line"
-                      style={{ color: "rgba(255,255,255,0.6)" }}
+                      style={{ color: "var(--c-link)" }}
                     >
                       {item.value}
                     </a>
                   ) : (
-                    <p className="text-sm leading-relaxed whitespace-pre-line" style={{ color: "rgba(255,255,255,0.6)" }}>
+                    <p className="text-sm leading-relaxed whitespace-pre-line" style={{ color: "var(--c-link)" }}>
                       {item.value}
                     </p>
                   )}
@@ -127,7 +127,7 @@ export default function Address() {
                 className="absolute inset-0 h-full w-full"
                 style={{
                   border: "none",
-                  filter: "invert(90%) hue-rotate(180deg) brightness(0.9) contrast(0.95)",
+                  filter: "var(--c-map-filter)",
                 }}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -139,7 +139,7 @@ export default function Address() {
             </div>
             <div
               className="flex items-center justify-between px-5 py-3 text-xs"
-              style={{ borderTop: "1px solid rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.35)" }}
+              style={{ borderTop: "1px solid var(--c-border-sm)", color: "var(--c-faint)" }}
             >
               <span>Cotonou, Bénin · Afrique de l&apos;Ouest</span>
               <a
