@@ -49,12 +49,12 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#FF6B00" }}>
+          <p className="mb-3 text-sm font-semibold tracking-[0.3em] uppercase" style={{ color: "#FF6B00" }}>
             Projets
           </p>
           <h2
             className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: "var(--font-space-grotesk)" }}
+            style={{ fontFamily: "var(--font-jakarta)" }}
           >
             Travaux sélectionnés.
           </h2>
@@ -75,7 +75,7 @@ export default function Projects() {
                 style={{ background: "radial-gradient(400px at 50% 0%, rgba(255,107,0,0.06), transparent)" }}
               />
 
-              <div className="relative h-44 w-full overflow-hidden">
+              <div className="relative h-48 w-full overflow-hidden">
                 <Image
                   src={p.img}
                   alt={p.title}
@@ -90,14 +90,14 @@ export default function Projects() {
                 <div className="absolute bottom-3 left-4 flex items-center gap-2">
                   <span
                     className="text-4xl font-bold leading-none"
-                    style={{ fontFamily: "var(--font-space-grotesk)", color: "rgba(255,107,0,0.6)" }}
+                    style={{ fontFamily: "var(--font-jakarta)", color: "rgba(255,107,0,0.6)" }}
                   >
                     {p.num}
                   </span>
                 </div>
                 <div className="absolute top-3 right-3">
                   <span
-                    className="rounded-full px-3 py-1 text-xs backdrop-blur-md"
+                    className="rounded-full px-3 py-1 text-sm font-medium backdrop-blur-md"
                     style={{
                       border: "1px solid rgba(255,255,255,0.15)",
                       color: "rgba(255,255,255,0.8)",
@@ -111,19 +111,19 @@ export default function Projects() {
 
               <div className="relative z-10 p-6">
                 <h3
-                  className="mb-2 text-lg font-bold text-white"
-                  style={{ fontFamily: "var(--font-space-grotesk)" }}
+                  className="mb-3 text-xl font-bold text-white"
+                  style={{ fontFamily: "var(--font-jakarta)" }}
                 >
                   {p.title}
                 </h3>
-                <p className="mb-5 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
+                <p className="mb-6 text-lg leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
                   {p.desc}
                 </p>
                 <a
                   href={p.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex h-9 items-center gap-2 rounded-full border px-5 text-xs font-medium transition-all duration-200 hover:border-[#FF6B00] hover:text-[#FF6B00]"
+                  className="inline-flex items-center gap-2 rounded-full border px-6 py-2.5 text-base font-semibold transition-all duration-200 hover:border-[#FF6B00] hover:text-[#FF6B00]"
                   style={{ borderColor: "rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.7)" }}
                 >
                   Voir le projet →

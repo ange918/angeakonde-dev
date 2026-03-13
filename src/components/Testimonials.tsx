@@ -32,7 +32,7 @@ function Stars() {
   return (
     <div className="flex items-center gap-1">
       {Array.from({ length: 5 }).map((_, i) => (
-        <span key={i} style={{ color: "#FF6B00", fontSize: 14 }}>★</span>
+        <span key={i} style={{ color: "#FF6B00", fontSize: 18 }}>★</span>
       ))}
     </div>
   );
@@ -67,12 +67,12 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#FF6B00" }}>
+          <p className="mb-3 text-sm font-semibold tracking-[0.3em] uppercase" style={{ color: "#FF6B00" }}>
             Témoignages
           </p>
           <h2
             className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--c-text)" }}
+            style={{ fontFamily: "var(--font-jakarta)", color: "var(--c-text)" }}
           >
             Ce que disent les clients.
           </h2>
@@ -108,10 +108,10 @@ export default function Testimonials() {
               </div>
 
               <p
-                className="mb-10 text-lg leading-relaxed sm:text-xl"
+                className="mb-10 text-xl leading-loose"
                 style={{
                   color: "var(--c-dim)",
-                  fontFamily: "var(--font-ibm-plex-mono)",
+                  fontFamily: "var(--font-jakarta)",
                 }}
               >
                 {t.quote}
@@ -120,19 +120,19 @@ export default function Testimonials() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
                   <div
-                    className="flex h-12 w-12 items-center justify-center rounded-2xl text-base font-bold text-black"
+                    className="flex h-14 w-14 items-center justify-center rounded-2xl text-lg font-bold text-black"
                     style={{ background: t.color }}
                   >
                     {t.initial}
                   </div>
                   <div>
                     <p
-                      className="font-semibold"
-                      style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--c-text)" }}
+                      className="text-lg font-semibold"
+                      style={{ fontFamily: "var(--font-jakarta)", color: "var(--c-text)" }}
                     >
                       {t.name}
                     </p>
-                    <p className="text-xs mt-0.5" style={{ color: "var(--c-faint)" }}>
+                    <p className="text-base mt-0.5" style={{ color: "var(--c-faint)" }}>
                       {t.role}
                     </p>
                   </div>
@@ -160,25 +160,25 @@ export default function Testimonials() {
             <div className="flex gap-2">
               <button
                 onClick={prev}
-                className="flex h-10 w-10 items-center justify-center rounded-xl border transition-all duration-200"
+                className="flex h-11 w-11 items-center justify-center rounded-xl border transition-all duration-200"
                 style={{
                   borderColor: "var(--c-border-md)",
                   color: "var(--c-faint)",
                   background: "var(--c-surface)",
                 }}
               >
-                <ChevronLeftIcon className="h-4 w-4" />
+                <ChevronLeftIcon className="h-5 w-5" />
               </button>
               <button
                 onClick={next}
-                className="flex h-10 w-10 items-center justify-center rounded-xl border transition-all duration-200"
+                className="flex h-11 w-11 items-center justify-center rounded-xl border transition-all duration-200"
                 style={{
                   borderColor: "var(--c-border-md)",
                   color: "var(--c-faint)",
                   background: "var(--c-surface)",
                 }}
               >
-                <ChevronRightIcon className="h-4 w-4" />
+                <ChevronRightIcon className="h-5 w-5" />
               </button>
             </div>
           </div>

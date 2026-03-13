@@ -32,7 +32,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs"
+          className="mb-6 inline-flex items-center gap-2 rounded-full border px-5 py-2 text-base font-medium"
           style={{
             borderColor: "rgba(255,107,0,0.3)",
             color: "#FF6B00",
@@ -48,7 +48,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mb-6 text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl"
-          style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--c-text)" }}
+          style={{ fontFamily: "var(--font-jakarta)", color: "var(--c-text)" }}
         >
           Je crée des
           <br />
@@ -61,7 +61,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-10 text-base leading-relaxed sm:text-lg"
+          className="mb-10 text-xl leading-relaxed"
           style={{ color: "var(--c-muted)" }}
         >
           Full Stack Developer — Cotonou, Benin
@@ -75,14 +75,14 @@ export default function Hero() {
         >
           <a
             href="#projects"
-            className="inline-flex h-12 items-center rounded-full px-8 text-sm font-semibold text-black transition-all duration-200 hover:opacity-90 hover:scale-105"
+            className="inline-flex items-center rounded-full px-8 py-4 text-base font-semibold text-black transition-all duration-200 hover:opacity-90 hover:scale-105"
             style={{ background: "#FF6B00" }}
           >
             Voir mes projets
           </a>
           <a
             href="#contact"
-            className="inline-flex h-12 items-center rounded-full border px-8 text-sm font-semibold transition-all duration-200 hover:border-[#FF6B00] hover:text-[#FF6B00]"
+            className="inline-flex items-center rounded-full border px-8 py-4 text-base font-semibold transition-all duration-200 hover:border-[#FF6B00] hover:text-[#FF6B00]"
             style={{ borderColor: "var(--c-border-xl)", color: "var(--c-text)" }}
           >
             Me contacter
@@ -93,37 +93,37 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-16 flex items-center justify-center gap-8 text-xs"
+          className="mt-16 flex items-center justify-center gap-8"
           style={{ color: "var(--c-subtle)" }}
         >
           <div className="flex flex-col items-center gap-1">
             <span
-              className="text-2xl font-bold"
-              style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--c-text)" }}
+              className="text-3xl font-bold"
+              style={{ fontFamily: "var(--font-jakarta)", color: "var(--c-text)" }}
             >
               30+
             </span>
-            <span>Projets</span>
+            <span className="text-base">Projets</span>
           </div>
           <div className="h-8 w-px" style={{ background: "var(--c-border-lg)" }} />
           <div className="flex flex-col items-center gap-1">
             <span
-              className="text-2xl font-bold"
-              style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--c-text)" }}
+              className="text-3xl font-bold"
+              style={{ fontFamily: "var(--font-jakarta)", color: "var(--c-text)" }}
             >
               4+
             </span>
-            <span>Ans d&apos;expérience</span>
+            <span className="text-base">Ans d&apos;expérience</span>
           </div>
           <div className="h-8 w-px" style={{ background: "var(--c-border-lg)" }} />
           <div className="flex flex-col items-center gap-1">
             <span
-              className="text-2xl font-bold"
-              style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--c-text)" }}
+              className="text-3xl font-bold"
+              style={{ fontFamily: "var(--font-jakarta)", color: "var(--c-text)" }}
             >
               Afrique
             </span>
-            <span>&amp; Au-delà</span>
+            <span className="text-base">&amp; Au-delà</span>
           </div>
         </motion.div>
       </div>

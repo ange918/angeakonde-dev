@@ -54,8 +54,8 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
         <a
           href="#home"
-          className="text-lg font-bold tracking-tight"
-          style={{ color: "var(--c-text)", fontFamily: "var(--font-space-grotesk)" }}
+          className="text-xl font-bold tracking-tight"
+          style={{ color: "var(--c-text)", fontFamily: "var(--font-jakarta)" }}
         >
           Big<span style={{ color: "#FF6B00" }}>Sixteen</span>
         </a>
@@ -65,7 +65,7 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="rounded-full px-3 py-1.5 text-xs transition-colors duration-200"
+              className="rounded-full px-4 py-2 text-base font-medium transition-colors duration-200"
               style={{
                 color: active === l.href ? "#FF6B00" : "var(--c-muted)",
               }}
@@ -78,7 +78,7 @@ export default function Navbar() {
         <div className="hidden items-center gap-3 lg:flex">
           <a
             href="#contact"
-            className="rounded-full border border-[#FF6B00] px-5 py-2 text-sm text-[#FF6B00] transition-all duration-200 hover:bg-[#FF6B00] hover:text-black"
+            className="rounded-full border border-[#FF6B00] px-6 py-3 text-base font-semibold text-[#FF6B00] transition-all duration-200 hover:bg-[#FF6B00] hover:text-black"
           >
             Me contacter
           </a>
@@ -115,14 +115,14 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.25 }}
-              className="fixed right-0 top-0 z-50 h-full w-72 overflow-y-auto px-6 py-8"
+              className="fixed right-0 top-0 z-50 h-full w-80 overflow-y-auto px-6 py-8"
               style={{
                 background: "var(--c-sidebar)",
                 borderLeft: "1px solid var(--c-border-xl)",
               }}
             >
               <div className="flex items-center justify-between mb-8">
-                <span className="text-lg font-bold" style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--c-text)" }}>
+                <span className="text-xl font-bold" style={{ fontFamily: "var(--font-jakarta)", color: "var(--c-text)" }}>
                   Big<span style={{ color: "#FF6B00" }}>Sixteen</span>
                 </span>
                 <button
@@ -141,7 +141,7 @@ export default function Navbar() {
                     key={l.href}
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="rounded-xl px-4 py-3 text-sm transition-colors"
+                    className="rounded-xl px-4 py-3 text-base font-medium transition-colors"
                     style={
                       active === l.href
                         ? { background: "rgba(255,107,0,0.1)", color: "#FF6B00" }
@@ -157,7 +157,7 @@ export default function Navbar() {
                   href="https://github.com/ange918"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex-1 rounded-xl border py-2 text-center text-xs transition-colors"
+                  className="flex-1 rounded-xl border py-3 text-center text-base font-medium transition-colors"
                   style={{ borderColor: "var(--c-border-xl)", color: "var(--c-muted)" }}
                 >
                   GitHub
@@ -166,7 +166,7 @@ export default function Navbar() {
                   href="https://linkedin.com/in/ange-akonde"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex-1 rounded-xl border py-2 text-center text-xs transition-colors"
+                  className="flex-1 rounded-xl border py-3 text-center text-base font-medium transition-colors"
                   style={{ borderColor: "var(--c-border-xl)", color: "var(--c-muted)" }}
                 >
                   LinkedIn

@@ -53,12 +53,12 @@ export default function Skills() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16"
         >
-          <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#FF6B00" }}>
+          <p className="mb-3 text-sm font-semibold tracking-[0.3em] uppercase" style={{ color: "#FF6B00" }}>
             Compétences
           </p>
           <h2
             className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--c-text)" }}
+            style={{ fontFamily: "var(--font-jakarta)", color: "var(--c-text)" }}
           >
             Ma stack technique.
           </h2>
@@ -79,22 +79,22 @@ export default function Skills() {
           {repeated.map((skill, i) => (
             <div
               key={i}
-              className="flex shrink-0 items-center gap-3 mx-3 rounded-2xl px-6 py-4"
+              className="flex shrink-0 items-center gap-3 mx-3 rounded-2xl px-6 py-5"
               style={{
                 background: "var(--c-surface)",
                 border: "1px solid var(--c-border-md)",
-                minWidth: "160px",
+                minWidth: "180px",
               }}
             >
               <div
-                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl"
                 style={{ background: `${skill.color}18`, border: `1px solid ${skill.color}35` }}
               >
-                <skill.Icon style={{ color: skill.color, width: 18, height: 18 }} />
+                <skill.Icon style={{ color: skill.color, width: 20, height: 20 }} />
               </div>
               <span
-                className="text-sm font-semibold whitespace-nowrap"
-                style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--c-text)" }}
+                className="text-base font-semibold whitespace-nowrap"
+                style={{ fontFamily: "var(--font-jakarta)", color: "var(--c-text)" }}
               >
                 {skill.name}
               </span>

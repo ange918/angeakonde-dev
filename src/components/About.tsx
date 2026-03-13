@@ -12,12 +12,12 @@ export default function About() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
         >
-          <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#FF6B00" }}>
+          <p className="mb-3 text-sm font-semibold tracking-[0.3em] uppercase" style={{ color: "#FF6B00" }}>
             À propos
           </p>
           <h2
             className="mb-16 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: "var(--font-space-grotesk)" }}
+            style={{ fontFamily: "var(--font-jakarta)" }}
           >
             Bâtisseur passionné
             <br />
@@ -33,10 +33,10 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="card rounded-2xl p-8"
           >
-            <p className="mb-6 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
-              Salut, je suis <span className="text-white font-medium">Ange Akonde</span>, développeur Full Stack basé à Cotonou, au Bénin. Je suis passionné par la création d&apos;expériences numériques qui résolvent de vrais problèmes pour les gens à travers l&apos;Afrique et le monde entier.
+            <p className="mb-6 text-lg leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+              Salut, je suis <span className="text-white font-semibold">Ange Akonde</span>, développeur Full Stack basé à Cotonou, au Bénin. Je suis passionné par la création d&apos;expériences numériques qui résolvent de vrais problèmes pour les gens à travers l&apos;Afrique et le monde entier.
             </p>
-            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+            <p className="text-lg leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
               Des plateformes de gestion académique aux outils fintech et aux labs d&apos;innovation, je construis des produits qui allient un code propre à un design intentionnel. Mon objectif est d&apos;être un pont entre la technologie et le marché africain — en créant des outils numériques qui fonctionnent vraiment pour les personnes qui les utilisent.
             </p>
 
@@ -44,7 +44,7 @@ export default function About() {
               {["Résolveur de problèmes", "Code propre", "Africa-first", "Full Stack", "Product builder"].map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full px-3 py-1 text-xs"
+                  className="rounded-full px-4 py-1.5 text-base font-medium"
                   style={{
                     border: "1px solid rgba(255,107,0,0.2)",
                     color: "#FF6B00",
@@ -78,11 +78,11 @@ export default function About() {
                 value: "Cotonou, Bénin — travaillant avec des clients du monde entier.",
               },
             ].map((item) => (
-              <div key={item.label} className="card rounded-xl p-5">
-                <p className="mb-1 text-xs font-medium" style={{ color: "#FF6B00" }}>
+              <div key={item.label} className="card rounded-xl p-6">
+                <p className="mb-2 text-sm font-semibold tracking-wide uppercase" style={{ color: "#FF6B00" }}>
                   {item.label}
                 </p>
-                <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+                <p className="text-lg leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
                   {item.value}
                 </p>
               </div>
