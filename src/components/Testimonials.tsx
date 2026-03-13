@@ -1,52 +1,71 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
 const testimonials = [
   {
-    quote: "Ange a transformé ma vision en une plateforme élégante et moderne. Son sens du détail et sa capacité à comprendre ce dont nous avions besoin m'ont impressionné.",
+    quote: "Ange a transformé ma vision en une plateforme élégante et moderne. Son sens du détail et sa capacité à comprendre ce dont nous avions besoin m'ont impressionné. Un travail vraiment remarquable du début à la fin.",
     name: "Axel Merryl",
     role: "Artiste & Directeur Créatif",
     initial: "A",
+    color: "#00FF66",
   },
   {
-    quote: "La qualité du code et la structure sont à un autre niveau. Propre, maintenable, exactement ce que nous voulions. Je retravaillerais avec lui sans hésitation.",
+    quote: "La qualité du code et la structure sont à un autre niveau. Propre, maintenable, exactement ce que nous voulions. Je retravaillerais avec lui sans hésitation. Un développeur qui pense produit.",
     name: "Gauthier O.",
     role: "Architecte",
     initial: "G",
+    color: "#61DAFB",
   },
   {
-    quote: "À l'écoute, réactif, force de proposition. Une combinaison rare de compétences techniques et d'une vraie volonté de faire les choses bien.",
+    quote: "À l'écoute, réactif, force de proposition. Une combinaison rare de compétences techniques et d'une vraie volonté de faire les choses bien. Il a livré au-delà de mes attentes.",
     name: "Merveille S.",
     role: "Entrepreneuse",
     initial: "M",
+    color: "#F7DF1E",
   },
 ];
 
 function Stars() {
   return (
-    <div className="flex items-center gap-0.5">
+    <div className="flex items-center gap-1">
       {Array.from({ length: 5 }).map((_, i) => (
-        <span key={i} style={{ color: "#00FF66" }}>★</span>
+        <span key={i} style={{ color: "#00FF66", fontSize: 14 }}>★</span>
       ))}
     </div>
   );
 }
 
 export default function Testimonials() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const [active, setActive] = useState(0);
+  const [direction, setDirection] = useState(1);
+
+  const go = useCallback((next: number) => {
+    setDirection(next > active ? 1 : -1);
+    setActive(next);
+  }, [active]);
+
+  const prev = () => go((active - 1 + testimonials.length) % testimonials.length);
+  const next = useCallback(() => go((active + 1) % testimonials.length), [active, go]);
+
+  useEffect(() => {
+    const timer = setInterval(next, 5000);
+    return () => clearInterval(timer);
+  }, [next]);
+
+  const t = testimonials[active];
 
   return (
     <section id="testimonials" className="py-24 px-5">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-4xl">
         <motion.div
-          ref={ref}
           initial={{ opacity: 0, y: 40 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-16 text-center"
         >
           <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#00FF66" }}>
             Témoignages
@@ -59,47 +78,110 @@ export default function Testimonials() {
           </h2>
         </motion.div>
 
-        <div className="grid gap-5 md:grid-cols-3">
-          {testimonials.map((t, i) => (
+        <div
+          className="relative overflow-hidden rounded-3xl p-8 sm:p-12"
+          style={{
+            background: "rgba(255,255,255,0.03)",
+            border: "1px solid rgba(255,255,255,0.07)",
+          }}
+        >
+          <div
+            className="pointer-events-none absolute -top-20 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full blur-[80px]"
+            style={{ background: `${t.color}18` }}
+          />
+
+          <AnimatePresence mode="wait" custom={direction}>
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.55, delay: i * 0.12 }}
-              className="card relative overflow-hidden rounded-2xl p-7"
+              key={active}
+              custom={direction}
+              initial={{ opacity: 0, x: direction * 60 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: direction * -60 }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              className="relative"
             >
               <div
-                className="pointer-events-none absolute -top-10 -right-10 h-32 w-32 rounded-full blur-[60px]"
-                style={{ background: "rgba(0,255,102,0.08)" }}
-              />
-
-              <div className="mb-4 text-5xl font-serif leading-none" style={{ color: "rgba(0,255,102,0.3)" }}>
+                className="mb-8 text-7xl font-serif leading-none"
+                style={{ color: `${t.color}40` }}
+              >
                 &ldquo;
               </div>
 
-              <p className="mb-6 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+              <p
+                className="mb-10 text-lg leading-relaxed sm:text-xl"
+                style={{
+                  color: "rgba(255,255,255,0.75)",
+                  fontFamily: "var(--font-ibm-plex-mono)",
+                }}
+              >
                 {t.quote}
               </p>
 
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-4">
                   <div
-                    className="flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold text-black"
-                    style={{ background: "#00FF66" }}
+                    className="flex h-12 w-12 items-center justify-center rounded-2xl text-base font-bold text-black"
+                    style={{ background: t.color }}
                   >
                     {t.initial}
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                    <p
+                      className="font-semibold text-white"
+                      style={{ fontFamily: "var(--font-space-grotesk)" }}
+                    >
                       {t.name}
                     </p>
-                    <p className="text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>{t.role}</p>
+                    <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.4)" }}>
+                      {t.role}
+                    </p>
                   </div>
                 </div>
                 <Stars />
               </div>
             </motion.div>
-          ))}
+          </AnimatePresence>
+
+          <div className="mt-10 flex items-center justify-between">
+            <div className="flex gap-2">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => go(i)}
+                  className="h-1.5 rounded-full transition-all duration-300"
+                  style={{
+                    width: i === active ? 32 : 8,
+                    background: i === active ? "#00FF66" : "rgba(255,255,255,0.15)",
+                  }}
+                />
+              ))}
+            </div>
+
+            <div className="flex gap-2">
+              <button
+                onClick={prev}
+                className="flex h-10 w-10 items-center justify-center rounded-xl border transition-all duration-200 hover:border-white/20 hover:text-white"
+                style={{
+                  borderColor: "rgba(255,255,255,0.08)",
+                  color: "rgba(255,255,255,0.4)",
+                  background: "rgba(255,255,255,0.03)",
+                }}
+              >
+                <ChevronLeftIcon className="h-4 w-4" />
+              </button>
+              <button
+                onClick={next}
+                className="flex h-10 w-10 items-center justify-center rounded-xl border transition-all duration-200 hover:border-white/20 hover:text-white"
+                style={{
+                  borderColor: "rgba(255,255,255,0.08)",
+                  color: "rgba(255,255,255,0.4)",
+                  background: "rgba(255,255,255,0.03)",
+                }}
+              >
+                <ChevronRightIcon className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

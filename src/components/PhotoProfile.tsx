@@ -51,9 +51,8 @@ export default function PhotoProfile() {
                   background: "rgba(255,255,255,0.03)",
                 }}
               >
-                {/* Remplacez /photo-placeholder.svg par /photo.jpg (ou .png, .webp) après avoir mis votre photo dans le dossier public/ */}
                 <Image
-                  src="/photo-placeholder.svg"
+                  src="/photo.jpg"
                   alt="Ange Akonde"
                   fill
                   className="object-cover"
