@@ -1,11 +1,13 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export default function Contact() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   return (
     <section id="contact" className="py-24 px-5">
@@ -87,7 +89,7 @@ export default function Contact() {
           </motion.div>
 
           <motion.form
-            initial={{ opacity: 0, x: 30 }}
+            initial={mounted ? { opacity: 0, x: 30 } : false}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.25 }}
             className="card rounded-2xl p-7 lg:col-span-3"
