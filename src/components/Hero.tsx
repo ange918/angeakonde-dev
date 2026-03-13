@@ -32,7 +32,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-6 inline-flex items-center gap-2 rounded-full border px-5 py-2 text-base font-medium"
+          className="mb-8 inline-flex items-center gap-2 rounded-full border px-5 py-2 text-base font-medium"
           style={{
             borderColor: "rgba(255,107,0,0.3)",
             color: "#FF6B00",
@@ -47,21 +47,22 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-6 text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl"
-          style={{ fontFamily: "var(--font-jakarta)", color: "var(--c-text)" }}
+          className="mb-6 text-5xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-[5.5rem]"
+          style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)", fontWeight: 800 }}
         >
-          Je crée des
+          Je crée des{" "}
+          <span style={{ color: "#FF6B00", fontWeight: 800 }}>produits</span>
           <br />
-          <span style={{ color: "#FF6B00" }}>produits</span> digitaux
+          digitaux qui
           <br />
-          qui comptent.
+          <span style={{ color: "#FF6B00", fontWeight: 800 }}>comptent.</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-10 text-xl leading-relaxed"
+          className="mb-10 text-xl font-normal leading-relaxed"
           style={{ color: "var(--c-muted)" }}
         >
           Full Stack Developer — Cotonou, Benin
@@ -75,15 +76,15 @@ export default function Hero() {
         >
           <a
             href="#projects"
-            className="inline-flex items-center rounded-full px-8 py-4 text-base font-semibold text-black transition-all duration-200 hover:opacity-90 hover:scale-105"
-            style={{ background: "#FF6B00" }}
+            className="inline-flex items-center rounded-full px-8 py-4 text-base text-black transition-all duration-200 hover:opacity-90 hover:scale-105"
+            style={{ background: "#FF6B00", fontWeight: 700 }}
           >
             Voir mes projets
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center rounded-full border px-8 py-4 text-base font-semibold transition-all duration-200 hover:border-[#FF6B00] hover:text-[#FF6B00]"
-            style={{ borderColor: "var(--c-border-xl)", color: "var(--c-text)" }}
+            className="inline-flex items-center rounded-full border px-8 py-4 text-base transition-all duration-200 hover:border-[#FF6B00] hover:text-[#FF6B00]"
+            style={{ borderColor: "var(--c-border-xl)", color: "var(--c-text)", fontWeight: 600 }}
           >
             Me contacter
           </a>
@@ -93,37 +94,28 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-16 flex items-center justify-center gap-8"
+          className="mt-16 flex items-center justify-center gap-10"
           style={{ color: "var(--c-subtle)" }}
         >
           <div className="flex flex-col items-center gap-1">
-            <span
-              className="text-3xl font-bold"
-              style={{ fontFamily: "var(--font-jakarta)", color: "var(--c-text)" }}
-            >
+            <span className="text-3xl font-extrabold" style={{ color: "var(--c-text)", fontWeight: 800 }}>
               30+
             </span>
-            <span className="text-base">Projets</span>
+            <span className="text-base font-medium">Projets</span>
           </div>
           <div className="h-8 w-px" style={{ background: "var(--c-border-lg)" }} />
           <div className="flex flex-col items-center gap-1">
-            <span
-              className="text-3xl font-bold"
-              style={{ fontFamily: "var(--font-jakarta)", color: "var(--c-text)" }}
-            >
+            <span className="text-3xl font-extrabold" style={{ color: "var(--c-text)", fontWeight: 800 }}>
               4+
             </span>
-            <span className="text-base">Ans d&apos;expérience</span>
+            <span className="text-base font-medium">Ans d&apos;expérience</span>
           </div>
           <div className="h-8 w-px" style={{ background: "var(--c-border-lg)" }} />
           <div className="flex flex-col items-center gap-1">
-            <span
-              className="text-3xl font-bold"
-              style={{ fontFamily: "var(--font-jakarta)", color: "var(--c-text)" }}
-            >
+            <span className="text-3xl font-extrabold" style={{ color: "var(--c-text)", fontWeight: 800 }}>
               Afrique
             </span>
-            <span className="text-base">&amp; Au-delà</span>
+            <span className="text-base font-medium">&amp; Au-delà</span>
           </div>
         </motion.div>
       </div>

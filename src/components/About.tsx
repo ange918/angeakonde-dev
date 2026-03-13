@@ -16,8 +16,8 @@ export default function About() {
             À propos
           </p>
           <h2
-            className="mb-16 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: "var(--font-jakarta)" }}
+            className="mb-16 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl"
+            style={{ fontFamily: "var(--font-outfit)" }}
           >
             Bâtisseur passionné
             <br />

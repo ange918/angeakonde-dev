@@ -55,7 +55,7 @@ export default function Navbar() {
         <a
           href="#home"
           className="text-xl font-bold tracking-tight"
-          style={{ color: "var(--c-text)", fontFamily: "var(--font-jakarta)" }}
+          style={{ color: "var(--c-text)", fontFamily: "var(--font-outfit)" }}
         >
           Big<span style={{ color: "#FF6B00" }}>Sixteen</span>
         </a>
@@ -122,7 +122,7 @@ export default function Navbar() {
               }}
             >
               <div className="flex items-center justify-between mb-8">
-                <span className="text-xl font-bold" style={{ fontFamily: "var(--font-jakarta)", color: "var(--c-text)" }}>
+                <span className="text-xl font-bold" style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)" }}>
                   Big<span style={{ color: "#FF6B00" }}>Sixteen</span>
                 </span>
                 <button

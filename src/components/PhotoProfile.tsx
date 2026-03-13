@@ -19,8 +19,8 @@ export default function PhotoProfile() {
             Profil
           </p>
           <h2
-            className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: "var(--font-jakarta)" }}
+            className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl"
+            style={{ fontFamily: "var(--font-outfit)" }}
           >
             Qui suis-je ?
           </h2>
@@ -65,7 +65,7 @@ export default function PhotoProfile() {
                 <div className="absolute bottom-5 left-5 right-5">
                   <p
                     className="text-lg font-bold text-white"
-                    style={{ fontFamily: "var(--font-jakarta)" }}
+                    style={{ fontFamily: "var(--font-outfit)" }}
                   >
                     Ange Akonde
                   </p>
@@ -134,7 +134,7 @@ export default function PhotoProfile() {
               <a
                 href="#contact"
                 className="inline-flex h-10 items-center gap-2 rounded-xl px-6 text-sm font-semibold text-black transition-all hover:opacity-90"
-                style={{ background: "#FF6B00", fontFamily: "var(--font-jakarta)" }}
+                style={{ background: "#FF6B00", fontFamily: "var(--font-outfit)" }}
               >
                 Me contacter →
               </a>
@@ -144,7 +144,7 @@ export default function PhotoProfile() {
                 style={{
                   borderColor: "rgba(255,255,255,0.1)",
                   color: "rgba(255,255,255,0.55)",
-                  fontFamily: "var(--font-jakarta)",
+                  fontFamily: "var(--font-outfit)",
                 }}
               >
                 <ArrowDownTrayIcon className="h-4 w-4" />

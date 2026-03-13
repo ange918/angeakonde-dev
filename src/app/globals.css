@@ -34,7 +34,7 @@
   --color-background: var(--c-bg);
   --color-foreground: var(--c-text);
   --color-accent: var(--accent);
-  --font-sans: var(--font-jakarta);
+  --font-sans: var(--font-outfit);
 }
 
 * {
@@ -49,13 +49,14 @@ html {
 body {
   background: #000000;
   color: var(--c-text);
-  font-family: var(--font-jakarta), ui-sans-serif, sans-serif;
+  font-family: var(--font-outfit), ui-sans-serif, sans-serif;
   min-height: 100dvh;
   overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-jakarta), ui-sans-serif, sans-serif;
+  font-family: var(--font-outfit), ui-sans-serif, sans-serif;
+  font-weight: 800;
 }
 
 ::selection {
@@ -101,7 +102,7 @@ input, textarea {
   background: var(--c-surface) !important;
   color: var(--c-text) !important;
   border-color: var(--c-border-md) !important;
-  font-family: var(--font-jakarta), ui-sans-serif, sans-serif;
+  font-family: var(--font-outfit), ui-sans-serif, sans-serif;
 }
 
 input:focus, textarea:focus {

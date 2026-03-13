@@ -57,8 +57,8 @@ export default function Skills() {
             Compétences
           </p>
           <h2
-            className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: "var(--font-jakarta)", color: "var(--c-text)" }}
+            className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl"
+            style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)" }}
           >
             Ma stack technique.
           </h2>
@@ -94,7 +94,7 @@ export default function Skills() {
               </div>
               <span
                 className="text-base font-semibold whitespace-nowrap"
-                style={{ fontFamily: "var(--font-jakarta)", color: "var(--c-text)" }}
+                style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)" }}
               >
                 {skill.name}
               </span>

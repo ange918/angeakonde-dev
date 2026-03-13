@@ -53,7 +53,7 @@ function Item({ faq }: { faq: (typeof faqs)[0] }) {
       >
         <span
           className="pr-4 text-sm font-medium"
-          style={{ fontFamily: "var(--font-jakarta)", color: "var(--c-text)" }}
+          style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)" }}
         >
           {faq.q}
         </span>
@@ -105,8 +105,8 @@ export default function FAQ() {
             FAQ
           </p>
           <h2
-            className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: "var(--font-jakarta)", color: "var(--c-text)" }}
+            className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl"
+            style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)" }}
           >
             Questions fréquentes.
           </h2>
@@ -133,7 +133,7 @@ export default function FAQ() {
         >
           <p
             className="mb-2 text-base font-semibold"
-            style={{ fontFamily: "var(--font-jakarta)", color: "var(--c-text)" }}
+            style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)" }}
           >
             Vous avez une autre question ?
           </p>

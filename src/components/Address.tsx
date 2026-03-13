@@ -65,8 +65,8 @@ export default function Address() {
             Adresse
           </p>
           <h2
-            className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: "var(--font-jakarta)", color: "var(--c-text)" }}
+            className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl"
+            style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)" }}
           >
             Où me trouver.
           </h2>

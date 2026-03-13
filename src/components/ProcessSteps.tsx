@@ -76,8 +76,8 @@ export default function ProcessSteps() {
             Comment je travaille
           </p>
           <h2
-            className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: "var(--font-jakarta)" }}
+            className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl"
+            style={{ fontFamily: "var(--font-outfit)" }}
           >
             Les étapes d&apos;un projet.
           </h2>
@@ -126,13 +126,13 @@ export default function ProcessSteps() {
                       <div className="mb-1 flex items-center gap-3">
                         <span
                           className="text-xs font-bold tabular-nums"
-                          style={{ color: step.color, fontFamily: "var(--font-jakarta)" }}
+                          style={{ color: step.color, fontFamily: "var(--font-outfit)" }}
                         >
                           {step.number}
                         </span>
                         <h3
                           className="text-base font-bold text-white"
-                          style={{ fontFamily: "var(--font-jakarta)" }}
+                          style={{ fontFamily: "var(--font-outfit)" }}
                         >
                           {step.title}
                         </h3>
@@ -164,7 +164,7 @@ export default function ProcessSteps() {
             style={{
               background: "#FF6B00",
               boxShadow: "0 0 24px rgba(255,107,0,0.3)",
-              fontFamily: "var(--font-jakarta)",
+              fontFamily: "var(--font-outfit)",
             }}
           >
             Démarrer un projet →
