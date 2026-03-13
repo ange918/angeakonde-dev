@@ -11,11 +11,11 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div
           className="absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px]"
-          style={{ background: "rgba(0,255,102,0.08)" }}
+          style={{ background: "rgba(255,107,0,0.08)" }}
         />
         <div
           className="absolute right-0 bottom-0 h-[300px] w-[300px] rounded-full blur-[100px]"
-          style={{ background: "rgba(0,255,102,0.05)" }}
+          style={{ background: "rgba(255,107,0,0.05)" }}
         />
         <svg className="absolute inset-0 h-full w-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -34,12 +34,12 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs"
           style={{
-            borderColor: "rgba(0,255,102,0.3)",
-            color: "#00FF66",
-            background: "rgba(0,255,102,0.05)",
+            borderColor: "rgba(255,107,0,0.3)",
+            color: "#FF6B00",
+            background: "rgba(255,107,0,0.05)",
           }}
         >
-          <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ background: "#00FF66" }} />
+          <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ background: "#FF6B00" }} />
           Disponible pour de nouveaux projets
         </motion.div>
 
@@ -52,7 +52,7 @@ export default function Hero() {
         >
           Je crée des
           <br />
-          <span style={{ color: "#00FF66" }}>produits</span> digitaux
+          <span style={{ color: "#FF6B00" }}>produits</span> digitaux
           <br />
           qui comptent.
         </motion.h1>
@@ -76,13 +76,13 @@ export default function Hero() {
           <a
             href="#projects"
             className="inline-flex h-12 items-center rounded-full px-8 text-sm font-semibold text-black transition-all duration-200 hover:opacity-90 hover:scale-105"
-            style={{ background: "#00FF66" }}
+            style={{ background: "#FF6B00" }}
           >
             Voir mes projets
           </a>
           <a
             href="#contact"
-            className="inline-flex h-12 items-center rounded-full border px-8 text-sm font-semibold transition-all duration-200 hover:border-[#00FF66] hover:text-[#00FF66]"
+            className="inline-flex h-12 items-center rounded-full border px-8 text-sm font-semibold transition-all duration-200 hover:border-[#FF6B00] hover:text-[#FF6B00]"
             style={{ borderColor: "var(--c-border-xl)", color: "var(--c-text)" }}
           >
             Me contacter
@@ -142,7 +142,7 @@ export default function Hero() {
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
             className="h-1.5 w-1 rounded-full"
-            style={{ background: "#00FF66" }}
+            style={{ background: "#FF6B00" }}
           />
         </div>
       </motion.div>

@@ -13,7 +13,7 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#00FF66" }}>
+          <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#FF6B00" }}>
             Contact
           </p>
           <h2
@@ -38,19 +38,19 @@ export default function Contact() {
 
             <div className="mb-6 space-y-4 text-sm">
               <div>
-                <p className="mb-1 text-xs" style={{ color: "#00FF66" }}>Email</p>
+                <p className="mb-1 text-xs" style={{ color: "#FF6B00" }}>Email</p>
                 <a href="mailto:akondejunior18@gmail.com" className="text-white/70 hover:text-white transition-colors">
                   akondejunior18@gmail.com
                 </a>
               </div>
               <div>
-                <p className="mb-1 text-xs" style={{ color: "#00FF66" }}>Téléphone</p>
+                <p className="mb-1 text-xs" style={{ color: "#FF6B00" }}>Téléphone</p>
                 <a href="tel:+22941483715" className="text-white/70 hover:text-white transition-colors">
                   +229 41 48 37 15
                 </a>
               </div>
               <div>
-                <p className="mb-1 text-xs" style={{ color: "#00FF66" }}>Localisation</p>
+                <p className="mb-1 text-xs" style={{ color: "#FF6B00" }}>Localisation</p>
                 <span className="text-white/70">Cotonou, Bénin</span>
               </div>
             </div>
@@ -60,7 +60,7 @@ export default function Contact() {
                 href="https://github.com/ange918"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-10 items-center gap-2 rounded-full border px-5 text-xs transition-all duration-200 hover:border-[#00FF66] hover:text-[#00FF66]"
+                className="inline-flex h-10 items-center gap-2 rounded-full border px-5 text-xs transition-all duration-200 hover:border-[#FF6B00] hover:text-[#FF6B00]"
                 style={{ borderColor: "rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.6)" }}
               >
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
@@ -72,7 +72,7 @@ export default function Contact() {
                 href="https://linkedin.com/in/ange-akonde"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-10 items-center gap-2 rounded-full border px-5 text-xs transition-all duration-200 hover:border-[#00FF66] hover:text-[#00FF66]"
+                className="inline-flex h-10 items-center gap-2 rounded-full border px-5 text-xs transition-all duration-200 hover:border-[#FF6B00] hover:text-[#FF6B00]"
                 style={{ borderColor: "rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.6)" }}
               >
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
@@ -124,7 +124,7 @@ export default function Contact() {
               <button
                 type="submit"
                 className="inline-flex h-11 items-center rounded-full px-8 text-sm font-semibold text-black transition-all duration-200 hover:opacity-90"
-                style={{ background: "#00FF66" }}
+                style={{ background: "#FF6B00" }}
               >
                 Envoyer →
               </button>

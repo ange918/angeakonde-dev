@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useTheme } from "@/components/ThemeProvider";
 
 const links = [
   { href: "#home", label: "Accueil" },
@@ -14,37 +13,6 @@ const links = [
   { href: "#faq", label: "FAQ" },
   { href: "#contact", label: "Contact" },
 ];
-
-function ThemeToggle() {
-  const { theme, toggle } = useTheme();
-  const isDark = theme === "dark";
-
-  return (
-    <button
-      type="button"
-      onClick={toggle}
-      aria-label={isDark ? "Activer le mode clair" : "Activer le mode sombre"}
-      className="relative flex h-8 w-14 items-center rounded-full border transition-all duration-300"
-      style={{
-        background: isDark ? "rgba(0,255,102,0.1)" : "rgba(0,255,102,0.15)",
-        borderColor: "rgba(0,255,102,0.3)",
-      }}
-    >
-      <motion.div
-        layout
-        transition={{ type: "spring", stiffness: 500, damping: 35 }}
-        className="absolute flex h-6 w-6 items-center justify-center rounded-full text-xs"
-        style={{
-          left: isDark ? "2px" : "calc(100% - 26px)",
-          background: "#00FF66",
-          color: "#000",
-        }}
-      >
-        {isDark ? "🌙" : "☀️"}
-      </motion.div>
-    </button>
-  );
-}
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -89,7 +57,7 @@ export default function Navbar() {
           className="text-lg font-bold tracking-tight"
           style={{ color: "var(--c-text)", fontFamily: "var(--font-space-grotesk)" }}
         >
-          Big<span style={{ color: "#00FF66" }}>Sixteen</span>
+          Big<span style={{ color: "#FF6B00" }}>Sixteen</span>
         </a>
 
         <nav className="hidden items-center gap-0.5 lg:flex">
@@ -99,7 +67,7 @@ export default function Navbar() {
               href={l.href}
               className="rounded-full px-3 py-1.5 text-xs transition-colors duration-200"
               style={{
-                color: active === l.href ? "#00FF66" : "var(--c-muted)",
+                color: active === l.href ? "#FF6B00" : "var(--c-muted)",
               }}
             >
               {l.label}
@@ -108,17 +76,15 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <ThemeToggle />
           <a
             href="#contact"
-            className="rounded-full border border-[#00FF66] px-5 py-2 text-sm text-[#00FF66] transition-all duration-200 hover:bg-[#00FF66] hover:text-black"
+            className="rounded-full border border-[#FF6B00] px-5 py-2 text-sm text-[#FF6B00] transition-all duration-200 hover:bg-[#FF6B00] hover:text-black"
           >
             Me contacter
           </a>
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
-          <ThemeToggle />
           <button
             type="button"
             aria-label="Ouvrir le menu"
@@ -157,7 +123,7 @@ export default function Navbar() {
             >
               <div className="flex items-center justify-between mb-8">
                 <span className="text-lg font-bold" style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--c-text)" }}>
-                  Big<span style={{ color: "#00FF66" }}>Sixteen</span>
+                  Big<span style={{ color: "#FF6B00" }}>Sixteen</span>
                 </span>
                 <button
                   type="button"
@@ -178,7 +144,7 @@ export default function Navbar() {
                     className="rounded-xl px-4 py-3 text-sm transition-colors"
                     style={
                       active === l.href
-                        ? { background: "rgba(0,255,102,0.1)", color: "#00FF66" }
+                        ? { background: "rgba(255,107,0,0.1)", color: "#FF6B00" }
                         : { color: "var(--c-muted)" }
                     }
                   >

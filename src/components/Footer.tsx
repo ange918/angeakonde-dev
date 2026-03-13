@@ -6,16 +6,16 @@ export default function Footer() {
           © BigSixteen 2026. Tous droits réservés.
         </div>
         <div className="flex items-center gap-6 text-xs" style={{ color: "var(--c-faint)" }}>
-          <a href="#about" className="transition-colors hover:text-[#00FF66]">À propos</a>
-          <a href="#projects" className="transition-colors hover:text-[#00FF66]">Projets</a>
-          <a href="#progiciel" className="transition-colors hover:text-[#00FF66]">Progiciels</a>
-          <a href="#contact" className="transition-colors hover:text-[#00FF66]">Contact</a>
-          <a href="https://github.com/ange918" target="_blank" rel="noreferrer" className="transition-colors hover:text-[#00FF66]">
+          <a href="#about" className="transition-colors hover:text-[#FF6B00]">À propos</a>
+          <a href="#projects" className="transition-colors hover:text-[#FF6B00]">Projets</a>
+          <a href="#progiciel" className="transition-colors hover:text-[#FF6B00]">Progiciels</a>
+          <a href="#contact" className="transition-colors hover:text-[#FF6B00]">Contact</a>
+          <a href="https://github.com/ange918" target="_blank" rel="noreferrer" className="transition-colors hover:text-[#FF6B00]">
             GitHub
           </a>
         </div>
         <div className="flex items-center gap-1.5 text-xs" style={{ color: "var(--c-subtle)" }}>
-          <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ background: "#00FF66" }} />
+          <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ background: "#FF6B00" }} />
           Cotonou, Bénin
         </div>
       </div>

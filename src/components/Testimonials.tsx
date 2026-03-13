@@ -10,7 +10,7 @@ const testimonials = [
     name: "Axel Merryl",
     role: "Artiste & Directeur Créatif",
     initial: "A",
-    color: "#00FF66",
+    color: "#FF6B00",
   },
   {
     quote: "La qualité du code et la structure sont à un autre niveau. Propre, maintenable, exactement ce que nous voulions. Je retravaillerais avec lui sans hésitation. Un développeur qui pense produit.",
@@ -32,7 +32,7 @@ function Stars() {
   return (
     <div className="flex items-center gap-1">
       {Array.from({ length: 5 }).map((_, i) => (
-        <span key={i} style={{ color: "#00FF66", fontSize: 14 }}>★</span>
+        <span key={i} style={{ color: "#FF6B00", fontSize: 14 }}>★</span>
       ))}
     </div>
   );
@@ -67,7 +67,7 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#00FF66" }}>
+          <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#FF6B00" }}>
             Témoignages
           </p>
           <h2
@@ -151,7 +151,7 @@ export default function Testimonials() {
                   className="h-1.5 rounded-full transition-all duration-300"
                   style={{
                     width: i === active ? 32 : 8,
-                    background: i === active ? "#00FF66" : "var(--c-border-xl)",
+                    background: i === active ? "#FF6B00" : "var(--c-border-xl)",
                   }}
                 />
               ))}

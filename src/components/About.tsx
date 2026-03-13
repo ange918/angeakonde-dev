@@ -12,7 +12,7 @@ export default function About() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
         >
-          <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#00FF66" }}>
+          <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#FF6B00" }}>
             À propos
           </p>
           <h2
@@ -46,9 +46,9 @@ export default function About() {
                   key={tag}
                   className="rounded-full px-3 py-1 text-xs"
                   style={{
-                    border: "1px solid rgba(0,255,102,0.2)",
-                    color: "#00FF66",
-                    background: "rgba(0,255,102,0.05)",
+                    border: "1px solid rgba(255,107,0,0.2)",
+                    color: "#FF6B00",
+                    background: "rgba(255,107,0,0.05)",
                   }}
                 >
                   {tag}
@@ -79,7 +79,7 @@ export default function About() {
               },
             ].map((item) => (
               <div key={item.label} className="card rounded-xl p-5">
-                <p className="mb-1 text-xs font-medium" style={{ color: "#00FF66" }}>
+                <p className="mb-1 text-xs font-medium" style={{ color: "#FF6B00" }}>
                   {item.label}
                 </p>
                 <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>

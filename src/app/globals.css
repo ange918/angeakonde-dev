@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --accent: #00FF66;
-  --accent-dim: rgba(0, 255, 102, 0.12);
-  --accent-glow: rgba(0, 255, 102, 0.35);
+  --accent: #FF6B00;
+  --accent-dim: rgba(255, 107, 0, 0.12);
+  --accent-glow: rgba(255, 107, 0, 0.35);
 
   --c-bg: #000000;
   --c-surface: rgba(255, 255, 255, 0.03);
@@ -30,32 +30,6 @@
   --c-thumb-toggle: #ffffff;
 }
 
-html.light {
-  --c-bg: #f0f4f0;
-  --c-surface: rgba(0, 0, 0, 0.04);
-  --c-surface-hover: rgba(0, 0, 0, 0.06);
-  --c-text: #0d1a0d;
-  --c-muted: rgba(13, 26, 13, 0.5);
-  --c-dim: rgba(13, 26, 13, 0.6);
-  --c-subtle: rgba(13, 26, 13, 0.35);
-  --c-faint: rgba(13, 26, 13, 0.45);
-  --c-link: rgba(13, 26, 13, 0.65);
-  --c-card-text: rgba(13, 26, 13, 0.55);
-  --c-border: rgba(0, 0, 0, 0.08);
-  --c-border-sm: rgba(0, 0, 0, 0.07);
-  --c-border-md: rgba(0, 0, 0, 0.09);
-  --c-border-lg: rgba(0, 0, 0, 0.13);
-  --c-border-xl: rgba(0, 0, 0, 0.16);
-  --c-border-2xl: rgba(0, 0, 0, 0.22);
-  --c-invert-bg: rgba(255, 255, 255, 0.7);
-  --c-backdrop: rgba(0, 0, 0, 0.45);
-  --c-nav-bg: rgba(240, 244, 240, 0.92);
-  --c-sidebar: #e8ede8;
-  --c-map-filter: none;
-  --c-scrollbar-track: #d8e0d8;
-  --c-thumb-toggle: #0d1a0d;
-}
-
 @theme inline {
   --color-background: var(--c-bg);
   --color-foreground: var(--c-text);
@@ -69,18 +43,16 @@ html.light {
 }
 
 html {
-  background: var(--c-bg);
+  background: #000000;
   scroll-behavior: smooth;
-  transition: background 0.3s ease;
 }
 
 body {
-  background: var(--c-bg);
+  background: #000000;
   color: var(--c-text);
   font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
   min-height: 100dvh;
   overflow-x: hidden;
-  transition: background 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -88,7 +60,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::selection {
-  background: #00FF66;
+  background: #FF6B00;
   color: #000;
 }
 
@@ -96,10 +68,10 @@ h1, h2, h3, h4, h5, h6 {
   width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--c-scrollbar-track);
+  background: #000000;
 }
 ::-webkit-scrollbar-thumb {
-  background: #00FF66;
+  background: #FF6B00;
   border-radius: 3px;
 }
 
@@ -110,8 +82,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .card:hover {
-  border-color: #00FF66;
-  box-shadow: 0 0 28px rgba(0, 255, 102, 0.2), inset 0 0 28px rgba(0, 255, 102, 0.02);
+  border-color: #FF6B00;
+  box-shadow: 0 0 28px rgba(255, 107, 0, 0.2), inset 0 0 28px rgba(255, 107, 0, 0.02);
 }
 
 .accent-text {
@@ -122,8 +94,8 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--c-muted);
 }
 
-.green-glow {
-  box-shadow: 0 0 30px rgba(0, 255, 102, 0.4);
+.orange-glow {
+  box-shadow: 0 0 30px rgba(255, 107, 0, 0.4);
 }
 
 input, textarea {
@@ -134,16 +106,11 @@ input, textarea {
 
 input:focus, textarea:focus {
   outline: none;
-  border-color: #00FF66 !important;
-  box-shadow: 0 0 0 2px rgba(0, 255, 102, 0.15);
+  border-color: #FF6B00 !important;
+  box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.15);
 }
 
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(calc(-100% / 3)); }
-}
-
-@keyframes theme-toggle-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }

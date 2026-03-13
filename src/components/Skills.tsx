@@ -31,7 +31,7 @@ const skills: Skill[] = [
   { name: "JavaScript", Icon: CommandLineIcon, color: "#F7DF1E" },
   { name: "TypeScript", Icon: DocumentTextIcon, color: "#3178C6" },
   { name: "React", Icon: CubeTransparentIcon, color: "#61DAFB" },
-  { name: "Next.js", Icon: GlobeAltIcon, color: "#00FF66" },
+  { name: "Next.js", Icon: GlobeAltIcon, color: "#FF6B00" },
   { name: "Node.js", Icon: ServerIcon, color: "#339933" },
   { name: "Express", Icon: BoltIcon, color: "#888888" },
   { name: "Flutter", Icon: DevicePhoneMobileIcon, color: "#02569B" },
@@ -53,7 +53,7 @@ export default function Skills() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16"
         >
-          <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#00FF66" }}>
+          <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#FF6B00" }}>
             Compétences
           </p>
           <h2

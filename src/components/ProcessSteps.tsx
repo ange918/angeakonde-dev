@@ -17,7 +17,7 @@ const steps = [
     subtitle: "Cadrage du projet",
     desc: "On échange sur vos besoins, vos objectifs et votre vision. Un appel ou une réunion suffit pour poser les bases.",
     Icon: ChatBubbleLeftRightIcon,
-    color: "#00FF66",
+    color: "#FF6B00",
   },
   {
     number: "02",
@@ -57,7 +57,7 @@ const steps = [
     subtitle: "Suivi & Maintenance",
     desc: "Un accompagnement post-livraison pour corriger, faire évoluer et maintenir votre solution dans le temps.",
     Icon: WrenchScrewdriverIcon,
-    color: "#00FF66",
+    color: "#FF6B00",
   },
 ];
 
@@ -72,7 +72,7 @@ export default function ProcessSteps() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#00FF66" }}>
+          <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#FF6B00" }}>
             Comment je travaille
           </p>
           <h2
@@ -89,7 +89,7 @@ export default function ProcessSteps() {
         <div className="relative">
           <div
             className="absolute left-[27px] top-0 hidden h-full w-px md:block"
-            style={{ background: "linear-gradient(to bottom, #00FF6640, transparent)" }}
+            style={{ background: "linear-gradient(to bottom, #FF6B0040, transparent)" }}
           />
 
           <div className="space-y-6">
@@ -162,8 +162,8 @@ export default function ProcessSteps() {
             href="#contact"
             className="inline-flex h-11 items-center gap-2 rounded-xl px-7 text-sm font-semibold text-black transition-all duration-200 hover:opacity-90 hover:shadow-lg"
             style={{
-              background: "#00FF66",
-              boxShadow: "0 0 24px rgba(0,255,102,0.3)",
+              background: "#FF6B00",
+              boxShadow: "0 0 24px rgba(255,107,0,0.3)",
               fontFamily: "var(--font-space-grotesk)",
             }}
           >
