@@ -99,23 +99,23 @@ export default function Hero() {
         >
           <div className="flex flex-col items-center gap-1">
             <span className="text-3xl font-extrabold" style={{ color: "var(--c-text)", fontWeight: 800 }}>
-              30+
+              4
             </span>
-            <span className="text-base font-medium">Projets</span>
+            <span className="text-base font-medium">Projets réalisés</span>
           </div>
           <div className="h-8 w-px" style={{ background: "var(--c-border-lg)" }} />
           <div className="flex flex-col items-center gap-1">
             <span className="text-3xl font-extrabold" style={{ color: "var(--c-text)", fontWeight: 800 }}>
-              4+
+              4
             </span>
-            <span className="text-base font-medium">Ans d&apos;expérience</span>
+            <span className="text-base font-medium">En cours</span>
           </div>
           <div className="h-8 w-px" style={{ background: "var(--c-border-lg)" }} />
           <div className="flex flex-col items-center gap-1">
             <span className="text-3xl font-extrabold" style={{ color: "var(--c-text)", fontWeight: 800 }}>
-              Afrique
+              1
             </span>
-            <span className="text-base font-medium">&amp; Au-delà</span>
+            <span className="text-base font-medium">An d&apos;expérience</span>
           </div>
         </motion.div>
       </div>
