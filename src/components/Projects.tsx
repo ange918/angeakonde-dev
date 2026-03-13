@@ -1,37 +1,41 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 
 const projects = [
   {
     title: "Models Academy Management",
-    desc: "Academic platform for student and model tracking. Full management system for academic institutions with enrollment, scheduling, and progress tracking.",
-    tag: "Education",
+    desc: "Plateforme académique de suivi des étudiants et des modèles. Système de gestion complet avec inscription, planification et suivi des progrès.",
+    tag: "Éducation",
     href: "https://modelacademy-management.com/",
     num: "01",
+    img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=640&h=300&fit=crop&q=80",
   },
   {
     title: "Code-Capital",
-    desc: "Developer community and coding resources hub. A fintech-meets-dev platform connecting coders with tools, content, and capital resources.",
-    tag: "Community",
+    desc: "Communauté de développeurs et hub de ressources. Une plateforme fintech-dev connectant les codeurs avec des outils, du contenu et des ressources.",
+    tag: "Communauté",
     href: "https://codecapital.net",
     num: "02",
+    img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=640&h=300&fit=crop&q=80",
   },
   {
     title: "SusuniLab",
-    desc: "Collaborative innovation lab for African tech projects. A space where African builders come together to ideate, prototype, and ship.",
+    desc: "Lab d'innovation collaboratif pour les projets tech africains. Un espace où les bâtisseurs africains se retrouvent pour idéer, prototyper et livrer.",
     tag: "Innovation",
     href: "https://susunilab.com",
     num: "03",
+    img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=640&h=300&fit=crop&q=80",
   },
   {
     title: "God's Plan",
-    desc: "Personal goal-tracking and life management app. Set intentions, track milestones, and stay aligned with your vision — built for deliberate living.",
-    tag: "Productivity",
+    desc: "Application personnelle de suivi des objectifs et gestion de vie. Fixez des intentions, suivez vos jalons et restez aligné avec votre vision.",
+    tag: "Productivité",
     href: "https://god-plan.vercel.app/",
     num: "04",
+    img: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=640&h=300&fit=crop&q=80",
   },
 ];
 
@@ -50,83 +54,82 @@ export default function Projects() {
           className="mb-16"
         >
           <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#00FF66" }}>
-            Projects
+            Projets
           </p>
           <h2
             className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
-            Selected work.
+            Travaux sélectionnés.
           </h2>
         </motion.div>
 
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2">
           {projects.map((p, i) => (
             <motion.article
               key={p.title}
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.55, delay: i * 0.1 }}
-              className="card group relative overflow-hidden rounded-2xl p-7"
+              className="card group relative overflow-hidden rounded-2xl"
             >
               <div
-                className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                style={{
-                  background:
-                    "radial-gradient(400px at 50% 0%, rgba(0,255,102,0.06), transparent)",
-                }}
+                className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 z-10"
+                style={{ background: "radial-gradient(400px at 50% 0%, rgba(0,255,102,0.06), transparent)" }}
               />
 
-              <div className="relative flex items-start justify-between gap-4">
-                <span
-                  className="text-5xl font-bold leading-none"
-                  style={{
-                    fontFamily: "var(--font-space-grotesk)",
-                    color: "rgba(0,255,102,0.15)",
-                  }}
-                >
-                  {p.num}
-                </span>
-                <span
-                  className="rounded-full px-3 py-1 text-xs"
-                  style={{
-                    border: "1px solid rgba(255,255,255,0.08)",
-                    color: "rgba(255,255,255,0.5)",
-                  }}
-                >
-                  {p.tag}
-                </span>
+              <div className="relative h-44 w-full overflow-hidden">
+                <Image
+                  src={p.img}
+                  alt={p.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{ background: "linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.85))" }}
+                />
+                <div className="absolute bottom-3 left-4 flex items-center gap-2">
+                  <span
+                    className="text-4xl font-bold leading-none"
+                    style={{ fontFamily: "var(--font-space-grotesk)", color: "rgba(0,255,102,0.6)" }}
+                  >
+                    {p.num}
+                  </span>
+                </div>
+                <div className="absolute top-3 right-3">
+                  <span
+                    className="rounded-full px-3 py-1 text-xs backdrop-blur-md"
+                    style={{
+                      border: "1px solid rgba(255,255,255,0.15)",
+                      color: "rgba(255,255,255,0.8)",
+                      background: "rgba(0,0,0,0.4)",
+                    }}
+                  >
+                    {p.tag}
+                  </span>
+                </div>
               </div>
 
-              <div className="relative mt-4">
+              <div className="relative z-10 p-6">
                 <h3
-                  className="mb-3 text-xl font-bold text-white"
+                  className="mb-2 text-lg font-bold text-white"
                   style={{ fontFamily: "var(--font-space-grotesk)" }}
                 >
                   {p.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
+                <p className="mb-5 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
                   {p.desc}
                 </p>
-              </div>
-
-              <div className="relative mt-6 flex items-center justify-between">
-                <div
-                  className="h-px flex-1 mr-4"
-                  style={{ background: "rgba(255,255,255,0.06)" }}
-                />
                 <a
                   href={p.href}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex h-9 items-center gap-2 rounded-full border px-5 text-xs font-medium transition-all duration-200 hover:border-[#00FF66] hover:text-[#00FF66]"
-                  style={{
-                    borderColor: "rgba(255,255,255,0.12)",
-                    color: "rgba(255,255,255,0.7)",
-                  }}
+                  style={{ borderColor: "rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.7)" }}
                 >
-                  View project
-                  <span>→</span>
+                  Voir le projet →
                 </a>
               </div>
             </motion.article>

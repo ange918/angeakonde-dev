@@ -1,7 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 export default function About() {
@@ -18,15 +17,15 @@ export default function About() {
           transition={{ duration: 0.6 }}
         >
           <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#00FF66" }}>
-            About
+            À propos
           </p>
           <h2
             className="mb-16 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
-            Passionate builder
+            Bâtisseur passionné
             <br />
-            from Benin.
+            du Bénin.
           </h2>
         </motion.div>
 
@@ -38,14 +37,14 @@ export default function About() {
             className="card rounded-2xl p-8"
           >
             <p className="mb-6 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
-              Hey, I&apos;m <span className="text-white font-medium">Ange Akonde</span>, a Full Stack Developer based in Cotonou, Benin. I&apos;m passionate about creating meaningful digital experiences that solve real problems for people across Africa and around the world.
+              Salut, je suis <span className="text-white font-medium">Ange Akonde</span>, développeur Full Stack basé à Cotonou, au Bénin. Je suis passionné par la création d&apos;expériences numériques qui résolvent de vrais problèmes pour les gens à travers l&apos;Afrique et le monde entier.
             </p>
             <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
-              From academic management platforms to fintech tools and innovation labs, I build products that blend clean code with purposeful design. My goal is to be a bridge between technology and the African market — crafting digital tools that actually work for the people who use them.
+              Des plateformes de gestion académique aux outils fintech et aux labs d&apos;innovation, je construis des produits qui allient un code propre à un design intentionnel. Mon objectif est d&apos;être un pont entre la technologie et le marché africain — en créant des outils numériques qui fonctionnent vraiment pour les personnes qui les utilisent.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
-              {["Problem solver", "Clean code", "Africa-first", "Full Stack", "Product thinker"].map((tag) => (
+              {["Résolveur de problèmes", "Code propre", "Africa-first", "Full Stack", "Product builder"].map((tag) => (
                 <span
                   key={tag}
                   className="rounded-full px-3 py-1 text-xs"
@@ -69,22 +68,19 @@ export default function About() {
           >
             {[
               {
-                label: "Background",
-                value: "Software Engineering student at Futurcraft Institut, 2nd year. Building towards JRC Digit, my own digital agency.",
+                label: "Parcours",
+                value: "Étudiant en ingénierie logicielle à l'Institut Futurcraft, 2e année. En route vers JRC Digit, ma propre agence digitale.",
               },
               {
                 label: "Mission",
-                value: "Create digital products that empower African businesses and individuals, bringing world-class technology to local contexts.",
+                value: "Créer des produits numériques qui donnent du pouvoir aux entreprises et aux individus africains, en apportant une technologie de classe mondiale aux contextes locaux.",
               },
               {
-                label: "Location",
-                value: "Cotonou, Benin — working with clients worldwide.",
+                label: "Localisation",
+                value: "Cotonou, Bénin — travaillant avec des clients du monde entier.",
               },
             ].map((item) => (
-              <div
-                key={item.label}
-                className="card rounded-xl p-5"
-              >
+              <div key={item.label} className="card rounded-xl p-5">
                 <p className="mb-1 text-xs font-medium" style={{ color: "#00FF66" }}>
                   {item.label}
                 </p>

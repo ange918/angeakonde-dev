@@ -59,7 +59,7 @@ export default function Hero() {
             className="inline-block h-1.5 w-1.5 rounded-full"
             style={{ background: "#00FF66" }}
           />
-          Available for new projects
+          Disponible pour de nouveaux projets
         </motion.div>
 
         <motion.h1
@@ -69,11 +69,11 @@ export default function Hero() {
           className="mb-6 text-5xl font-bold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl"
           style={{ fontFamily: "var(--font-space-grotesk)" }}
         >
-          I build digital
+          Je crée des
           <br />
-          <span style={{ color: "#00FF66" }}>products</span> that
+          <span style={{ color: "#00FF66" }}>produits</span> digitaux
           <br />
-          matter.
+          qui comptent.
         </motion.h1>
 
         <motion.p
@@ -97,14 +97,14 @@ export default function Hero() {
             className="inline-flex h-12 items-center rounded-full px-8 text-sm font-semibold text-black transition-all duration-200 hover:opacity-90 hover:scale-105"
             style={{ background: "#00FF66" }}
           >
-            See my projects
+            Voir mes projets
           </a>
           <a
             href="#contact"
             className="inline-flex h-12 items-center rounded-full border px-8 text-sm font-semibold text-white transition-all duration-200 hover:border-[#00FF66] hover:text-[#00FF66]"
             style={{ borderColor: "rgba(255,255,255,0.15)" }}
           >
-            Contact me
+            Me contacter
           </a>
         </motion.div>
 
@@ -117,17 +117,17 @@ export default function Hero() {
         >
           <div className="flex flex-col items-center gap-1">
             <span className="text-2xl font-bold text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>30+</span>
-            <span>Projects</span>
+            <span>Projets</span>
           </div>
           <div className="h-8 w-px bg-white/10" />
           <div className="flex flex-col items-center gap-1">
             <span className="text-2xl font-bold text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>4+</span>
-            <span>Years exp.</span>
+            <span>Ans d&apos;expérience</span>
           </div>
           <div className="h-8 w-px bg-white/10" />
           <div className="flex flex-col items-center gap-1">
-            <span className="text-2xl font-bold text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>Africa</span>
-            <span>& Beyond</span>
+            <span className="text-2xl font-bold text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>Afrique</span>
+            <span>& Au-delà</span>
           </div>
         </motion.div>
       </div>

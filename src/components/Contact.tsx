@@ -1,7 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 export default function Contact() {
@@ -25,7 +24,7 @@ export default function Contact() {
             className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
-            Let&apos;s build something.
+            Construisons quelque chose.
           </h2>
         </motion.div>
 
@@ -37,22 +36,25 @@ export default function Contact() {
             className="lg:col-span-2"
           >
             <p className="mb-8 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
-              I&apos;m open to freelance projects and full-time remote roles. Whether you have a clear brief or just an idea — reach out and let&apos;s talk.
+              Je suis ouvert aux projets freelance et aux postes full-time en remote. Que vous ayez un brief précis ou juste une idée — contactez-moi et parlons-en.
             </p>
 
             <div className="mb-6 space-y-4 text-sm">
               <div>
                 <p className="mb-1 text-xs" style={{ color: "#00FF66" }}>Email</p>
-                <a
-                  href="mailto:akondejunior18@gmail.com"
-                  className="text-white/70 hover:text-white transition-colors"
-                >
+                <a href="mailto:akondejunior18@gmail.com" className="text-white/70 hover:text-white transition-colors">
                   akondejunior18@gmail.com
                 </a>
               </div>
               <div>
-                <p className="mb-1 text-xs" style={{ color: "#00FF66" }}>Location</p>
-                <span className="text-white/70">Cotonou, Benin</span>
+                <p className="mb-1 text-xs" style={{ color: "#00FF66" }}>Téléphone</p>
+                <a href="tel:+22941483715" className="text-white/70 hover:text-white transition-colors">
+                  +229 41 48 37 15
+                </a>
+              </div>
+              <div>
+                <p className="mb-1 text-xs" style={{ color: "#00FF66" }}>Localisation</p>
+                <span className="text-white/70">Cotonou, Bénin</span>
               </div>
             </div>
 
@@ -93,10 +95,10 @@ export default function Contact() {
           >
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="flex flex-col gap-2">
-                <span className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>Name</span>
+                <span className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>Nom</span>
                 <input
                   type="text"
-                  placeholder="Your name"
+                  placeholder="Votre nom"
                   className="h-11 rounded-xl border bg-white/5 px-4 text-sm text-white placeholder-white/25 transition-all"
                   style={{ borderColor: "rgba(255,255,255,0.08)" }}
                 />
@@ -105,30 +107,28 @@ export default function Contact() {
                 <span className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>Email</span>
                 <input
                   type="email"
-                  placeholder="your@email.com"
+                  placeholder="votre@email.com"
                   className="h-11 rounded-xl border bg-white/5 px-4 text-sm text-white placeholder-white/25 transition-all"
                   style={{ borderColor: "rgba(255,255,255,0.08)" }}
                 />
               </label>
             </div>
-
             <label className="mt-4 flex flex-col gap-2">
               <span className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>Message</span>
               <textarea
                 rows={5}
-                placeholder="Tell me about your project..."
+                placeholder="Parlez-moi de votre projet..."
                 className="resize-none rounded-xl border bg-white/5 px-4 py-3 text-sm text-white placeholder-white/25 transition-all"
                 style={{ borderColor: "rgba(255,255,255,0.08)" }}
               />
             </label>
-
             <div className="mt-5 flex justify-end">
               <button
                 type="submit"
                 className="inline-flex h-11 items-center rounded-full px-8 text-sm font-semibold text-black transition-all duration-200 hover:opacity-90"
                 style={{ background: "#00FF66" }}
               >
-                Send message →
+                Envoyer →
               </button>
             </div>
           </motion.form>

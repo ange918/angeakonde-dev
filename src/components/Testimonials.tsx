@@ -1,33 +1,32 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const testimonials = [
   {
-    quote:
-      "Ange transformed my vision into an elegant, modern platform. His attention to detail and ability to understand what we actually needed was impressive.",
+    quote: "Ange a transformé ma vision en une plateforme élégante et moderne. Son sens du détail et sa capacité à comprendre ce dont nous avions besoin m'ont impressionné.",
     name: "Axel Merryl",
-    role: "Artist & Creative Director",
+    role: "Artiste & Directeur Créatif",
+    initial: "A",
   },
   {
-    quote:
-      "The code quality and structure are on another level. Clean, maintainable, and exactly what we asked for. I would work with him again without hesitation.",
+    quote: "La qualité du code et la structure sont à un autre niveau. Propre, maintenable, exactement ce que nous voulions. Je retravaillerais avec lui sans hésitation.",
     name: "Gauthier O.",
-    role: "Architect",
+    role: "Architecte",
+    initial: "G",
   },
   {
-    quote:
-      "He listens, adapts quickly, and delivers with precision. A rare combination of technical skill and genuine desire to make the product right.",
+    quote: "À l'écoute, réactif, force de proposition. Une combinaison rare de compétences techniques et d'une vraie volonté de faire les choses bien.",
     name: "Merveille S.",
-    role: "Entrepreneur",
+    role: "Entrepreneuse",
+    initial: "M",
   },
 ];
 
 function Stars() {
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex items-center gap-0.5">
       {Array.from({ length: 5 }).map((_, i) => (
         <span key={i} style={{ color: "#00FF66" }}>★</span>
       ))}
@@ -50,13 +49,13 @@ export default function Testimonials() {
           className="mb-16"
         >
           <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#00FF66" }}>
-            Testimonials
+            Témoignages
           </p>
           <h2
             className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
-            What clients say.
+            Ce que disent les clients.
           </h2>
         </motion.div>
 
@@ -74,10 +73,7 @@ export default function Testimonials() {
                 style={{ background: "rgba(0,255,102,0.08)" }}
               />
 
-              <div
-                className="mb-4 text-5xl font-serif leading-none"
-                style={{ color: "rgba(0,255,102,0.3)" }}
-              >
+              <div className="mb-4 text-5xl font-serif leading-none" style={{ color: "rgba(0,255,102,0.3)" }}>
                 &ldquo;
               </div>
 
@@ -85,17 +81,20 @@ export default function Testimonials() {
                 {t.quote}
               </p>
 
-              <div className="flex items-end justify-between">
-                <div>
-                  <p
-                    className="text-sm font-semibold text-white"
-                    style={{ fontFamily: "var(--font-space-grotesk)" }}
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div
+                    className="flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold text-black"
+                    style={{ background: "#00FF66" }}
                   >
-                    {t.name}
-                  </p>
-                  <p className="text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
-                    {t.role}
-                  </p>
+                    {t.initial}
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                      {t.name}
+                    </p>
+                    <p className="text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>{t.role}</p>
+                  </div>
                 </div>
                 <Stars />
               </div>
