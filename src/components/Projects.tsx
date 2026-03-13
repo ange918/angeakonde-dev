@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const projects = [
@@ -40,16 +39,13 @@ const projects = [
 ];
 
 export default function Projects() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
     <section id="projects" className="py-24 px-5">
       <div className="mx-auto max-w-6xl">
         <motion.div
-          ref={ref}
           initial={{ opacity: 0, y: 40 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
@@ -69,7 +65,8 @@ export default function Projects() {
             <motion.article
               key={p.title}
               initial={{ opacity: 0, y: 40 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.55, delay: i * 0.1 }}
               className="card group relative overflow-hidden rounded-2xl"
             >

@@ -1,21 +1,15 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 export default function Contact() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-
   return (
     <section id="contact" className="py-24 px-5">
       <div className="mx-auto max-w-6xl">
         <motion.div
-          ref={ref}
           initial={{ opacity: 0, y: 40 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
@@ -33,7 +27,8 @@ export default function Contact() {
         <div className="grid gap-10 lg:grid-cols-5">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, delay: 0.15 }}
             className="lg:col-span-2"
           >
@@ -89,8 +84,9 @@ export default function Contact() {
           </motion.div>
 
           <motion.form
-            initial={mounted ? { opacity: 0, x: 30 } : false}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, delay: 0.25 }}
             className="card rounded-2xl p-7 lg:col-span-3"
             onSubmit={(e) => e.preventDefault()}

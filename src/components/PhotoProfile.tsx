@@ -1,21 +1,17 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { MapPinIcon, EnvelopeIcon, ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 
 export default function PhotoProfile() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
     <section id="profil" className="py-24 px-5">
       <div className="mx-auto max-w-6xl">
         <motion.div
-          ref={ref}
           initial={{ opacity: 0, y: 40 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
@@ -33,7 +29,8 @@ export default function PhotoProfile() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, delay: 0.15 }}
             className="flex justify-center lg:justify-start"
           >
@@ -94,7 +91,8 @@ export default function PhotoProfile() {
 
           <motion.div
             initial={{ opacity: 0, x: 40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, delay: 0.25 }}
             className="flex flex-col gap-6"
           >
