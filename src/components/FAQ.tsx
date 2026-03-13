@@ -1,7 +1,8 @@
 "use client";
 
-import { motion, useInView, AnimatePresence } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
 
 const faqs = [
   {
@@ -30,16 +31,21 @@ const faqs = [
   },
 ];
 
-function Item({ faq, index }: { faq: typeof faqs[0]; index: number }) {
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
+};
+
+function Item({ faq }: { faq: (typeof faqs)[0] }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.45, delay: index * 0.07 }}
-      className="card overflow-hidden rounded-xl"
-    >
+    <motion.div variants={itemVariants} className="card overflow-hidden rounded-xl">
       <button
         type="button"
         onClick={() => setOpen(!open)}
@@ -51,14 +57,13 @@ function Item({ faq, index }: { faq: typeof faqs[0]; index: number }) {
         >
           {faq.q}
         </span>
-        <motion.span
-          animate={{ rotate: open ? 45 : 0 }}
-          transition={{ duration: 0.2 }}
-          className="flex-shrink-0 text-xl font-light"
-          style={{ color: "#00FF66" }}
+        <motion.div
+          animate={{ rotate: open ? 180 : 0 }}
+          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          className="flex-shrink-0"
         >
-          +
-        </motion.span>
+          <ChevronDownIcon style={{ color: "#00FF66", width: 18, height: 18 }} />
+        </motion.div>
       </button>
 
       <AnimatePresence initial={false}>
@@ -67,7 +72,7 @@ function Item({ faq, index }: { faq: typeof faqs[0]; index: number }) {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: "easeInOut" }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
             <div
               className="border-t px-6 pb-5 pt-4 text-sm leading-relaxed"
@@ -86,17 +91,14 @@ function Item({ faq, index }: { faq: typeof faqs[0]; index: number }) {
 }
 
 export default function FAQ() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
     <section id="faq" className="py-24 px-5">
       <div className="mx-auto max-w-6xl">
         <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 40 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16"
         >
           <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#00FF66" }}>
@@ -110,16 +112,23 @@ export default function FAQ() {
           </h2>
         </motion.div>
 
-        <div className="grid gap-3 lg:grid-cols-2">
+        <motion.div
+          className="grid gap-3 lg:grid-cols-2"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+        >
           {faqs.map((faq, i) => (
-            <Item key={i} faq={faq} index={i} />
+            <Item key={i} faq={faq} />
           ))}
-        </div>
+        </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.5 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="mt-10 card rounded-2xl p-8 text-center"
         >
           <p className="mb-2 text-base font-semibold text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>
