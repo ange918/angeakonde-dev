@@ -39,7 +39,7 @@ export default function Contact() {
             <div className="mb-6 space-y-5 text-base">
               <div>
                 <p className="mb-1 text-sm font-semibold tracking-wide uppercase" style={{ color: "#FF6B00" }}>Email</p>
-                <a href="mailto:akondejunior18@gmail.com" className="text-lg text-white/70 hover:text-white transition-colors">
+                <a href="mailto:akondejunior18@gmail.com" className="text-base break-all text-white/70 hover:text-white transition-colors sm:text-lg">
                   akondejunior18@gmail.com
                 </a>
               </div>
@@ -55,7 +55,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
               <a
                 href="https://github.com/ange918"
                 target="_blank"
@@ -88,7 +88,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="card rounded-2xl p-8 lg:col-span-3"
+            className="card rounded-2xl p-5 sm:p-8 lg:col-span-3"
             onSubmit={(e) => e.preventDefault()}
           >
             <div className="grid gap-5 sm:grid-cols-2">

@@ -117,22 +117,22 @@ export default function Testimonials() {
                 {t.quote}
               </p>
 
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-center gap-4">
                   <div
-                    className="flex h-14 w-14 items-center justify-center rounded-2xl text-lg font-bold text-black"
+                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-lg font-bold text-black sm:h-14 sm:w-14"
                     style={{ background: t.color }}
                   >
                     {t.initial}
                   </div>
                   <div>
                     <p
-                      className="text-lg font-semibold"
+                      className="text-base font-semibold sm:text-lg"
                       style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)" }}
                     >
                       {t.name}
                     </p>
-                    <p className="text-base mt-0.5" style={{ color: "var(--c-faint)" }}>
+                    <p className="text-sm mt-0.5 sm:text-base" style={{ color: "var(--c-faint)" }}>
                       {t.role}
                     </p>
                   </div>

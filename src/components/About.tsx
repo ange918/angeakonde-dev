@@ -31,7 +31,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="card rounded-2xl p-8"
+            className="card rounded-2xl p-5 sm:p-8"
           >
             <p className="mb-6 text-lg leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
               Salut, je suis <span className="text-white font-semibold">Ange Akonde</span>, développeur Full Stack basé à Cotonou, au Bénin. Je suis passionné par la création d&apos;expériences numériques qui résolvent de vrais problèmes pour les gens à travers l&apos;Afrique et le monde entier.
