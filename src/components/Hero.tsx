@@ -117,6 +117,13 @@ export default function Hero() {
             </span>
             <span className="text-base font-medium">An d&apos;expérience</span>
           </div>
+          <div className="h-8 w-px" style={{ background: "var(--c-border-lg)" }} />
+          <div className="flex flex-col items-center gap-1">
+            <span className="text-3xl font-extrabold" style={{ color: "var(--c-text)", fontWeight: 800 }}>
+              Afrique
+            </span>
+            <span className="text-base font-medium">&amp; Au-delà</span>
+          </div>
         </motion.div>
       </div>
 
