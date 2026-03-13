@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
-import Progiciel from "@/components/Progiciel";
+import PhotoProfile from "@/components/PhotoProfile";
 import ProcessSteps from "@/components/ProcessSteps";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -19,7 +19,7 @@ export default function Home() {
       <About />
       <Skills />
       <Projects />
-      <Progiciel />
+      <PhotoProfile />
       <ProcessSteps />
       <Testimonials />
       <FAQ />
