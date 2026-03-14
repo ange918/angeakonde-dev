@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const FULL_TEXT = "j'ai commencé le développement web parce que j'avais le dos au mur, c'est devenu une passion par la suite";
-const CHAR_INTERVAL = 28; // ms per character
+const FULL_TEXT = "j'ai commencé le développement web parce que j'avais le dos au mur, c'est devenu une passion par la suite. Suivez moi dans mon univers";
+const CHAR_INTERVAL = 22; // ms per character
 
 export default function Loader() {
   const [count, setCount] = useState(0);
@@ -64,21 +64,33 @@ export default function Loader() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "14px" }}
           >
-            <svg
-              width="72"
-              height="72"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="rgba(255,255,255,0.85)"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
+            <motion.div
+              animate={{
+                y: [0, -8, 0],
+                filter: [
+                  "drop-shadow(0 0 0px #4AFF00)",
+                  "drop-shadow(0 0 12px #4AFF00)",
+                  "drop-shadow(0 0 0px #4AFF00)",
+                ],
+              }}
+              transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
             >
-              <rect x="2" y="4" width="20" height="13" rx="2" />
-              <path d="M2 20h20" />
-              <path d="M9 17l1 3h4l1-3" />
-            </svg>
+              <svg
+                width="72"
+                height="72"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="rgba(255,255,255,0.85)"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="2" y="4" width="20" height="13" rx="2" />
+                <path d="M2 20h20" />
+                <path d="M9 17l1 3h4l1-3" />
+              </svg>
+            </motion.div>
 
             <p
               style={{
