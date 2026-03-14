@@ -10,15 +10,15 @@ const projects = [
     tag: "Éducation",
     href: "https://modelacademy-management.com/",
     num: "01",
-    img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=640&h=300&fit=crop&q=80",
+    img: "/project-models-academy.png",
   },
   {
     title: "Code-Capital",
     desc: "Communauté de développeurs et hub de ressources. Une plateforme fintech-dev connectant les codeurs avec des outils, du contenu et des ressources.",
     tag: "Communauté",
-    href: "https://codecapital.net",
+    href: "https://code-capital.vercel.app/",
     num: "02",
-    img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=640&h=300&fit=crop&q=80",
+    img: "/project-code-capital.png",
   },
   {
     title: "SusuniLab",
@@ -26,15 +26,15 @@ const projects = [
     tag: "Innovation",
     href: "https://susunilab.com",
     num: "03",
-    img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=640&h=300&fit=crop&q=80",
+    img: "/project-susuni-lab.png",
   },
   {
     title: "God's Plan",
-    desc: "Application personnelle de suivi des objectifs et gestion de vie. Fixez des intentions, suivez vos jalons et restez aligné avec votre vision.",
-    tag: "Productivité",
+    desc: "Centre privé de formation professionnelle. Plateforme web complète pour la gestion des inscriptions, des formations et des filières.",
+    tag: "Formation",
     href: "https://god-plan.vercel.app/",
     num: "04",
-    img: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=640&h=300&fit=crop&q=80",
+    img: "/project-gods-plan.png",
   },
 ];
 
