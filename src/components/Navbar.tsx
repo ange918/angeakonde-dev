@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { useTheme } from "next-themes";
 
 const links = [
   { href: "#home", label: "Accueil" },
@@ -15,51 +14,15 @@ const links = [
   { href: "#contact", label: "Contact" },
 ];
 
-function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => { setMounted(true); }, []);
-  if (!mounted) return <div className="h-9 w-9" />;
-
-  const isDark = theme === "dark";
-
-  return (
-    <button
-      type="button"
-      aria-label={isDark ? "Passer en mode clair" : "Passer en mode sombre"}
-      onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="flex h-9 w-9 items-center justify-center rounded-full border transition-all duration-300 hover:border-[var(--c-accent)]"
-      style={{ borderColor: "var(--c-border)", background: "var(--c-surface)", color: "var(--c-text-muted)" }}
-    >
-      {isDark ? (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="5" />
-          <line x1="12" y1="1" x2="12" y2="3" />
-          <line x1="12" y1="21" x2="12" y2="23" />
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-          <line x1="1" y1="12" x2="3" y2="12" />
-          <line x1="21" y1="12" x2="23" y2="12" />
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-        </svg>
-      ) : (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-        </svg>
-      )}
-    </button>
-  );
-}
-
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("#home");
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => { setMounted(true); }, []);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => {
@@ -120,19 +83,19 @@ export default function Navbar() {
               overflowY: "auto",
               padding: "2rem 1.5rem",
               background: "var(--c-sidebar)",
-              borderLeft: "1px solid var(--c-border)",
+              borderLeft: "1px solid var(--c-border-xl)",
             }}
           >
             <div className="flex items-center justify-between mb-8">
-              <span className="text-xl font-bold" style={{ fontFamily: "var(--font-nunito)", color: "var(--c-text)" }}>
-                Big<span style={{ color: "var(--c-accent)" }}>Sixteen</span>
+              <span className="text-xl font-bold" style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)" }}>
+                Big<span style={{ color: "#4AFF00" }}>Sixteen</span>
               </span>
               <button
                 type="button"
                 aria-label="Fermer le menu"
                 onClick={() => setOpen(false)}
                 className="flex h-8 w-8 items-center justify-center rounded-full border transition-colors"
-                style={{ borderColor: "var(--c-border)", color: "var(--c-text-muted)" }}
+                style={{ borderColor: "var(--c-border-xl)", color: "var(--c-muted)" }}
               >
                 ✕
               </button>
@@ -143,27 +106,24 @@ export default function Navbar() {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-xl px-4 py-3 text-base font-medium transition-colors duration-300"
+                  className="rounded-xl px-4 py-3 text-base font-medium transition-colors"
                   style={
                     active === l.href
-                      ? { background: "rgba(0,223,129,0.1)", color: "var(--c-accent)" }
-                      : { color: "var(--c-text-muted)" }
+                      ? { background: "rgba(74,255,0,0.1)", color: "#4AFF00" }
+                      : { color: "var(--c-muted)" }
                   }
                 >
                   {l.label}
                 </a>
               ))}
             </nav>
-            <div className="mt-6">
-              <ThemeToggle />
-            </div>
-            <div className="mt-6 flex gap-3">
+            <div className="mt-8 flex gap-3">
               <a
                 href="https://github.com/ange918"
                 target="_blank"
                 rel="noreferrer"
-                className="flex-1 rounded-xl border py-3 text-center text-base font-medium transition-colors duration-300 hover:text-[var(--c-accent)] hover:border-[var(--c-accent)]"
-                style={{ borderColor: "var(--c-border)", color: "var(--c-text-muted)" }}
+                className="flex-1 rounded-xl border py-3 text-center text-base font-medium transition-colors hover:text-[#4AFF00] hover:border-[#4AFF00]"
+                style={{ borderColor: "var(--c-border-xl)", color: "var(--c-muted)" }}
               >
                 GitHub
               </a>
@@ -171,8 +131,8 @@ export default function Navbar() {
                 href="https://linkedin.com/in/ange-akonde"
                 target="_blank"
                 rel="noreferrer"
-                className="flex-1 rounded-xl border py-3 text-center text-base font-medium transition-colors duration-300 hover:text-[var(--c-accent)] hover:border-[var(--c-accent)]"
-                style={{ borderColor: "var(--c-border)", color: "var(--c-text-muted)" }}
+                className="flex-1 rounded-xl border py-3 text-center text-base font-medium transition-colors hover:text-[#4AFF00] hover:border-[#4AFF00]"
+                style={{ borderColor: "var(--c-border-xl)", color: "var(--c-muted)" }}
               >
                 LinkedIn
               </a>
@@ -189,17 +149,17 @@ export default function Navbar() {
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
         style={
           scrolled
-            ? { borderBottom: `1px solid var(--c-border)`, background: "var(--c-nav-bg)", backdropFilter: "blur(20px)" }
+            ? { borderBottom: "1px solid var(--c-border-sm)", background: "var(--c-nav-bg)", backdropFilter: "blur(20px)" }
             : { background: "transparent" }
         }
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
           <a
             href="#home"
-            className="text-xl font-bold tracking-tight transition-colors duration-300"
-            style={{ color: "var(--c-text)", fontFamily: "var(--font-nunito)" }}
+            className="text-xl font-bold tracking-tight"
+            style={{ color: "var(--c-text)", fontFamily: "var(--font-outfit)" }}
           >
-            Big<span style={{ color: "var(--c-accent)" }}>Sixteen</span>
+            Big<span style={{ color: "#4AFF00" }}>Sixteen</span>
           </a>
 
           <nav className="hidden items-center gap-0.5 lg:flex">
@@ -209,7 +169,7 @@ export default function Navbar() {
                 href={l.href}
                 className="rounded-full px-4 py-2 text-base font-medium transition-colors duration-200"
                 style={{
-                  color: active === l.href ? "var(--c-accent)" : "var(--c-text-muted)",
+                  color: active === l.href ? "#4AFF00" : "var(--c-muted)",
                 }}
               >
                 {l.label}
@@ -218,32 +178,25 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">
-            <ThemeToggle />
             <a
               href="#contact"
-              className="rounded-lg border-2 px-6 py-2.5 text-base font-semibold transition-all duration-300 hover:opacity-90"
-              style={{
-                borderColor: "var(--c-accent)",
-                color: "var(--c-accent)",
-                background: "transparent",
-              }}
+              className="rounded-full border border-[#4AFF00] px-6 py-3 text-base font-semibold text-[#4AFF00] transition-all duration-200 hover:bg-[#4AFF00] hover:text-black"
             >
               Me contacter
             </a>
           </div>
 
           <div className="flex items-center gap-2 lg:hidden">
-            <ThemeToggle />
             <button
               type="button"
               aria-label="Ouvrir le menu"
               onClick={() => setOpen(true)}
               className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full border"
-              style={{ borderColor: "var(--c-border)", background: "var(--c-surface)" }}
+              style={{ borderColor: "var(--c-border-xl)", background: "var(--c-surface)" }}
             >
-              <span className="block h-0.5 w-5 transition-colors duration-300" style={{ background: "var(--c-text)" }} />
-              <span className="block h-0.5 w-5 transition-colors duration-300" style={{ background: "var(--c-text)" }} />
-              <span className="block h-0.5 w-3 self-start ml-1 transition-colors duration-300" style={{ background: "var(--c-text)" }} />
+              <span className="block h-0.5 w-5" style={{ background: "var(--c-text)" }} />
+              <span className="block h-0.5 w-5" style={{ background: "var(--c-text)" }} />
+              <span className="block h-0.5 w-3 self-start ml-1" style={{ background: "var(--c-text)" }} />
             </button>
           </div>
         </div>
