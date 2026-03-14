@@ -1,0 +1,96 @@
+In my Next.js 14 portfolio project, apply a complete design overhaul with a dual light/dark mode using this exact color palette:
+
+═══════════════════════════════
+COLOR PALETTE (from brand guide)
+═══════════════════════════════
+
+PRIMARY COLORS:
+- Rich Black: #000F81 (darkest bg)
+- Dark Green: #032221
+- Bangladesh Green: #03624C
+- Mountain Meadow: #20C295
+- Caribbean Green: #00DF81
+- Anti-Flash White: #F5F7F8
+
+SECONDARY COLORS:
+- Pine: #063028
+- Basil: #08453A
+- Forest: #095544
+- Frog: #17876D
+- Mint: #3FA98C
+- Stone: #707D7D
+- Pistachio: #AACBC4
+
+FONT: Replace current font with "Axiforma" — since it's not on Google Fonts, use "Nunito" from Google Fonts (closest match: same rounded geometric sans-serif DNA). Import weights 400, 500, 600, 700, 800.
+
+═══════════════════════════════
+DARK MODE (default)
+═══════════════════════════════
+- Background: #000F81 → no, use #0A0A0A base with Dark Green #032221 for cards/sections
+- Primary background: #0D1F1C (very dark green-black)
+- Card background: #032221
+- Section alternate bg: #063028
+- Primary text: #F5F7F8 (Anti-Flash White) — MUST be fully visible
+- Secondary text: #AACBC4 (Pistachio)
+- Accent / CTA buttons: #00DF81 (Caribbean Green)
+- Button text: #032221 (Dark Green) — dark text on green button
+- Hover accent: #20C295 (Mountain Meadow)
+- Borders: #08453A (Basil)
+- Nav background: #0D1F1C with border-bottom #08453A
+
+═══════════════════════════════
+LIGHT MODE
+═══════════════════════════════
+- Background: #F5F7F8 (Anti-Flash White)
+- Section alternate bg: #AACBC4 (Pistachio, very light)
+- Card background: #FFFFFF
+- Primary text: #032221 (Dark Green) — MUST be fully visible, high contrast
+- Secondary text: #095544 (Forest)
+- Accent / CTA buttons: #03624C (Bangladesh Green)
+- Button text: #F5F7F8 (white) — light text on dark green button
+- Hover accent: #20C295 (Mountain Meadow)
+- Borders: #AACBC4 (Pistachio)
+- Nav background: #F5F7F8 with border-bottom #AACBC4
+
+═══════════════════════════════
+THEME TOGGLE
+═══════════════════════════════
+- Add a sun/moon toggle button in the Navbar (top right)
+- Use next-themes library for theme switching
+- In tailwind.config.ts set darkMode: 'class'
+- In layout.tsx wrap with ThemeProvider from next-themes, attribute="class", defaultTheme="dark"
+- All color transitions animated: transition-colors duration-300
+
+═══════════════════════════════
+HERO SECTION — UPDATE TEXT
+═══════════════════════════════
+Replace current hero text with:
+
+Main headline: "DÉVELOPPEUR WEB À VOTRE SERVICE"
+- Split into two lines
+- "DÉVELOPPEUR WEB" in primary text color (white in dark, dark green in light)
+- "À VOTRE SERVICE" in accent color (#00DF81 in dark / #03624C in light)
+- Font: Nunito, weight 800, very large (text-5xl md:text-7xl), tracking-tight
+
+Subtitle paragraph (exactly this text):
+"J'aide les entreprises et porteurs de projets à mettre en place des sites internes modernes et une stratégie digitale efficace."
+- Font size: text-xl, weight 400, color: secondary text
+- Max width: 600px, line-height relaxed
+
+CTA Buttons:
+- Primary button: "Voir mes projets" — bg accent color, text dark, font-bold, px-8 py-4, rounded-lg
+- Secondary button: "Me contacter" — border 2px accent color, bg transparent, text accent color, px-8 py-4, rounded-lg
+- Both buttons change colors correctly in light and dark mode
+
+═══════════════════════════════
+GLOBAL RULES
+═══════════════════════════════
+- EVERY text element must have sufficient contrast in BOTH modes (minimum 4.5:1 ratio)
+- NEVER put dark text on dark background or light text on light background
+- All cards: rounded-xl, subtle border, correct bg per mode
+- Loader screen: update to use #00DF81 as progress bar color
+- Glow effects on buttons and accents: 0 0 15px rgba(0, 223, 129, 0.4)
+- Apply all changes across: layout.tsx, globals.css, tailwind.config.ts, Navbar.tsx, Hero.tsx, About.tsx, Skills.tsx, Projects.tsx, Testimonials.tsx, Contact.tsx, Footer.tsx, Loader.tsx
+
+Install next-themes if not already installed:
+npm install next-themes
