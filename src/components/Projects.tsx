@@ -87,7 +87,7 @@ export default function Projects() {
                   className="absolute inset-0"
                   style={{ background: "linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.85))" }}
                 />
-                <div className="absolute bottom-3 left-4 flex items-center gap-2">
+                <div className="absolute top-3 left-4 flex items-center gap-2">
                   <span
                     className="text-4xl font-extrabold leading-none"
                     style={{ fontFamily: "var(--font-outfit)", color: "rgba(74,255,0,0.6)" }}
