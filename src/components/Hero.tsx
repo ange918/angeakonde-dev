@@ -50,22 +50,19 @@ export default function Hero() {
           className="mb-6 text-4xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-[5.5rem]"
           style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)", fontWeight: 800 }}
         >
-          Je crée des{" "}
-          <span style={{ color: "#4AFF00", fontWeight: 800 }}>produits</span>
+          DÉVELOPPEUR WEB
           <br />
-          digitaux qui
-          <br />
-          <span style={{ color: "#4AFF00", fontWeight: 800 }}>comptent.</span>
+          <span style={{ color: "#4AFF00", fontWeight: 800 }}>À VOTRE SERVICE</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-10 text-lg font-normal leading-relaxed sm:text-xl"
-          style={{ color: "var(--c-muted)" }}
+          className="mb-10 mx-auto text-lg font-normal leading-relaxed sm:text-xl"
+          style={{ color: "var(--c-muted)", maxWidth: "600px" }}
         >
-          Full Stack Developer — Cotonou, Benin
+          J&apos;aide les entreprises et porteurs de projets à mettre en place des sites internes modernes et une stratégie digitale efficace.
         </motion.p>
 
         <motion.div
