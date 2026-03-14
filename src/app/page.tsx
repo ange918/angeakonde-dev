@@ -1,3 +1,4 @@
+import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -14,6 +15,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <main style={{ background: "var(--c-bg)", color: "var(--c-text)" }}>
+      <Loader />
       <Navbar />
       <Hero />
       <About />
