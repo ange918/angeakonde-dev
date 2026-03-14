@@ -3,10 +3,16 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const FULL_TEXT = "j'ai commencé le développement web parce que j'avais le dos au mur, c'est devenu une passion par la suite";
+const CHAR_INTERVAL = 28; // ms per character
+
 export default function Loader() {
   const [count, setCount] = useState(0);
+  const [typed, setTyped] = useState("");
+  const [showCursor, setShowCursor] = useState(true);
   const [visible, setVisible] = useState(true);
 
+  // Progress counter (0 → 100, every 30ms)
   useEffect(() => {
     if (count >= 100) {
       const t = setTimeout(() => setVisible(false), 800);
@@ -15,6 +21,21 @@ export default function Loader() {
     const t = setTimeout(() => setCount((c) => c + 1), 30);
     return () => clearTimeout(t);
   }, [count]);
+
+  // Typewriter effect
+  useEffect(() => {
+    if (typed.length >= FULL_TEXT.length) return;
+    const t = setTimeout(() => {
+      setTyped(FULL_TEXT.slice(0, typed.length + 1));
+    }, CHAR_INTERVAL);
+    return () => clearTimeout(t);
+  }, [typed]);
+
+  // Blinking cursor
+  useEffect(() => {
+    const t = setInterval(() => setShowCursor((v) => !v), 500);
+    return () => clearInterval(t);
+  }, []);
 
   return (
     <AnimatePresence>
@@ -33,18 +54,19 @@ export default function Loader() {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
+            padding: "0 24px",
           }}
         >
+          {/* Top: icon + name */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "16px" }}
+            style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "14px" }}
           >
-            {/* Laptop icon */}
             <svg
-              width="80"
-              height="80"
+              width="72"
+              height="72"
               viewBox="0 0 24 24"
               fill="none"
               stroke="rgba(255,255,255,0.85)"
@@ -58,11 +80,10 @@ export default function Loader() {
               <path d="M9 17l1 3h4l1-3" />
             </svg>
 
-            {/* Name */}
             <p
               style={{
                 fontFamily: "var(--font-outfit)",
-                fontSize: "2.25rem",
+                fontSize: "2rem",
                 fontWeight: 700,
                 color: "#ffffff",
                 letterSpacing: "-0.02em",
@@ -73,17 +94,54 @@ export default function Loader() {
               Ange Akonde
             </p>
 
-            {/* Brand */}
             <p
               style={{
                 fontFamily: "var(--font-outfit)",
-                fontSize: "1.125rem",
+                fontSize: "1.05rem",
                 fontWeight: 500,
                 color: "#4AFF00",
                 margin: 0,
               }}
             >
               BigSixteen
+            </p>
+          </motion.div>
+
+          {/* Typewriter text */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.4 }}
+            style={{
+              marginTop: "40px",
+              maxWidth: "480px",
+              width: "100%",
+              textAlign: "center",
+            }}
+          >
+            <p
+              style={{
+                fontFamily: "ui-monospace, monospace",
+                fontSize: "0.875rem",
+                lineHeight: "1.7",
+                color: "rgba(255,255,255,0.45)",
+                margin: 0,
+                minHeight: "3.4em",
+              }}
+            >
+              {typed}
+              <span
+                style={{
+                  display: "inline-block",
+                  width: "2px",
+                  height: "1em",
+                  background: "#4AFF00",
+                  marginLeft: "2px",
+                  verticalAlign: "text-bottom",
+                  opacity: showCursor ? 1 : 0,
+                  transition: "opacity 0.1s",
+                }}
+              />
             </p>
           </motion.div>
 
