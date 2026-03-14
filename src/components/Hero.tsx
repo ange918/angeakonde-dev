@@ -43,18 +43,6 @@ export default function Hero() {
           Disponible pour de nouveaux projets
         </motion.div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-6 text-4xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-[5.5rem]"
-          style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)", fontWeight: 800 }}
-        >
-          DÉVELOPPEUR WEB
-          <br />
-          <span style={{ color: "#4AFF00", fontWeight: 800 }}>À VOTRE SERVICE</span>
-        </motion.h1>
-
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
