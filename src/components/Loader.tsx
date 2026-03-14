@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const FULL_TEXT = "j'ai commencé le développement web parce que j'avais le dos au mur, c'est devenu une passion par la suite. Suivez moi dans mon univers";
-const CHAR_INTERVAL = 22; // ms per character
+const CHAR_INTERVAL = 20; // ms per character
 
 export default function Loader() {
   const [count, setCount] = useState(0);
@@ -12,24 +12,31 @@ export default function Loader() {
   const [showCursor, setShowCursor] = useState(true);
   const [visible, setVisible] = useState(true);
 
+  const textDone = typed.length >= FULL_TEXT.length;
+  const counterDone = count >= 100;
+
   // Progress counter (0 → 100, every 30ms)
   useEffect(() => {
-    if (count >= 100) {
-      const t = setTimeout(() => setVisible(false), 800);
-      return () => clearTimeout(t);
-    }
+    if (counterDone) return;
     const t = setTimeout(() => setCount((c) => c + 1), 30);
     return () => clearTimeout(t);
-  }, [count]);
+  }, [count, counterDone]);
 
-  // Typewriter effect
+  // Fade out only when BOTH counter and text are done
   useEffect(() => {
-    if (typed.length >= FULL_TEXT.length) return;
+    if (!counterDone || !textDone) return;
+    const t = setTimeout(() => setVisible(false), 800);
+    return () => clearTimeout(t);
+  }, [counterDone, textDone]);
+
+  // Typewriter effect (starts immediately)
+  useEffect(() => {
+    if (textDone) return;
     const t = setTimeout(() => {
       setTyped(FULL_TEXT.slice(0, typed.length + 1));
     }, CHAR_INTERVAL);
     return () => clearTimeout(t);
-  }, [typed]);
+  }, [typed, textDone]);
 
   // Blinking cursor
   useEffect(() => {
@@ -123,7 +130,7 @@ export default function Loader() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.4 }}
+            transition={{ delay: 0.2, duration: 0.4 }}
             style={{
               marginTop: "40px",
               maxWidth: "480px",
