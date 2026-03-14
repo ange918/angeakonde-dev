@@ -61,7 +61,7 @@ export default function Address() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16"
         >
-          <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#FF6B00" }}>
+          <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#4AFF00" }}>
             Adresse
           </p>
           <h2
@@ -87,18 +87,18 @@ export default function Address() {
               >
                 <div
                   className="flex-shrink-0 flex h-10 w-10 items-center justify-center rounded-xl"
-                  style={{ background: "rgba(255,107,0,0.08)", border: "1px solid rgba(255,107,0,0.15)" }}
+                  style={{ background: "rgba(74,255,0,0.08)", border: "1px solid rgba(74,255,0,0.15)" }}
                 >
-                  <item.Icon style={{ color: "#FF6B00", width: 18, height: 18 }} />
+                  <item.Icon style={{ color: "#4AFF00", width: 18, height: 18 }} />
                 </div>
                 <div>
-                  <p className="mb-1 text-xs font-medium" style={{ color: "#FF6B00" }}>
+                  <p className="mb-1 text-xs font-medium" style={{ color: "#4AFF00" }}>
                     {item.label}
                   </p>
                   {item.href ? (
                     <a
                       href={item.href}
-                      className="text-sm leading-relaxed hover:text-[#FF6B00] transition-colors whitespace-pre-line"
+                      className="text-sm leading-relaxed hover:text-[#4AFF00] transition-colors whitespace-pre-line"
                       style={{ color: "var(--c-link)" }}
                     >
                       {item.value}
@@ -134,7 +134,7 @@ export default function Address() {
               />
               <div
                 className="pointer-events-none absolute inset-0 rounded-2xl"
-                style={{ border: "1px solid rgba(255,107,0,0.15)" }}
+                style={{ border: "1px solid rgba(74,255,0,0.15)" }}
               />
             </div>
             <div
@@ -146,7 +146,7 @@ export default function Address() {
                 href="https://www.openstreetmap.org/?mlat=6.3829&mlon=2.3933#map=13/6.3829/2.3933"
                 target="_blank"
                 rel="noreferrer"
-                className="transition-colors hover:text-[#FF6B00]"
+                className="transition-colors hover:text-[#4AFF00]"
               >
                 Ouvrir dans OpenStreetMap ↗
               </a>

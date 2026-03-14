@@ -62,7 +62,7 @@ function Item({ faq }: { faq: (typeof faqs)[0] }) {
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="flex-shrink-0"
         >
-          <ChevronDownIcon style={{ color: "#FF6B00", width: 18, height: 18 }} />
+          <ChevronDownIcon style={{ color: "#4AFF00", width: 18, height: 18 }} />
         </motion.div>
       </button>
 
@@ -101,7 +101,7 @@ export default function FAQ() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16"
         >
-          <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#FF6B00" }}>
+          <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#4AFF00" }}>
             FAQ
           </p>
           <h2
@@ -143,7 +143,7 @@ export default function FAQ() {
           <a
             href="#contact"
             className="inline-flex h-11 items-center rounded-full px-8 text-sm font-semibold text-black transition-all duration-200 hover:opacity-90"
-            style={{ background: "#FF6B00" }}
+            style={{ background: "#4AFF00" }}
           >
             Poser une question →
           </a>

@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --accent: #FF6B00;
-  --accent-dim: rgba(255, 107, 0, 0.12);
-  --accent-glow: rgba(255, 107, 0, 0.35);
+  --accent: #4AFF00;
+  --accent-dim: rgba(74, 255, 0, 0.12);
+  --accent-glow: rgba(74, 255, 0, 0.35);
 
   --c-bg: #000000;
   --c-surface: rgba(255, 255, 255, 0.03);
@@ -34,6 +34,7 @@
   --color-background: var(--c-bg);
   --color-foreground: var(--c-text);
   --color-accent: var(--accent);
+  --color-electric: #4AFF00;
   --font-sans: var(--font-outfit);
 }
 
@@ -60,7 +61,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::selection {
-  background: #FF6B00;
+  background: #4AFF00;
   color: #000;
 }
 
@@ -71,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #000000;
 }
 ::-webkit-scrollbar-thumb {
-  background: #FF6B00;
+  background: #4AFF00;
   border-radius: 3px;
 }
 
@@ -82,8 +83,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .card:hover {
-  border-color: #FF6B00;
-  box-shadow: 0 0 28px rgba(255, 107, 0, 0.2), inset 0 0 28px rgba(255, 107, 0, 0.02);
+  border-color: #4AFF00;
+  box-shadow: 0 0 28px rgba(74, 255, 0, 0.2), inset 0 0 28px rgba(74, 255, 0, 0.02);
 }
 
 .accent-text {
@@ -94,8 +95,8 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--c-muted);
 }
 
-.orange-glow {
-  box-shadow: 0 0 30px rgba(255, 107, 0, 0.4);
+.electric-glow {
+  box-shadow: 0 0 20px rgba(74, 255, 0, 0.4);
 }
 
 input, textarea {
@@ -107,8 +108,8 @@ input, textarea {
 
 input:focus, textarea:focus {
   outline: none;
-  border-color: #FF6B00 !important;
-  box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.15);
+  border-color: #4AFF00 !important;
+  box-shadow: 0 0 0 2px rgba(74, 255, 0, 0.15);
 }
 
 @keyframes marquee {

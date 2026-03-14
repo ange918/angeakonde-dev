@@ -49,7 +49,7 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <p className="mb-3 text-sm font-semibold tracking-[0.3em] uppercase" style={{ color: "#FF6B00" }}>
+          <p className="mb-3 text-sm font-semibold tracking-[0.3em] uppercase" style={{ color: "#4AFF00" }}>
             Projets
           </p>
           <h2
@@ -72,7 +72,7 @@ export default function Projects() {
             >
               <div
                 className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 z-10"
-                style={{ background: "radial-gradient(400px at 50% 0%, rgba(255,107,0,0.06), transparent)" }}
+                style={{ background: "radial-gradient(400px at 50% 0%, rgba(74,255,0,0.06), transparent)" }}
               />
 
               <div className="relative h-48 w-full overflow-hidden">
@@ -90,7 +90,7 @@ export default function Projects() {
                 <div className="absolute bottom-3 left-4 flex items-center gap-2">
                   <span
                     className="text-4xl font-extrabold leading-none"
-                    style={{ fontFamily: "var(--font-outfit)", color: "rgba(255,107,0,0.6)" }}
+                    style={{ fontFamily: "var(--font-outfit)", color: "rgba(74,255,0,0.6)" }}
                   >
                     {p.num}
                   </span>
@@ -123,7 +123,7 @@ export default function Projects() {
                   href={p.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border px-6 py-2.5 text-base font-semibold transition-all duration-200 hover:border-[#FF6B00] hover:text-[#FF6B00]"
+                  className="inline-flex items-center gap-2 rounded-full border px-6 py-2.5 text-base font-semibold transition-all duration-200 hover:border-[#4AFF00] hover:text-[#4AFF00]"
                   style={{ borderColor: "rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.7)" }}
                 >
                   Voir le projet →

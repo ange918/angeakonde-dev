@@ -11,11 +11,11 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div
           className="absolute left-1/2 top-1/3 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px]"
-          style={{ background: "rgba(255,107,0,0.08)" }}
+          style={{ background: "rgba(74,255,0,0.08)" }}
         />
         <div
           className="absolute right-0 bottom-0 h-[300px] w-[300px] rounded-full blur-[100px]"
-          style={{ background: "rgba(255,107,0,0.05)" }}
+          style={{ background: "rgba(74,255,0,0.05)" }}
         />
         <svg className="absolute inset-0 h-full w-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -34,12 +34,12 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="mb-8 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium sm:px-5 sm:text-base"
           style={{
-            borderColor: "rgba(255,107,0,0.3)",
-            color: "#FF6B00",
-            background: "rgba(255,107,0,0.05)",
+            borderColor: "rgba(74,255,0,0.3)",
+            color: "#4AFF00",
+            background: "rgba(74,255,0,0.05)",
           }}
         >
-          <span className="inline-block h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: "#FF6B00" }} />
+          <span className="inline-block h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: "#4AFF00" }} />
           Disponible pour de nouveaux projets
         </motion.div>
 
@@ -51,11 +51,11 @@ export default function Hero() {
           style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)", fontWeight: 800 }}
         >
           Je crée des{" "}
-          <span style={{ color: "#FF6B00", fontWeight: 800 }}>produits</span>
+          <span style={{ color: "#4AFF00", fontWeight: 800 }}>produits</span>
           <br />
           digitaux qui
           <br />
-          <span style={{ color: "#FF6B00", fontWeight: 800 }}>comptent.</span>
+          <span style={{ color: "#4AFF00", fontWeight: 800 }}>comptent.</span>
         </motion.h1>
 
         <motion.p
@@ -77,13 +77,13 @@ export default function Hero() {
           <a
             href="#projects"
             className="w-full sm:w-auto inline-flex items-center justify-center rounded-full px-8 py-4 text-base text-black transition-all duration-200 hover:opacity-90 hover:scale-105"
-            style={{ background: "#FF6B00", fontWeight: 700 }}
+            style={{ background: "#4AFF00", fontWeight: 700 }}
           >
             Voir mes projets
           </a>
           <a
             href="#contact"
-            className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border px-8 py-4 text-base transition-all duration-200 hover:border-[#FF6B00] hover:text-[#FF6B00]"
+            className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border px-8 py-4 text-base transition-all duration-200 hover:border-[#4AFF00] hover:text-[#4AFF00]"
             style={{ borderColor: "var(--c-border-xl)", color: "var(--c-text)", fontWeight: 600 }}
           >
             Me contacter
@@ -147,7 +147,7 @@ export default function Hero() {
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
             className="h-1.5 w-1 rounded-full"
-            style={{ background: "#FF6B00" }}
+            style={{ background: "#4AFF00" }}
           />
         </div>
       </motion.div>

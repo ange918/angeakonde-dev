@@ -56,7 +56,7 @@ export default function Navbar() {
           className="text-xl font-bold tracking-tight"
           style={{ color: "var(--c-text)", fontFamily: "var(--font-outfit)" }}
         >
-          Big<span style={{ color: "#FF6B00" }}>Sixteen</span>
+          Big<span style={{ color: "#4AFF00" }}>Sixteen</span>
         </a>
 
         <nav className="hidden items-center gap-0.5 lg:flex">
@@ -66,7 +66,7 @@ export default function Navbar() {
               href={l.href}
               className="rounded-full px-4 py-2 text-base font-medium transition-colors duration-200"
               style={{
-                color: active === l.href ? "#FF6B00" : "var(--c-muted)",
+                color: active === l.href ? "#4AFF00" : "var(--c-muted)",
               }}
             >
               {l.label}
@@ -77,7 +77,7 @@ export default function Navbar() {
         <div className="hidden items-center gap-3 lg:flex">
           <a
             href="#contact"
-            className="rounded-full border border-[#FF6B00] px-6 py-3 text-base font-semibold text-[#FF6B00] transition-all duration-200 hover:bg-[#FF6B00] hover:text-black"
+            className="rounded-full border border-[#4AFF00] px-6 py-3 text-base font-semibold text-[#4AFF00] transition-all duration-200 hover:bg-[#4AFF00] hover:text-black"
           >
             Me contacter
           </a>
@@ -122,7 +122,7 @@ export default function Navbar() {
             >
               <div className="flex items-center justify-between mb-8">
                 <span className="text-xl font-bold" style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)" }}>
-                  Big<span style={{ color: "#FF6B00" }}>Sixteen</span>
+                  Big<span style={{ color: "#4AFF00" }}>Sixteen</span>
                 </span>
                 <button
                   type="button"
@@ -143,7 +143,7 @@ export default function Navbar() {
                     className="rounded-xl px-4 py-3 text-base font-medium transition-colors"
                     style={
                       active === l.href
-                        ? { background: "rgba(255,107,0,0.1)", color: "#FF6B00" }
+                        ? { background: "rgba(74,255,0,0.1)", color: "#4AFF00" }
                         : { color: "var(--c-muted)" }
                     }
                   >

@@ -15,7 +15,7 @@ export default function PhotoProfile() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#FF6B00" }}>
+          <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#4AFF00" }}>
             Profil
           </p>
           <h2
@@ -37,14 +37,14 @@ export default function PhotoProfile() {
             <div className="relative">
               <div
                 className="absolute -inset-1 rounded-3xl opacity-60 blur-xl"
-                style={{ background: "radial-gradient(ellipse, #FF6B0030, transparent 70%)" }}
+                style={{ background: "radial-gradient(ellipse, #4AFF0030, transparent 70%)" }}
               />
               <div
                 className="relative overflow-hidden rounded-3xl"
                 style={{
                   width: 340,
                   height: 420,
-                  border: "1px solid rgba(255,107,0,0.2)",
+                  border: "1px solid rgba(74,255,0,0.2)",
                   background: "rgba(255,255,255,0.03)",
                 }}
               >
@@ -69,7 +69,7 @@ export default function PhotoProfile() {
                   >
                     Ange Akonde
                   </p>
-                  <p className="text-xs" style={{ color: "#FF6B00" }}>
+                  <p className="text-xs" style={{ color: "#4AFF00" }}>
                     Développeur Full Stack · Cotonou, Bénin
                   </p>
                 </div>
@@ -79,12 +79,12 @@ export default function PhotoProfile() {
                 className="absolute -bottom-4 -right-4 rounded-2xl px-4 py-3"
                 style={{
                   background: "rgba(0,0,0,0.85)",
-                  border: "1px solid rgba(255,107,0,0.2)",
+                  border: "1px solid rgba(74,255,0,0.2)",
                   backdropFilter: "blur(12px)",
                 }}
               >
                 <p className="text-xs font-medium" style={{ color: "rgba(255,255,255,0.5)" }}>Disponible</p>
-                <p className="text-sm font-bold" style={{ color: "#FF6B00" }}>pour des projets</p>
+                <p className="text-sm font-bold" style={{ color: "#4AFF00" }}>pour des projets</p>
               </div>
             </div>
           </motion.div>
@@ -105,11 +105,11 @@ export default function PhotoProfile() {
 
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-3 text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
-                <MapPinIcon className="h-4 w-4 shrink-0" style={{ color: "#FF6B00" }} />
+                <MapPinIcon className="h-4 w-4 shrink-0" style={{ color: "#4AFF00" }} />
                 Cotonou, Bénin — disponible en remote
               </div>
               <div className="flex items-center gap-3 text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
-                <EnvelopeIcon className="h-4 w-4 shrink-0" style={{ color: "#FF6B00" }} />
+                <EnvelopeIcon className="h-4 w-4 shrink-0" style={{ color: "#4AFF00" }} />
                 contact@angeakonde.dev
               </div>
             </div>
@@ -120,9 +120,9 @@ export default function PhotoProfile() {
                   key={tag}
                   className="rounded-full px-3 py-1 text-xs"
                   style={{
-                    border: "1px solid rgba(255,107,0,0.2)",
-                    color: "#FF6B00",
-                    background: "rgba(255,107,0,0.05)",
+                    border: "1px solid rgba(74,255,0,0.2)",
+                    color: "#4AFF00",
+                    background: "rgba(74,255,0,0.05)",
                   }}
                 >
                   {tag}
@@ -134,7 +134,7 @@ export default function PhotoProfile() {
               <a
                 href="#contact"
                 className="inline-flex h-10 items-center gap-2 rounded-xl px-6 text-sm font-semibold text-black transition-all hover:opacity-90"
-                style={{ background: "#FF6B00", fontFamily: "var(--font-outfit)" }}
+                style={{ background: "#4AFF00", fontFamily: "var(--font-outfit)" }}
               >
                 Me contacter →
               </a>
