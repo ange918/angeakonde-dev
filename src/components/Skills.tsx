@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useRef, useEffect } from "react";
 import {
   CodeBracketIcon,
   SwatchIcon,
@@ -39,34 +38,8 @@ const skills: Skill[] = [
 const repeated = [...skills, ...skills];
 
 export default function Skills() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const stripRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    const strip = stripRef.current;
-    if (!section || !strip) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && strip) {
-            strip.style.animation = "none";
-            void strip.offsetHeight;
-            strip.style.animation = "";
-            strip.classList.add("marquee-strip");
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    observer.observe(section);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="skills" className="py-24" ref={sectionRef}>
+    <section id="skills" className="py-24">
       <div className="mx-auto max-w-6xl px-5">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -97,7 +70,7 @@ export default function Skills() {
           style={{ background: "linear-gradient(to left, var(--c-bg), transparent)" }}
         />
 
-        <div ref={stripRef} className="flex">
+        <div className="flex marquee-strip">
           {repeated.map((skill, i) => (
             <div
               key={i}
