@@ -20,12 +20,12 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <Futurcraft />
       <Skills />
       <Projects />
       <PhotoProfile />
       <ProcessSteps />
       <Testimonials />
-      <Futurcraft />
       <FAQ />
       <Contact />
       <Address />
