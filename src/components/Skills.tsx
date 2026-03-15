@@ -40,7 +40,7 @@ const skills: Skill[] = [
   { name: "Git", Icon: CodeBracketSquareIcon, color: "#F05032" },
 ];
 
-const repeated = [...skills, ...skills, ...skills];
+const repeated = [...skills, ...skills];
 
 export default function Skills() {
   return (
