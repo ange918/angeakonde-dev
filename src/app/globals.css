@@ -112,17 +112,12 @@ input:focus, textarea:focus {
   box-shadow: 0 0 0 2px rgba(74, 255, 0, 0.15);
 }
 
+.marquee-strip {
+  animation: marquee 28s linear infinite;
+}
+
 @keyframes marquee {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(calc(-100% / 3)); }
 }
 
-.marquee-strip {
-  animation: marquee 16s linear infinite;
-}
-
-@media (max-width: 768px) {
-  .marquee-strip {
-    animation: marquee 12s linear infinite;
-  }
-}
