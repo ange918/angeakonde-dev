@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import {
   CodeBracketIcon,
   SwatchIcon,
@@ -43,8 +44,11 @@ const skills: Skill[] = [
 const repeated = [...skills, ...skills];
 
 export default function Skills() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(sectionRef, { once: false, margin: "-100px" });
+
   return (
-    <section id="skills" className="py-24">
+    <section id="skills" className="py-24" ref={sectionRef}>
       <div className="mx-auto max-w-6xl px-5">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -75,7 +79,10 @@ export default function Skills() {
           style={{ background: "linear-gradient(to left, var(--c-bg), transparent)" }}
         />
 
-        <div className="flex marquee-strip">
+        <div
+          key={isInView ? "running" : "paused"}
+          className={`flex ${isInView ? "marquee-strip" : ""}`}
+        >
           {repeated.map((skill, i) => (
             <div
               key={i}
