@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import {
   CodeBracketIcon,
   SwatchIcon,
@@ -38,20 +39,20 @@ const skills: Skill[] = [
 const row1 = skills.slice(0, 6);
 const row2 = skills.slice(6, 12);
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   visible: {
     transition: { staggerChildren: 0.07 },
   },
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, scale: 0.7, y: 30 },
   visible: {
     opacity: 1,
     scale: 1,
     y: 0,
-    transition: { type: "spring", stiffness: 260, damping: 18 },
+    transition: { type: "spring" as const, stiffness: 260, damping: 18 },
   },
 };
 
