@@ -19,9 +19,9 @@ export default function About() {
             className="mb-16 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl"
             style={{ fontFamily: "var(--font-outfit)" }}
           >
-            Bâtisseur passionné
+           Passionné
             <br />
-            du Bénin.
+            du Code
           </h2>
         </motion.div>
 
