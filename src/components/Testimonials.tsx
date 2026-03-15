@@ -7,24 +7,31 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 const testimonials = [
   {
     quote: "Ange a transformé ma vision en une plateforme élégante et moderne. Son sens du détail et sa capacité à comprendre ce dont nous avions besoin m'ont impressionné. Un travail vraiment remarquable du début à la fin.",
-    name: "Axel Merryl",
+    name: "Morille",
     role: "Artiste & Directeur Créatif",
-    initial: "A",
+    initial: "M",
     color: "#4AFF00",
   },
   {
     quote: "La qualité du code et la structure sont à un autre niveau. Propre, maintenable, exactement ce que nous voulions. Je retravaillerais avec lui sans hésitation. Un développeur qui pense produit.",
     name: "Gauthier O.",
-    role: "Architecte",
+    role: "CEO de Model Academy",
     initial: "G",
     color: "#61DAFB",
   },
   {
     quote: "À l'écoute, réactif, force de proposition. Une combinaison rare de compétences techniques et d'une vraie volonté de faire les choses bien. Il a livré au-delà de mes attentes.",
     name: "Merveille S.",
-    role: "Entrepreneuse",
+    role: "Entrepreneur",
     initial: "M",
     color: "#F7DF1E",
+  },
+  {
+    quote: "Collaborer avec Ange a été une excellente expérience. Il a su saisir notre identité de marque et la traduire en un site à la fois moderne et professionnel. Résultat impeccable, délais respectés.",
+    name: "Senan Concept",
+    role: "Agence créative",
+    initial: "S",
+    color: "#FF6B35",
   },
 ];
 
