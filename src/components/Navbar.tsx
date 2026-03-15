@@ -88,7 +88,7 @@ export default function Navbar() {
           >
             <div className="flex items-center justify-between mb-8">
               <span className="text-xl font-bold" style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)" }}>
-                Big<span style={{ color: "#4AFF00" }}>Sixteen</span>
+                Bs<span style={{ color: "#4AFF00" }}>.dev</span>
               </span>
               <button
                 type="button"
@@ -159,7 +159,7 @@ export default function Navbar() {
             className="text-xl font-bold tracking-tight"
             style={{ color: "var(--c-text)", fontFamily: "var(--font-outfit)" }}
           >
-            Big<span style={{ color: "#4AFF00" }}>Sixteen</span>
+            Bs<span style={{ color: "#4AFF00" }}>.dev</span>
           </a>
 
           <nav className="hidden items-center gap-0.5 lg:flex">
