@@ -7,6 +7,7 @@ import Projects from "@/components/Projects";
 import PhotoProfile from "@/components/PhotoProfile";
 import ProcessSteps from "@/components/ProcessSteps";
 import Testimonials from "@/components/Testimonials";
+import Futurcraft from "@/components/Futurcraft";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Address from "@/components/Address";
@@ -24,6 +25,7 @@ export default function Home() {
       <PhotoProfile />
       <ProcessSteps />
       <Testimonials />
+      <Futurcraft />
       <FAQ />
       <Contact />
       <Address />
