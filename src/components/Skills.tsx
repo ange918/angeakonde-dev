@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+import { useRef, useEffect } from "react";
 import {
   CodeBracketIcon,
   SwatchIcon,
@@ -19,12 +19,7 @@ import {
 import type { FC, SVGProps } from "react";
 
 type HeroIcon = FC<SVGProps<SVGSVGElement>>;
-
-type Skill = {
-  name: string;
-  Icon: HeroIcon;
-  color: string;
-};
+type Skill = { name: string; Icon: HeroIcon; color: string };
 
 const skills: Skill[] = [
   { name: "HTML5", Icon: CodeBracketIcon, color: "#E34F26" },
@@ -45,7 +40,30 @@ const repeated = [...skills, ...skills];
 
 export default function Skills() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(sectionRef, { once: false, margin: "-100px" });
+  const stripRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const strip = stripRef.current;
+    if (!section || !strip) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && strip) {
+            strip.style.animation = "none";
+            void strip.offsetHeight;
+            strip.style.animation = "";
+            strip.classList.add("marquee-strip");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="skills" className="py-24" ref={sectionRef}>
@@ -79,10 +97,7 @@ export default function Skills() {
           style={{ background: "linear-gradient(to left, var(--c-bg), transparent)" }}
         />
 
-        <div
-          key={isInView ? "running" : "paused"}
-          className={`flex ${isInView ? "marquee-strip" : ""}`}
-        >
+        <div ref={stripRef} className="flex">
           {repeated.map((skill, i) => (
             <div
               key={i}
