@@ -19,8 +19,11 @@ Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allow
  GET / [32m200[39m in 126ms[2m (compile: 5ms, render: 121ms)[22m
  GET / [32m200[39m in 103ms[2m (compile: 7ms, render: 96ms)[22m
  GET / [32m200[39m in 126ms[2m (compile: 5ms, render: 121ms)[22m
+<<<<<<< HEAD
  GET / [32m200[39m in 111ms[2m (compile: 4ms, render: 107ms)[22m
  GET / [32m200[39m in 133ms[2m (compile: 4ms, render: 129ms)[22m
  GET / [32m200[39m in 113ms[2m (compile: 4ms, render: 109ms)[22m
  GET / [32m200[39m in 78ms[2m (compile: 3ms, render: 75ms)[22m
  GET / [32m200[39m in 85ms[2m (compile: 5ms, render: 79ms)[22m
+=======
+>>>>>>> d72497a95d491c9418988051ef0762601a643e96
