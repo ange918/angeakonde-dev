@@ -17,17 +17,30 @@ export default function Hero() {
           className="absolute right-0 bottom-0 h-[300px] w-[300px] rounded-full blur-[100px]"
           style={{ background: "rgba(74,255,0,0.05)" }}
         />
-        <svg className="absolute inset-0 h-full w-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          className="absolute inset-0 h-full w-full opacity-[0.03]"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <defs>
-            <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" strokeWidth="1" />
+            <pattern
+              id="grid"
+              width="60"
+              height="60"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 60 0 L 0 0 0 60"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+              />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid)" />
         </svg>
       </div>
 
-      <div className="relative z-10 max-w-4xl w-full">
+      <div className="relative z-10 max-w-6xl w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -39,7 +52,10 @@ export default function Hero() {
             background: "rgba(74,255,0,0.05)",
           }}
         >
-          <span className="inline-block h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: "#4AFF00" }} />
+          <span
+            className="inline-block h-1.5 w-1.5 shrink-0 rounded-full"
+            style={{ background: "#4AFF00" }}
+          />
           Disponible pour de nouveaux projets
         </motion.div>
 
@@ -48,14 +64,19 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mb-6 text-4xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-[5.5rem]"
-          style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)", fontWeight: 800 }}
+          style={{
+            fontFamily: "var(--font-outfit)",
+            color: "var(--c-text)",
+            fontWeight: 800,
+          }}
         >
           Je Transforme vos idées en{" "}
-          <span style={{ color: "#4AFF00", fontWeight: 800 }}>site web</span>
-          {" "}ou{" "}
-          <span style={{ color: "#4AFF00", fontWeight: 800 }}>Application mobiles</span>
+          <span style={{ color: "#4AFF00", fontWeight: 800 }}>site web</span> ou{" "}
+          <span style={{ color: "#4AFF00", fontWeight: 800 }}>
+            Application mobiles
+          </span>
           <br />
-          Moderne et performant
+          moderne et performant
         </motion.h1>
 
         <motion.p
@@ -84,7 +105,11 @@ export default function Hero() {
           <a
             href="#contact"
             className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border px-8 py-4 text-base transition-all duration-200 hover:border-[#4AFF00] hover:text-[#4AFF00]"
-            style={{ borderColor: "var(--c-border-xl)", color: "var(--c-text)", fontWeight: 600 }}
+            style={{
+              borderColor: "var(--c-border-xl)",
+              color: "var(--c-text)",
+              fontWeight: 600,
+            }}
           >
             Me contacter
           </a>
@@ -98,37 +123,64 @@ export default function Hero() {
           style={{ color: "var(--c-subtle)" }}
         >
           <div className="flex flex-col items-center gap-1">
-            <span className="text-2xl font-extrabold sm:text-3xl" style={{ color: "var(--c-text)", fontWeight: 800 }}>
+            <span
+              className="text-2xl font-extrabold sm:text-3xl"
+              style={{ color: "var(--c-text)", fontWeight: 800 }}
+            >
               4
             </span>
-            <span className="text-sm font-medium sm:text-base">Projets réalisés</span>
+            <span className="text-sm font-medium sm:text-base">
+              Projets réalisés
+            </span>
           </div>
 
-          <div className="hidden sm:block h-8 w-px" style={{ background: "var(--c-border-lg)" }} />
+          <div
+            className="hidden sm:block h-8 w-px"
+            style={{ background: "var(--c-border-lg)" }}
+          />
 
           <div className="flex flex-col items-center gap-1">
-            <span className="text-2xl font-extrabold sm:text-3xl" style={{ color: "var(--c-text)", fontWeight: 800 }}>
+            <span
+              className="text-2xl font-extrabold sm:text-3xl"
+              style={{ color: "var(--c-text)", fontWeight: 800 }}
+            >
               4
             </span>
             <span className="text-sm font-medium sm:text-base">En cours</span>
           </div>
 
-          <div className="hidden sm:block h-8 w-px" style={{ background: "var(--c-border-lg)" }} />
+          <div
+            className="hidden sm:block h-8 w-px"
+            style={{ background: "var(--c-border-lg)" }}
+          />
 
           <div className="flex flex-col items-center gap-1">
-            <span className="text-2xl font-extrabold sm:text-3xl" style={{ color: "var(--c-text)", fontWeight: 800 }}>
+            <span
+              className="text-2xl font-extrabold sm:text-3xl"
+              style={{ color: "var(--c-text)", fontWeight: 800 }}
+            >
               1
             </span>
-            <span className="text-sm font-medium sm:text-base">An d&apos;expérience</span>
+            <span className="text-sm font-medium sm:text-base">
+              An d&apos;expérience
+            </span>
           </div>
 
-          <div className="hidden sm:block h-8 w-px" style={{ background: "var(--c-border-lg)" }} />
+          <div
+            className="hidden sm:block h-8 w-px"
+            style={{ background: "var(--c-border-lg)" }}
+          />
 
           <div className="flex flex-col items-center gap-1">
-            <span className="text-2xl font-extrabold sm:text-3xl" style={{ color: "var(--c-text)", fontWeight: 800 }}>
+            <span
+              className="text-2xl font-extrabold sm:text-3xl"
+              style={{ color: "var(--c-text)", fontWeight: 800 }}
+            >
               Afrique
             </span>
-            <span className="text-sm font-medium sm:text-base">&amp; Au-delà</span>
+            <span className="text-sm font-medium sm:text-base">
+              &amp; Au-delà
+            </span>
           </div>
         </motion.div>
       </div>
