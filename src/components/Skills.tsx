@@ -75,7 +75,7 @@ export default function Skills() {
           style={{ background: "linear-gradient(to left, var(--c-bg), transparent)" }}
         />
 
-        <div className="flex" style={{ animation: "marquee 16s linear infinite" }}>
+        <div className="flex marquee-strip">
           {repeated.map((skill, i) => (
             <div
               key={i}

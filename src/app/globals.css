@@ -116,3 +116,13 @@ input:focus, textarea:focus {
   0% { transform: translateX(0); }
   100% { transform: translateX(calc(-100% / 3)); }
 }
+
+.marquee-strip {
+  animation: marquee 16s linear infinite;
+}
+
+@media (max-width: 768px) {
+  .marquee-strip {
+    animation: marquee 8s linear infinite;
+  }
+}
