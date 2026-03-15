@@ -123,6 +123,6 @@ input:focus, textarea:focus {
 
 @media (max-width: 768px) {
   .marquee-strip {
-    animation: marquee 8s linear infinite;
+    animation: marquee 4s linear infinite;
   }
 }
