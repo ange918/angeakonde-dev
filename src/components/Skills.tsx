@@ -35,7 +35,8 @@ const skills: Skill[] = [
   { name: "Git", Icon: CodeBracketSquareIcon, color: "#F05032" },
 ];
 
-const repeated = [...skills, ...skills];
+const row1 = skills.slice(0, 6);
+const row2 = skills.slice(6, 12);
 
 export default function Skills() {
   return (
@@ -58,41 +59,37 @@ export default function Skills() {
             Ma stack technique.
           </h2>
         </motion.div>
-      </div>
 
-      <div className="relative overflow-hidden">
-        <div
-          className="absolute left-0 top-0 z-10 h-full w-24 pointer-events-none"
-          style={{ background: "linear-gradient(to right, var(--c-bg), transparent)" }}
-        />
-        <div
-          className="absolute right-0 top-0 z-10 h-full w-24 pointer-events-none"
-          style={{ background: "linear-gradient(to left, var(--c-bg), transparent)" }}
-        />
-
-        <div className="flex marquee-strip">
-          {repeated.map((skill, i) => (
-            <div
-              key={i}
-              className="flex shrink-0 items-center gap-3 mx-3 rounded-2xl px-6 py-5"
-              style={{
-                background: "var(--c-surface)",
-                border: "1px solid var(--c-border-md)",
-                minWidth: "180px",
-              }}
-            >
-              <div
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl"
-                style={{ background: `${skill.color}18`, border: `1px solid ${skill.color}35` }}
-              >
-                <skill.Icon style={{ color: skill.color, width: 20, height: 20 }} />
-              </div>
-              <span
-                className="text-base font-semibold whitespace-nowrap"
-                style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)" }}
-              >
-                {skill.name}
-              </span>
+        <div className="flex flex-col gap-4">
+          {[row1, row2].map((row, rowIdx) => (
+            <div key={rowIdx} className="grid grid-cols-3 gap-4 sm:grid-cols-6">
+              {row.map((skill, i) => (
+                <motion.div
+                  key={skill.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.5, delay: (rowIdx * 6 + i) * 0.05, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex flex-col items-center gap-3 rounded-2xl px-4 py-5"
+                  style={{
+                    background: "var(--c-surface)",
+                    border: "1px solid var(--c-border-md)",
+                  }}
+                >
+                  <div
+                    className="flex h-10 w-10 items-center justify-center rounded-xl"
+                    style={{ background: `${skill.color}18`, border: `1px solid ${skill.color}35` }}
+                  >
+                    <skill.Icon style={{ color: skill.color, width: 20, height: 20 }} />
+                  </div>
+                  <span
+                    className="text-xs font-semibold text-center whitespace-nowrap"
+                    style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)" }}
+                  >
+                    {skill.name}
+                  </span>
+                </motion.div>
+              ))}
             </div>
           ))}
         </div>
