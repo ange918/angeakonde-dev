@@ -50,12 +50,12 @@ export default function Hero() {
           className="mb-6 text-4xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-[5.5rem]"
           style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)", fontWeight: 800 }}
         >
-          Je crée des{" "}
-          <span style={{ color: "#4AFF00", fontWeight: 800 }}>produits</span>
+          Je Transforme vos idées en{" "}
+          <span style={{ color: "#4AFF00", fontWeight: 800 }}>site web</span>
+          {" "}ou{" "}
+          <span style={{ color: "#4AFF00", fontWeight: 800 }}>Application mobiles</span>
           <br />
-          digitaux qui
-          <br />
-          <span style={{ color: "#4AFF00", fontWeight: 800 }}>comptent.</span>
+          Moderne et performant
         </motion.h1>
 
         <motion.p
