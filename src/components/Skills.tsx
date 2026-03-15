@@ -38,6 +38,23 @@ const skills: Skill[] = [
 const row1 = skills.slice(0, 6);
 const row2 = skills.slice(6, 12);
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.07 },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, scale: 0.7, y: 30 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 260, damping: 18 },
+  },
+};
+
 export default function Skills() {
   return (
     <section id="skills" className="py-24">
@@ -62,26 +79,38 @@ export default function Skills() {
 
         <div className="flex flex-col gap-4">
           {[row1, row2].map((row, rowIdx) => (
-            <div key={rowIdx} className="grid grid-cols-3 gap-4 sm:grid-cols-6">
-              {row.map((skill, i) => (
+            <motion.div
+              key={rowIdx}
+              className="grid grid-cols-3 gap-4 sm:grid-cols-6"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-40px" }}
+            >
+              {row.map((skill) => (
                 <motion.div
                   key={skill.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.5, delay: (rowIdx * 6 + i) * 0.05, ease: [0.22, 1, 0.36, 1] }}
-                  className="flex flex-col items-center gap-3 rounded-2xl px-4 py-5"
+                  variants={cardVariants}
+                  whileHover={{
+                    scale: 1.08,
+                    boxShadow: `0 0 20px ${skill.color}55`,
+                    borderColor: `${skill.color}99`,
+                    transition: { type: "spring", stiffness: 400, damping: 15 },
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex flex-col items-center gap-3 rounded-2xl px-4 py-5 cursor-default"
                   style={{
                     background: "var(--c-surface)",
                     border: "1px solid var(--c-border-md)",
                   }}
                 >
-                  <div
+                  <motion.div
                     className="flex h-10 w-10 items-center justify-center rounded-xl"
                     style={{ background: `${skill.color}18`, border: `1px solid ${skill.color}35` }}
+                    whileHover={{ rotate: [0, -10, 10, -6, 6, 0], transition: { duration: 0.5 } }}
                   >
                     <skill.Icon style={{ color: skill.color, width: 20, height: 20 }} />
-                  </div>
+                  </motion.div>
                   <span
                     className="text-xs font-semibold text-center whitespace-nowrap"
                     style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)" }}
@@ -90,7 +119,7 @@ export default function Skills() {
                   </span>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
