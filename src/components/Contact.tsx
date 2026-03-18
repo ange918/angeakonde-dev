@@ -45,8 +45,8 @@ export default function Contact() {
               </div>
               <div>
                 <p className="mb-1 text-sm font-semibold tracking-wide uppercase" style={{ color: "#4AFF00" }}>Téléphone</p>
-                <a href="tel:+22941483715" className="text-lg text-white/70 hover:text-white transition-colors">
-                  +229 41 48 37 15
+                <a href="tel:+22965291352" className="text-lg text-white/70 hover:text-white transition-colors">
+                  +229 65 29 13 52
                 </a>
               </div>
               <div>

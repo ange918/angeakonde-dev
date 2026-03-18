@@ -20,8 +20,8 @@ export function ContactCard() {
           </div>
           <div>
             <span className="muted">Téléphone:</span>{" "}
-            <a className="hover:text-white" href="tel:+22941483715">
-              +229 41 48 37 15
+            <a className="hover:text-white" href="tel:+22965291352">
+              +229 65 29 13 52
             </a>
           </div>
           <div>

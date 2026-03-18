@@ -31,8 +31,8 @@ const contactItems: {
   {
     Icon: PhoneIcon,
     label: "Téléphone",
-    value: "+229 41 48 37 15",
-    href: "tel:+22941483715",
+    value: "+229 65 29 13 52",
+    href: "tel:+22965291352",
   },
   {
     Icon: ClockIcon,
