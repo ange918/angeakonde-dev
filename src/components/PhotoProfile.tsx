@@ -115,7 +115,7 @@ export default function PhotoProfile() {
             </div>
 
             <div className="flex flex-wrap gap-2 pt-2">
-              {["Full Stack", "React / Next.js", "Node.js", "Flutter", "Africa-first", "Product builder"].map((tag) => (
+              {["Full Stack", "React / Next.js", "Node.js", "Flutter", "DevOps", "Product builder"].map((tag) => (
                 <span
                   key={tag}
                   className="rounded-full px-3 py-1 text-xs"

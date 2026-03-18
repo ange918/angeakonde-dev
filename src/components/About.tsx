@@ -41,7 +41,7 @@ export default function About() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-2">
-              {["Résolveur de problèmes", "Code propre", "Africa-first", "Full Stack", "Product builder"].map((tag) => (
+              {["Résolveur de problèmes", "Code propre", "DevOps", "Full Stack", "Product builder"].map((tag) => (
                 <span
                   key={tag}
                   className="rounded-full px-4 py-1.5 text-base font-medium"
