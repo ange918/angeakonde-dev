@@ -1,9 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import ProjectModal from "./ProjectModal";
 
 const projects = [
   {
@@ -41,8 +39,6 @@ const projects = [
 ];
 
 export default function Projects() {
-  const [selected, setSelected] = useState<typeof projects[0] | null>(null);
-
   return (
     <section id="projects" className="py-24 px-5">
       <div className="mx-auto max-w-6xl">
@@ -123,20 +119,20 @@ export default function Projects() {
                 <p className="mb-6 text-lg leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
                   {p.desc}
                 </p>
-                <button
-                  onClick={() => setSelected(p)}
+                <a
+                  href={p.href}
+                  target="_blank"
+                  rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-full border px-6 py-2.5 text-base font-semibold transition-all duration-200 hover:border-[#4AFF00] hover:text-[#4AFF00]"
                   style={{ borderColor: "rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.7)" }}
                 >
                   Voir le projet →
-                </button>
+                </a>
               </div>
             </motion.article>
           ))}
         </div>
       </div>
-
-      <ProjectModal project={selected} onClose={() => setSelected(null)} />
     </section>
   );
 }
