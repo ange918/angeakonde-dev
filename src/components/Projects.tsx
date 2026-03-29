@@ -36,6 +36,30 @@ const projects = [
     num: "04",
     img: "/project-gods-plan.png",
   },
+  {
+    title: "Vano Baby",
+    desc: "Site web créé dans le cadre du challenge des 10 ans de carrière de l'artiste béninois Vano Baby. Une expérience immersive célébrant une décennie de musique.",
+    techs: ["Next.js", "Framer Motion", "Spotify API"],
+    href: "https://vanobaby-pi.vercel.app",
+    linkText: "Voir le site →",
+    num: "05",
+  },
+  {
+    title: "CosmeticsShop",
+    desc: "Template e-commerce pour boutique de produits cosmétiques, intégré à WhatsApp pour recevoir les commandes directement sans passerelle de paiement.",
+    techs: ["React", "Tailwind CSS", "WhatsApp API"],
+    href: "https://ffash.vercel.app",
+    linkText: "Voir le site →",
+    num: "06",
+  },
+  {
+    title: "Portfolio Agnès ADANMENNOUKON",
+    desc: "Portfolio élégant pour Agnès ADANMENNOUKON, Créatrice de mode et Fondatrice de ISM laMAF Bénin. Vitrine de son univers créatif et de ses collections.",
+    techs: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    href: "https://agnes-249k.vercel.app",
+    linkText: "Voir le site →",
+    num: "07",
+  },
 ];
 
 export default function Projects() {
@@ -76,17 +100,29 @@ export default function Projects() {
               />
 
               <div className="relative h-48 w-full overflow-hidden">
-                <Image
-                  src={p.img}
-                  alt={p.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                <div
-                  className="absolute inset-0"
-                  style={{ background: "linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.85))" }}
-                />
+                {"img" in p && p.img ? (
+                  <>
+                    <Image
+                      src={p.img}
+                      alt={p.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                    <div
+                      className="absolute inset-0"
+                      style={{ background: "linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.85))" }}
+                    />
+                  </>
+                ) : (
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background: "linear-gradient(135deg, rgba(74,255,0,0.04) 0%, rgba(0,0,0,0) 60%, rgba(74,255,0,0.03) 100%)",
+                      borderBottom: "1px solid rgba(255,255,255,0.06)",
+                    }}
+                  />
+                )}
                 <div className="absolute bottom-3 left-4 flex items-center gap-2">
                   <span
                     className="text-4xl font-extrabold leading-none"
@@ -95,18 +131,20 @@ export default function Projects() {
                     {p.num}
                   </span>
                 </div>
-                <div className="absolute top-3 right-3">
-                  <span
-                    className="rounded-full px-3 py-1 text-sm font-medium backdrop-blur-md"
-                    style={{
-                      border: "1px solid rgba(255,255,255,0.15)",
-                      color: "rgba(255,255,255,0.8)",
-                      background: "rgba(0,0,0,0.4)",
-                    }}
-                  >
-                    {p.tag}
-                  </span>
-                </div>
+                {"tag" in p && p.tag && (
+                  <div className="absolute top-3 right-3">
+                    <span
+                      className="rounded-full px-3 py-1 text-sm font-medium backdrop-blur-md"
+                      style={{
+                        border: "1px solid rgba(255,255,255,0.15)",
+                        color: "rgba(255,255,255,0.8)",
+                        background: "rgba(0,0,0,0.4)",
+                      }}
+                    >
+                      {p.tag}
+                    </span>
+                  </div>
+                )}
               </div>
 
               <div className="relative z-10 p-6">
@@ -116,17 +154,34 @@ export default function Projects() {
                 >
                   {p.title}
                 </h3>
-                <p className="mb-6 text-lg leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
+                <p className="mb-4 text-lg leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
                   {p.desc}
                 </p>
+                {"techs" in p && p.techs && (
+                  <div className="mb-6 flex flex-wrap gap-2">
+                    {p.techs.map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-full px-3 py-1 text-sm font-medium"
+                        style={{
+                          border: "1px solid rgba(74,255,0,0.25)",
+                          color: "rgba(74,255,0,0.85)",
+                          background: "rgba(74,255,0,0.06)",
+                        }}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                )}
                 <a
                   href={p.href}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full border px-6 py-2.5 text-base font-semibold transition-all duration-200 hover:border-[#4AFF00] hover:text-[#4AFF00]"
                   style={{ borderColor: "rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.7)" }}
                 >
-                  Voir le projet →
+                  {"linkText" in p && p.linkText ? p.linkText : "Voir le projet →"}
                 </a>
               </div>
             </motion.article>
