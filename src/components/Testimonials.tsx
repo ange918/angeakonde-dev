@@ -86,7 +86,7 @@ export default function Testimonials() {
         </motion.div>
 
         <div
-          className="relative overflow-hidden rounded-3xl p-8 sm:p-12"
+          className="relative overflow-hidden rounded-3xl p-5 sm:p-10"
           style={{
             background: "var(--c-surface)",
             border: "1px solid var(--c-border)",
@@ -108,14 +108,14 @@ export default function Testimonials() {
               className="relative"
             >
               <div
-                className="mb-8 text-7xl font-serif leading-none"
+                className="mb-4 text-5xl sm:text-7xl font-serif leading-none"
                 style={{ color: `${t.color}40` }}
               >
                 &ldquo;
               </div>
 
               <p
-                className="mb-10 text-xl leading-loose"
+                className="mb-8 text-base sm:text-xl leading-loose"
                 style={{
                   color: "var(--c-dim)",
                   fontFamily: "var(--font-outfit)",

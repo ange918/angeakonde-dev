@@ -32,7 +32,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="lg:col-span-2"
           >
-            <p className="mb-8 text-xl leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
+            <p className="mb-8 text-base sm:text-xl leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
               Je suis ouvert aux projets freelance et aux postes full-time en remote. Que vous ayez un brief précis ou juste une idée — contactez-moi et parlons-en.
             </p>
 
@@ -123,7 +123,7 @@ export default function Contact() {
             <div className="mt-6 flex justify-end">
               <button
                 type="submit"
-                className="inline-flex items-center rounded-full px-8 py-4 text-base font-semibold text-black transition-all duration-200 hover:opacity-90"
+                className="w-full sm:w-auto inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold text-black transition-all duration-200 hover:opacity-90"
                 style={{ background: "#4AFF00" }}
               >
                 Envoyer →

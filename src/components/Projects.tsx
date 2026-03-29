@@ -157,7 +157,7 @@ export default function Projects() {
                 >
                   {p.title}
                 </h3>
-                <p className="mb-4 text-lg leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
+                <p className="mb-4 text-sm sm:text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
                   {p.desc}
                 </p>
                 {"techs" in p && p.techs && (

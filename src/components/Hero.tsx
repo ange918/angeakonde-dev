@@ -63,7 +63,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-6 text-4xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-[5.5rem]"
+          className="mb-6 text-[2rem] font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-[5.5rem]"
           style={{
             fontFamily: "var(--font-outfit)",
             color: "var(--c-text)",

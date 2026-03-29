@@ -34,16 +34,15 @@ export default function PhotoProfile() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="flex justify-center lg:justify-start"
           >
-            <div className="relative">
+            <div className="relative w-full max-w-[340px]">
               <div
                 className="absolute -inset-1 rounded-3xl opacity-60 blur-xl"
                 style={{ background: "radial-gradient(ellipse, #4AFF0030, transparent 70%)" }}
               />
               <div
-                className="relative overflow-hidden rounded-3xl"
+                className="relative overflow-hidden rounded-3xl w-full"
                 style={{
-                  width: 340,
-                  height: 420,
+                  aspectRatio: "340 / 420",
                   border: "1px solid rgba(74,255,0,0.2)",
                   background: "rgba(255,255,255,0.03)",
                 }}
@@ -53,7 +52,7 @@ export default function PhotoProfile() {
                   alt="Ange Akonde"
                   fill
                   className="object-cover"
-                  sizes="340px"
+                  sizes="(max-width: 640px) calc(100vw - 40px), 340px"
                   priority
                 />
                 <div
@@ -76,7 +75,7 @@ export default function PhotoProfile() {
               </div>
 
               <div
-                className="absolute -bottom-4 -right-4 rounded-2xl px-4 py-3"
+                className="absolute bottom-0 right-0 sm:-bottom-4 sm:-right-4 rounded-2xl px-4 py-3"
                 style={{
                   background: "rgba(0,0,0,0.85)",
                   border: "1px solid rgba(74,255,0,0.2)",

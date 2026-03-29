@@ -120,7 +120,7 @@ export default function Address() {
             transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="card overflow-hidden rounded-2xl lg:col-span-3"
           >
-            <div className="relative h-full min-h-[400px]">
+            <div className="relative h-full min-h-[260px] sm:min-h-[400px]">
               <iframe
                 title="Carte Cotonou Bénin"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=2.3212%2C6.3404%2C2.4654%2C6.4254&layer=mapnik&marker=6.3829%2C2.3933"
