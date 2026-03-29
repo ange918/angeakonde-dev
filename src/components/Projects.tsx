@@ -43,6 +43,7 @@ const projects = [
     href: "https://vanobaby-pi.vercel.app",
     linkText: "Voir le site →",
     num: "05",
+    img: "/project-vano-baby.png",
   },
   {
     title: "CosmeticsShop",
@@ -51,6 +52,7 @@ const projects = [
     href: "https://ffash.vercel.app",
     linkText: "Voir le site →",
     num: "06",
+    img: "/project-cosmetics-shop.png",
   },
   {
     title: "Portfolio Agnès ADANMENNOUKON",
@@ -59,6 +61,7 @@ const projects = [
     href: "https://agnes-249k.vercel.app",
     linkText: "Voir le site →",
     num: "07",
+    img: "/project-agnes.png",
   },
 ];
 
