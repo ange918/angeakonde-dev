@@ -1,0 +1,32 @@
+
+> angeakonde-dev@0.1.0 dev
+> next dev -p 5000 -H 0.0.0.0
+
+[1G[0K[1m[38;2;173;127;168m▲ Next.js 16.1.6[39m[22m (Turbopack)
+- Local:         http://localhost:5000
+- Network:       http://0.0.0.0:5000
+
+[32m[1m✓[22m[39m Starting...
+[32m[1m✓[22m[39m Ready in 759ms
+[33m[1m⚠[22m[39m Cross origin request detected from f083e668-f66c-4c65-88c8-385106f87a83-00-1h2hceoc8w5qm.riker.replit.dev to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[37m[1m○[22m[39m Compiling / ...
+ GET / [32m200[39m in 4.2s[2m (compile: 3.8s, render: 428ms)[22m
+ GET / [32m200[39m in 1498ms[2m (compile: 973ms, render: 524ms)[22m
+[32m[1m✓[22m[39m Compiled in 60ms
+[32m[1m✓[22m[39m Compiled in 44ms
+[32m[1m✓[22m[39m Compiled in 64ms
+[32m[1m✓[22m[39m Compiled in 38ms
+[32m[1m✓[22m[39m Compiled in 37ms
+ GET / [32m200[39m in 404ms[2m (compile: 79ms, render: 325ms)[22m
+ GET / [32m200[39m in 97ms[2m (compile: 4ms, render: 93ms)[22m
+ GET / [32m200[39m in 91ms[2m (compile: 5ms, render: 86ms)[22m
+ GET / [32m200[39m in 100ms[2m (compile: 4ms, render: 96ms)[22m
+[32m[1m✓[22m[39m Compiled in 196ms
+ GET / [32m200[39m in 115ms[2m (compile: 76ms, render: 40ms)[22m
+ GET / [32m200[39m in 25ms[2m (compile: 6ms, render: 19ms)[22m
+ GET / [32m200[39m in 25ms[2m (compile: 4ms, render: 20ms)[22m
+[32m[1m✓[22m[39m Compiled in 78ms
+[32m[1m✓[22m[39m Compiled in 125ms
+ GET / [32m200[39m in 389ms[2m (compile: 71ms, render: 318ms)[22m
+ GET / [32m200[39m in 197ms[2m (compile: 7ms, render: 191ms)[22m
