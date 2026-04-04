@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { trackProjectClick } from "@/lib/analytics";
 
 const projects = [
   {
@@ -181,6 +182,7 @@ export default function Projects() {
                   href={p.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackProjectClick(p.title)}
                   className="inline-flex items-center gap-2 rounded-full border px-6 py-2.5 text-base font-semibold transition-all duration-200 hover:border-[#4AFF00] hover:text-[#4AFF00]"
                   style={{ borderColor: "rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.7)" }}
                 >

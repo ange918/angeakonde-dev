@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { trackContactClick } from "@/lib/analytics";
 
 export default function Hero() {
   return (
@@ -92,6 +93,7 @@ export default function Hero() {
           </a>
           <a
             href="#contact"
+            onClick={() => trackContactClick("hero")}
             className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border px-8 py-4 text-base transition-all duration-200 hover:border-[#4AFF00] hover:text-[#4AFF00]"
             style={{
               borderColor: "var(--c-border-xl)",

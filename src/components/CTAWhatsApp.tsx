@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 export default function CTAWhatsApp() {
   const [name, setName] = useState("");
@@ -9,6 +10,7 @@ export default function CTAWhatsApp() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    trackWhatsAppClick();
     const encodedName = encodeURIComponent(name);
     const encodedMessage = encodeURIComponent(message);
     const url = `https://wa.me/22965291352?text=Bonjour+Ange,+je+suis+${encodedName}+et+je+voudrais+${encodedMessage}`;

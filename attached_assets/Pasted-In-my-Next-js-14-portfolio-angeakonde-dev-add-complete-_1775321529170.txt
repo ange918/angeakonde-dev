@@ -1,0 +1,146 @@
+In my Next.js 14 portfolio (angeakonde-dev), add complete analytics with Vercel Analytics + Google Analytics, and create a private dashboard page.
+
+═══════════════════════════════
+1. VERCEL ANALYTICS
+═══════════════════════════════
+Install: npm install @vercel/analytics @vercel/speed-insights
+
+In app/layout.tsx, import and add:
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+
+Add <Analytics /> and <SpeedInsights /> just before closing </body> tag.
+
+═══════════════════════════════
+2. GOOGLE ANALYTICS
+═══════════════════════════════
+Create components/GoogleAnalytics.tsx:
+
+'use client'
+import Script from 'next/script'
+
+const GA_ID = 'G-XXXXXXXXXX' // placeholder, user will replace with real ID
+
+export default function GoogleAnalytics() {
+  return (
+    <>
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_ID}', {
+            page_path: window.location.pathname,
+          });
+        `}
+      </Script>
+    </>
+  )
+}
+
+Add <GoogleAnalytics /> in app/layout.tsx inside <body>.
+
+═══════════════════════════════
+3. CUSTOM EVENT TRACKING
+═══════════════════════════════
+Create lib/analytics.ts with these tracking functions:
+
+export const trackEvent = (eventName: string, properties?: Record<string, string>) => {
+  // Vercel Analytics
+  if (typeof window !== 'undefined' && (window as any).va) {
+    (window as any).va('event', eventName, properties)
+  }
+  // Google Analytics
+  if (typeof window !== 'undefined' && (window as any).gtag) {
+    (window as any).gtag('event', eventName, properties)
+  }
+}
+
+export const trackProjectClick = (projectName: string) => {
+  trackEvent('project_click', { project: projectName })
+}
+
+export const trackContactClick = (source: string) => {
+  trackEvent('contact_click', { source })
+}
+
+export const trackWhatsAppClick = () => {
+  trackEvent('whatsapp_click')
+}
+
+export const trackCVDownload = () => {
+  trackEvent('cv_download')
+}
+
+In components/Projects.tsx: call trackProjectClick(projectName) on each project link click
+In components/CTAWhatsApp.tsx: call trackWhatsAppClick() on form submit
+In components/Hero.tsx: call trackContactClick('hero') on contact button click
+In app/about/page.tsx: call trackCVDownload() on CV download button click
+
+═══════════════════════════════
+4. PRIVATE DASHBOARD PAGE
+═══════════════════════════════
+Create app/dashboard/page.tsx
+
+This is a PASSWORD PROTECTED page:
+- On first load, show a centered password input form
+- Password check: if input === "bigsixteen2026" → show dashboard
+- Store auth in localStorage key "bs_dashboard_auth"
+- If already authenticated (localStorage has the key), skip password screen
+
+Password screen design (same dark design as portfolio):
+- Background: #000000
+- Centered card: background #0D1F1C, border: 1px solid #08453A, padding 40px, border-radius 12px
+- Title: "Dashboard" in Montserrat bold white
+- Subtitle: "Accès privé — BigSixteen" in #AACBC4
+- Password input: same style as contact form inputs
+- Button: "Accéder →" in #00DF81 style
+- On wrong password: show error "Mot de passe incorrect" in red
+
+Dashboard content (shown after auth):
+
+HEADER:
+- Title: "Dashboard Analytics" 
+- Subtitle: "Bienvenue, Ange 👋"
+- Logout button top right: clears localStorage, returns to password screen
+
+STATS CARDS ROW (fetch from Vercel Analytics API if available, otherwise show placeholders):
+4 cards in a row using same card style as portfolio:
+- Total Visitors (icon: Users)
+- Page Views (icon: Eye)  
+- Countries reached (icon: Globe)
+- Avg. Time on site (icon: Clock)
+
+EMBEDDED SECTIONS:
+Add 3 iframe embeds with labels:
+
+Section 1 — "Vercel Analytics":
+- Link button: "Voir sur Vercel →" opening https://vercel.com/ange918/angeakonde-dev/analytics in new tab
+- Below: instruction text in #AACBC4: "Connectez-vous à votre compte Vercel pour voir les analytics détaillés."
+
+Section 2 — "Google Analytics":  
+- Link button: "Voir sur Google Analytics →" opening https://analytics.google.com in new tab
+- Below: instruction text: "Accédez à Google Analytics pour voir pays, pages, appareils et comportements."
+
+Section 3 — "Événements trackés":
+Show a static list of all tracked events with their descriptions:
+- project_click → "Clic sur un projet"
+- contact_click → "Clic sur le bouton contact"
+- whatsapp_click → "Envoi via WhatsApp"
+- cv_download → "Téléchargement du CV"
+Display as a clean table with columns: Événement | Description | Où tracker
+
+QUICK LINKS section:
+- "Vercel Dashboard" → https://vercel.com/ange918/angeakonde-dev
+- "Google Search Console" → https://search.google.com/search-console
+- "Google Analytics" → https://analytics.google.com
+- "Sitemap" → https://angeakonde-dev.vercel.app/sitemap.xml
+
+All links open in new tab.
+Same dark design as portfolio. No navbar from portfolio — just a simple back link "← Retour au portfolio" linking to /
+
+DO NOT add /dashboard link in the main Navbar — this page is private and accessed directly via URL.
