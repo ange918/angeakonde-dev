@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { Users, Eye, Globe, Clock } from "lucide-react";
 
 const PASSWORD = "bigsixteen2026";
@@ -125,12 +126,12 @@ export default function DashboardPage() {
 
         <div className="flex items-start justify-between mb-10 flex-wrap gap-4">
           <div>
-            <a
+            <Link
               href="/"
               style={{ color: "#AACBC4", fontSize: "0.875rem", textDecoration: "none", display: "inline-block", marginBottom: "16px" }}
             >
               ← Retour au portfolio
-            </a>
+            </Link>
             <h1
               style={{ fontFamily: "var(--font-montserrat, sans-serif)", fontSize: "2rem", fontWeight: 800, color: "#ffffff", marginBottom: "4px" }}
             >

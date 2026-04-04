@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -217,7 +218,7 @@ export default function Navbar() {
         }
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
-          <a
+          <Link
             href="/"
             onClick={(e) => {
               e.preventDefault();
@@ -231,7 +232,7 @@ export default function Navbar() {
             style={{ color: "var(--c-text)", fontFamily: "var(--font-montserrat)" }}
           >
             Bs<span style={{ color: "#4AFF00" }}>.dev</span>
-          </a>
+          </Link>
 
           <nav className="hidden items-center gap-0.5 lg:flex">
             {links.map((l) => (
