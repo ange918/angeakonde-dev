@@ -1,0 +1,46 @@
+18:02:42.430 Running build in Washington, D.C., USA (East) – iad1
+18:02:42.430 Build machine configuration: 2 cores, 8 GB
+18:02:42.556 Cloning github.com/ange918/angeakonde-dev (Branch: main, Commit: 2d87118)
+18:02:42.557 Previous build caches not available.
+18:02:44.526 Cloning completed: 1.970s
+18:02:44.922 Running "vercel build"
+18:02:45.585 Vercel CLI 50.38.2
+18:02:45.927 Installing dependencies...
+18:03:00.387
+18:03:00.387 added 359 packages in 14s
+18:03:00.388
+18:03:00.388 143 packages are looking for funding
+18:03:00.389 run npm fund for details
+18:03:00.453 Detected Next.js version: 15.5.13
+18:03:00.457 Running "npm run build"
+18:03:00.560
+18:03:00.561 > angeakonde-dev@0.1.0 build
+18:03:00.561 > next build
+18:03:00.561
+18:03:01.363 Attention: Next.js now collects completely anonymous telemetry regarding usage.
+18:03:01.365 This information is used to shape Next.js' roadmap and prioritize features.
+18:03:01.365 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+18:03:01.366 https://nextjs.org/telemetry
+18:03:01.366
+18:03:01.445 ▲ Next.js 15.5.13
+18:03:01.446
+18:03:01.479 Creating an optimized production build ...
+18:03:15.887 ✓ Compiled successfully in 11.9s
+18:03:15.890 Linting and checking validity of types ...
+
+git push origin main
+Enumerating objects: 525, done.
+Counting objects: 100% (525/525), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (275/275), done.
+Writing objects: 100% (355/355), 58.21 MiB | 7.49 MiB/s, done.
+Total 355 (delta 107), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (107/107), completed with 56 local objects.
+remote: warning: See https://gh.io/lfs for more information.
+remote: warning: File .local/state/replit/log-query.db is 50.86 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB
+remote: warning: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+To https://github.com/ange918/angeakonde-dev
+831ec1b..2d87118 main -> main
+
+ADMIN@BIGSIXTEEN MINGW64 ~/Music/angeakonde-dev (main)
+$
