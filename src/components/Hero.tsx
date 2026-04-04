@@ -80,34 +80,6 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex justify-center"
-          style={{ marginBottom: "16px" }}
-        >
-          <a
-            href="#contact"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              borderLeft: "3px solid #00DF81",
-              padding: "6px 14px",
-              background: "transparent",
-              color: "#00DF81",
-              fontSize: "13px",
-              fontFamily: "var(--font-inter)",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              cursor: "pointer",
-              textDecoration: "none",
-            }}
-          >
-            Contactez-moi
-          </a>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
         >
