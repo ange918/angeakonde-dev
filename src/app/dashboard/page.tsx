@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Users, Eye, Globe, Clock } from "lucide-react";
 
 const PASSWORD = "bigsixteen2026";
 const STORAGE_KEY = "bs_dashboard_auth";
@@ -155,10 +156,10 @@ export default function DashboardPage() {
 
         <div className="grid gap-4 mb-10" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}>
           {[
-            { label: "Total Visiteurs", value: "—", icon: "👥" },
-            { label: "Pages vues", value: "—", icon: "👁" },
-            { label: "Pays atteints", value: "—", icon: "🌍" },
-            { label: "Temps moyen", value: "—", icon: "⏱" },
+            { label: "Total Visiteurs", value: "—", icon: <Users size={22} color="#00DF81" /> },
+            { label: "Pages vues", value: "—", icon: <Eye size={22} color="#00DF81" /> },
+            { label: "Pays atteints", value: "—", icon: <Globe size={22} color="#00DF81" /> },
+            { label: "Temps moyen", value: "—", icon: <Clock size={22} color="#00DF81" /> },
           ].map((stat) => (
             <div
               key={stat.label}
@@ -169,7 +170,7 @@ export default function DashboardPage() {
                 padding: "24px",
               }}
             >
-              <div style={{ fontSize: "1.75rem", marginBottom: "8px" }}>{stat.icon}</div>
+              <div style={{ marginBottom: "12px" }}>{stat.icon}</div>
               <div style={{ fontSize: "1.75rem", fontWeight: 700, color: "#00DF81", fontFamily: "var(--font-montserrat, sans-serif)" }}>
                 {stat.value}
               </div>
