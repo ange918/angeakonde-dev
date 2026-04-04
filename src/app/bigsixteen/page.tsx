@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Users, Eye, Globe, Clock } from "lucide-react";
 
 const PASSWORD = "bigsixteen2026";
-const STORAGE_KEY = "bs_dashboard_auth";
+const STORAGE_KEY = "bs_bigsixteen_auth";
 
 const TRACKED_EVENTS = [
   { event: "project_click", description: "Clic sur un projet", where: "components/Projects.tsx" },
