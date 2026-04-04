@@ -1,17 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
-  { href: "/", label: "Accueil" },
-  { href: "/about", label: "À propos" },
-  { href: "#skills", label: "Compétences" },
-  { href: "#projects", label: "Projets" },
-  { href: "#testimonials", label: "Avis" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#contact", label: "Contact" },
+  { href: "/", label: "Accueil", anchor: false },
+  { href: "/about", label: "À propos", anchor: false },
+  { href: "#skills", label: "Compétences", anchor: true },
+  { href: "#projects", label: "Projets", anchor: true },
+  { href: "#testimonials", label: "Avis", anchor: true },
+  { href: "#faq", label: "FAQ", anchor: true },
+  { href: "#contact", label: "Contact", anchor: true },
 ];
 
 export default function Navbar() {
@@ -19,6 +20,13 @@ export default function Navbar() {
   const [active, setActive] = useState("#home");
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
+  const resolveHref = (link: { href: string; anchor: boolean }) => {
+    if (!link.anchor) return link.href;
+    return isHome ? link.href : `/${link.href}`;
+  };
 
   useEffect(() => {
     setMounted(true);
@@ -27,7 +35,8 @@ export default function Navbar() {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 20);
-      const sections = links.map((l) => l.href.slice(1));
+      const anchorLinks = links.filter((l) => l.anchor);
+      const sections = anchorLinks.map((l) => l.href.slice(1));
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i]);
         if (el && window.scrollY >= el.offsetTop - 120) {
@@ -50,6 +59,11 @@ export default function Navbar() {
       window.removeEventListener("keydown", onKey);
     };
   }, [open]);
+
+  const isLinkActive = (l: { href: string; anchor: boolean }) => {
+    if (!l.anchor) return pathname === l.href;
+    return active === l.href;
+  };
 
   const mobileMenu = (
     <AnimatePresence>
@@ -104,11 +118,11 @@ export default function Navbar() {
               {links.map((l) => (
                 <a
                   key={l.href}
-                  href={l.href}
+                  href={resolveHref(l)}
                   onClick={() => setOpen(false)}
                   className="rounded-xl px-4 py-3 text-base font-medium transition-colors"
                   style={
-                    active === l.href
+                    isLinkActive(l)
                       ? { background: "rgba(74,255,0,0.1)", color: "#4AFF00" }
                       : { color: "var(--c-muted)" }
                   }
@@ -166,10 +180,10 @@ export default function Navbar() {
             {links.map((l) => (
               <a
                 key={l.href}
-                href={l.href}
+                href={resolveHref(l)}
                 className="rounded-full px-4 py-2 text-base font-medium transition-colors duration-200"
                 style={{
-                  color: active === l.href ? "#4AFF00" : "var(--c-muted)",
+                  color: isLinkActive(l) ? "#4AFF00" : "var(--c-muted)",
                 }}
               >
                 {l.label}
@@ -179,7 +193,7 @@ export default function Navbar() {
 
           <div className="hidden items-center gap-3 lg:flex">
             <a
-              href="#contact"
+              href={isHome ? "#contact" : "/#contact"}
               className="rounded-full border border-[#4AFF00] px-6 py-3 text-base font-semibold text-[#4AFF00] transition-all duration-200 hover:bg-[#4AFF00] hover:text-black"
             >
               Me contacter
