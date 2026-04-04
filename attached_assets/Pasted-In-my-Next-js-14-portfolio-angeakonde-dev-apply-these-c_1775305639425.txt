@@ -1,0 +1,134 @@
+In my Next.js 14 portfolio (angeakonde-dev), apply these changes:
+
+⚠️ IMPORTANT: Keep the exact same existing design system (colors, card styles, animations, hover effects). Only change what is specified below.
+
+═══════════════════════════════
+1. FONTS
+═══════════════════════════════
+Replace current font with:
+- Montserrat (Google Fonts): weights 700, 800, 900 — for ALL headings (h1, h2, h3)
+- Inter (Google Fonts): weights 400, 500, 600 — for ALL body text, paragraphs, buttons, nav links
+
+In layout.tsx, import both via next/font/google and apply globally.
+Remove all previous font imports (Nunito, Space Grotesk, IBM Plex Mono, Outfit).
+
+═══════════════════════════════
+2. HERO SECTION CHANGES
+═══════════════════════════════
+In components/Hero.tsx:
+
+a) REMOVE the "Disponible pour de nouveaux projets" badge completely
+
+b) ADD this line just below the main headline, before the subtitle paragraph:
+"Full Stack Developer — Cotonou, Bénin"
+Style: font-size 1rem, color #AACBC4, font-family Inter, font-weight 500, letter-spacing 0.05em
+
+c) ADD a contact badge just before the CTA buttons:
+Text: "Contactez-moi"
+Style: 
+- display inline-flex, align-items center
+- border-left: 3px solid #00DF81
+- padding: 6px 14px
+- background: transparent
+- color: #00DF81
+- font-size: 13px
+- font-family: Inter
+- letter-spacing: 0.08em
+- text-transform: uppercase
+- NO border-radius pill shape
+- NO background color fill
+- margin-bottom: 16px
+- cursor: pointer, links to #contact
+
+d) CHANGE button text:
+- "Voir mes projets" → "Mes services"
+- "Me contacter" → keep as is
+
+e) REMOVE the statistics row that appears just below the Hero buttons
+(the row with "7+ Projets livrés", "100% Clients satisfaits", etc.)
+We will place Statistics section separately later.
+
+═══════════════════════════════
+3. REMOVE ABOUT FROM MAIN PAGE
+═══════════════════════════════
+- Remove <About /> component from app/page.tsx completely
+- Remove the Futurcraft section from main page
+- Create app/about/page.tsx with ALL the about content:
+  * Full bio of Ange Akonde
+  * Photo (public/photo.jpg)
+  * Futurcraft Institut section
+  * Mission, location, contact details
+  * CV download button (public/cv.pdf)
+  * Same Navbar and Footer as main page
+- In Navbar.tsx: change "À propos" link to href="/about" (page route, not anchor)
+
+═══════════════════════════════
+4. NEW SECTION ORDER in app/page.tsx
+═══════════════════════════════
+Arrange components in this exact order:
+
+<Hero />
+<Services />
+<Projects />
+<Skills />
+<Statistics />
+<HowIWork />
+<FAQ />
+<Testimonials />
+<CTAWhatsApp />
+<Footer />
+
+═══════════════════════════════
+5. SERVICES SECTION (NEW)
+═══════════════════════════════
+Create components/Services.tsx
+Use same card style as existing project cards.
+
+Section title: "Ce que je réalise"
+Subtitle: "Des solutions digitales sur mesure pour vos projets."
+
+6 service cards using lucide-react icons:
+
+1. Globe — "Sites Web Modernes" — "Création de sites vitrines, portfolios et landing pages rapides, responsive et optimisés SEO."
+2. ShoppingCart — "E-commerce & Boutiques" — "Boutiques en ligne connectées WhatsApp ou avec passerelle de paiement."
+3. Smartphone — "Applications Mobiles" — "Applications cross-platform avec Flutter pour iOS et Android."
+4. LayoutDashboard — "Dashboards & SaaS" — "Tableaux de bord sur mesure et plateformes SaaS pour vos équipes."
+5. Zap — "Stratégie Digitale" — "Conseil et mise en place d'une présence digitale efficace."
+6. Code2 — "APIs & Intégrations" — "Connexion de vos outils via des APIs : paiement, messagerie, CRM, analytics."
+
+Grid: 3 columns desktop, 2 tablet, 1 mobile
+
+═══════════════════════════════
+6. STATISTICS SECTION
+═══════════════════════════════
+Create components/Statistics.tsx
+Place it AFTER Skills section.
+
+4 stats in horizontal row:
+- "7+" — "Projets livrés"
+- "100%" — "Clients satisfaits"
+- "2" — "Pays clients"
+- "1an+" — "D'expérience"
+
+Animate numbers counting up from 0 when section enters viewport using IntersectionObserver.
+Same dark band style as existing sections.
+
+═══════════════════════════════
+7. CTA WHATSAPP SECTION
+═══════════════════════════════
+Create components/CTAWhatsApp.tsx
+Place it just before Footer.
+
+Headline: "Prêt à construire avec moi ?"
+Subtext: "Décrivez votre projet en quelques mots. Je réponds sous 24h."
+
+Form:
+- Name input: placeholder "Votre nom"
+- Message textarea (3 rows): placeholder "Décrivez votre projet..."
+- Button: "Envoyer sur WhatsApp →"
+
+On submit open:
+https://wa.me/22965291352?text=Bonjour+Ange,+je+suis+[name]+et+je+voudrais+[message]
+Use encodeURIComponent for values.
+
+Same form field styles as existing Contact section.

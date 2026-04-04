@@ -41,31 +41,13 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-6xl w-full">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-8 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium sm:px-5 sm:text-base"
-          style={{
-            borderColor: "rgba(74,255,0,0.3)",
-            color: "#4AFF00",
-            background: "rgba(74,255,0,0.05)",
-          }}
-        >
-          <span
-            className="inline-block h-1.5 w-1.5 shrink-0 rounded-full"
-            style={{ background: "#4AFF00" }}
-          />
-          Disponible pour de nouveaux projets
-        </motion.div>
-
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-6 text-[2rem] font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-[5.5rem]"
+          className="mb-4 text-[2rem] font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-[5.5rem]"
           style={{
-            fontFamily: "var(--font-outfit)",
+            fontFamily: "var(--font-montserrat)",
             color: "var(--c-text)",
             fontWeight: 800,
           }}
@@ -83,24 +65,58 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-10 text-lg font-normal leading-relaxed sm:text-xl"
-          style={{ color: "var(--c-muted)" }}
+          style={{
+            fontSize: "1rem",
+            color: "#AACBC4",
+            fontFamily: "var(--font-inter)",
+            fontWeight: 500,
+            letterSpacing: "0.05em",
+            marginBottom: "1.5rem",
+          }}
         >
-          Full Stack Developer — Cotonou, Benin
+          Full Stack Developer — Cotonou, Bénin
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.35 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="flex justify-center"
+          style={{ marginBottom: "16px" }}
+        >
+          <a
+            href="#contact"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              borderLeft: "3px solid #00DF81",
+              padding: "6px 14px",
+              background: "transparent",
+              color: "#00DF81",
+              fontSize: "13px",
+              fontFamily: "var(--font-inter)",
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              cursor: "pointer",
+              textDecoration: "none",
+            }}
+          >
+            Contactez-moi
+          </a>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
           className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
         >
           <a
-            href="#projects"
+            href="#services"
             className="w-full sm:w-auto inline-flex items-center justify-center rounded-full px-8 py-4 text-base text-black transition-all duration-200 hover:opacity-90 hover:scale-105"
-            style={{ background: "#4AFF00", fontWeight: 700 }}
+            style={{ background: "#4AFF00", fontWeight: 700, fontFamily: "var(--font-inter)" }}
           >
-            Voir mes projets
+            Mes services
           </a>
           <a
             href="#contact"
@@ -109,79 +125,11 @@ export default function Hero() {
               borderColor: "var(--c-border-xl)",
               color: "var(--c-text)",
               fontWeight: 600,
+              fontFamily: "var(--font-inter)",
             }}
           >
             Me contacter
           </a>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-14 grid grid-cols-2 gap-6 sm:flex sm:flex-row sm:items-center sm:justify-center sm:gap-10"
-          style={{ color: "var(--c-subtle)" }}
-        >
-          <div className="flex flex-col items-center gap-1">
-            <span
-              className="text-2xl font-extrabold sm:text-3xl"
-              style={{ color: "var(--c-text)", fontWeight: 800 }}
-            >
-              4
-            </span>
-            <span className="text-sm font-medium sm:text-base">
-              Projets réalisés
-            </span>
-          </div>
-
-          <div
-            className="hidden sm:block h-8 w-px"
-            style={{ background: "var(--c-border-lg)" }}
-          />
-
-          <div className="flex flex-col items-center gap-1">
-            <span
-              className="text-2xl font-extrabold sm:text-3xl"
-              style={{ color: "var(--c-text)", fontWeight: 800 }}
-            >
-              4
-            </span>
-            <span className="text-sm font-medium sm:text-base">En cours</span>
-          </div>
-
-          <div
-            className="hidden sm:block h-8 w-px"
-            style={{ background: "var(--c-border-lg)" }}
-          />
-
-          <div className="flex flex-col items-center gap-1">
-            <span
-              className="text-2xl font-extrabold sm:text-3xl"
-              style={{ color: "var(--c-text)", fontWeight: 800 }}
-            >
-              1
-            </span>
-            <span className="text-sm font-medium sm:text-base">
-              An d&apos;expérience
-            </span>
-          </div>
-
-          <div
-            className="hidden sm:block h-8 w-px"
-            style={{ background: "var(--c-border-lg)" }}
-          />
-
-          <div className="flex flex-col items-center gap-1">
-            <span
-              className="text-2xl font-extrabold sm:text-3xl"
-              style={{ color: "var(--c-text)", fontWeight: 800 }}
-            >
-              Afrique
-            </span>
-            <span className="text-sm font-medium sm:text-base">
-              &amp; Au-delà
-            </span>
-          </div>
         </motion.div>
       </div>
 

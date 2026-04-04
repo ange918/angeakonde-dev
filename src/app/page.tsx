@@ -1,15 +1,13 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Skills from "@/components/Skills";
+import Services from "@/components/Services";
 import Projects from "@/components/Projects";
-import PhotoProfile from "@/components/PhotoProfile";
+import Skills from "@/components/Skills";
+import Statistics from "@/components/Statistics";
 import ProcessSteps from "@/components/ProcessSteps";
-import Testimonials from "@/components/Testimonials";
-import Futurcraft from "@/components/Futurcraft";
 import FAQ from "@/components/FAQ";
-import Contact from "@/components/Contact";
-import Address from "@/components/Address";
+import Testimonials from "@/components/Testimonials";
+import CTAWhatsApp from "@/components/CTAWhatsApp";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -17,16 +15,14 @@ export default function Home() {
     <main style={{ background: "var(--c-bg)", color: "var(--c-text)" }}>
       <Navbar />
       <Hero />
-      <About />
-      <Futurcraft />
-      <Skills />
+      <Services />
       <Projects />
-      <PhotoProfile />
+      <Skills />
+      <Statistics />
       <ProcessSteps />
-      <Testimonials />
       <FAQ />
-      <Contact />
-      <Address />
+      <Testimonials />
+      <CTAWhatsApp />
       <Footer />
     </main>
   );

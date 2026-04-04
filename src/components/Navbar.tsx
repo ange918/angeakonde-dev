@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
   { href: "#home", label: "Accueil" },
-  { href: "#about", label: "À propos" },
+  { href: "/about", label: "À propos" },
   { href: "#skills", label: "Compétences" },
   { href: "#projects", label: "Projets" },
   { href: "#testimonials", label: "Avis" },
@@ -87,7 +87,7 @@ export default function Navbar() {
             }}
           >
             <div className="flex items-center justify-between mb-8">
-              <span className="text-xl font-bold" style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)" }}>
+              <span className="text-xl font-bold" style={{ fontFamily: "var(--font-montserrat)", color: "var(--c-text)" }}>
                 Bs<span style={{ color: "#4AFF00" }}>.dev</span>
               </span>
               <button
@@ -157,7 +157,7 @@ export default function Navbar() {
           <a
             href="#home"
             className="text-xl font-bold tracking-tight"
-            style={{ color: "var(--c-text)", fontFamily: "var(--font-outfit)" }}
+            style={{ color: "var(--c-text)", fontFamily: "var(--font-montserrat)" }}
           >
             Bs<span style={{ color: "#4AFF00" }}>.dev</span>
           </a>

@@ -101,7 +101,7 @@ export default function Loader() {
 
             <p
               style={{
-                fontFamily: "var(--font-outfit)",
+                fontFamily: "var(--font-montserrat)",
                 fontSize: "2rem",
                 fontWeight: 700,
                 color: "#ffffff",
@@ -115,7 +115,7 @@ export default function Loader() {
 
             <p
               style={{
-                fontFamily: "var(--font-outfit)",
+                fontFamily: "var(--font-montserrat)",
                 fontSize: "1.05rem",
                 fontWeight: 500,
                 color: "#4AFF00",

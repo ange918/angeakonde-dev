@@ -72,7 +72,7 @@ export default function Skills() {
           </p>
           <h2
             className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)" }}
+            style={{ fontFamily: "var(--font-montserrat)", color: "var(--c-text)" }}
           >
             Ma stack technique.
           </h2>
@@ -114,7 +114,7 @@ export default function Skills() {
                   </motion.div>
                   <span
                     className="text-xs font-semibold text-center whitespace-nowrap"
-                    style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)" }}
+                    style={{ fontFamily: "var(--font-montserrat)", color: "var(--c-text)" }}
                   >
                     {skill.name}
                   </span>

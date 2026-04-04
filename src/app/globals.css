@@ -35,7 +35,7 @@
   --color-foreground: var(--c-text);
   --color-accent: var(--accent);
   --color-electric: #4AFF00;
-  --font-sans: var(--font-outfit);
+  --font-sans: var(--font-inter);
 }
 
 * {
@@ -50,13 +50,13 @@ html {
 body {
   background: #000000;
   color: var(--c-text);
-  font-family: var(--font-outfit), ui-sans-serif, sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, sans-serif;
   min-height: 100dvh;
   overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-outfit), ui-sans-serif, sans-serif;
+  font-family: var(--font-montserrat), ui-sans-serif, sans-serif;
   font-weight: 800;
 }
 
@@ -103,7 +103,7 @@ input, textarea {
   background: var(--c-surface) !important;
   color: var(--c-text) !important;
   border-color: var(--c-border-md) !important;
-  font-family: var(--font-outfit), ui-sans-serif, sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, sans-serif;
 }
 
 input:focus, textarea:focus {

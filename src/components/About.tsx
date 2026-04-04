@@ -17,7 +17,7 @@ export default function About() {
           </p>
           <h2
             className="mb-16 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: "var(--font-outfit)" }}
+            style={{ fontFamily: "var(--font-montserrat)" }}
           >
            Passionné
             <br />

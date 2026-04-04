@@ -62,7 +62,7 @@ export default function Futurcraft() {
               </p>
               <h2
                 className="mb-5 text-3xl font-extrabold tracking-tight sm:text-4xl"
-                style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)" }}
+                style={{ fontFamily: "var(--font-montserrat)", color: "var(--c-text)" }}
               >
                 Futurcraft Institut
               </h2>

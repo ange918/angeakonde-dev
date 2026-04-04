@@ -79,7 +79,7 @@ export default function Testimonials() {
           </p>
           <h2
             className="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)" }}
+            style={{ fontFamily: "var(--font-montserrat)", color: "var(--c-text)" }}
           >
             Ce que disent les clients.
           </h2>
@@ -118,7 +118,7 @@ export default function Testimonials() {
                 className="mb-8 text-base sm:text-xl leading-loose"
                 style={{
                   color: "var(--c-dim)",
-                  fontFamily: "var(--font-outfit)",
+                  fontFamily: "var(--font-montserrat)",
                 }}
               >
                 {t.quote}
@@ -135,7 +135,7 @@ export default function Testimonials() {
                   <div>
                     <p
                       className="text-base font-semibold sm:text-lg"
-                      style={{ fontFamily: "var(--font-outfit)", color: "var(--c-text)" }}
+                      style={{ fontFamily: "var(--font-montserrat)", color: "var(--c-text)" }}
                     >
                       {t.name}
                     </p>

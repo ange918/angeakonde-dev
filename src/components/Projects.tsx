@@ -81,7 +81,7 @@ export default function Projects() {
           </p>
           <h2
             className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: "var(--font-outfit)" }}
+            style={{ fontFamily: "var(--font-montserrat)" }}
           >
             Travaux sélectionnés.
           </h2>
@@ -129,7 +129,7 @@ export default function Projects() {
                 <div className="absolute bottom-3 left-4 flex items-center gap-2">
                   <span
                     className="text-4xl font-extrabold leading-none"
-                    style={{ fontFamily: "var(--font-outfit)", color: "rgba(74,255,0,0.6)" }}
+                    style={{ fontFamily: "var(--font-montserrat)", color: "rgba(74,255,0,0.6)" }}
                   >
                     {p.num}
                   </span>
@@ -153,7 +153,7 @@ export default function Projects() {
               <div className="relative z-10 p-6">
                 <h3
                   className="mb-3 text-xl font-bold text-white"
-                  style={{ fontFamily: "var(--font-outfit)" }}
+                  style={{ fontFamily: "var(--font-montserrat)" }}
                 >
                   {p.title}
                 </h3>

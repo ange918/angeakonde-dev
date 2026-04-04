@@ -77,7 +77,7 @@ export default function ProcessSteps() {
           </p>
           <h2
             className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: "var(--font-outfit)" }}
+            style={{ fontFamily: "var(--font-montserrat)" }}
           >
             Les étapes d&apos;un projet.
           </h2>
@@ -126,13 +126,13 @@ export default function ProcessSteps() {
                       <div className="mb-1 flex items-center gap-3">
                         <span
                           className="text-xs font-bold tabular-nums"
-                          style={{ color: step.color, fontFamily: "var(--font-outfit)" }}
+                          style={{ color: step.color, fontFamily: "var(--font-montserrat)" }}
                         >
                           {step.number}
                         </span>
                         <h3
                           className="text-base font-bold text-white"
-                          style={{ fontFamily: "var(--font-outfit)" }}
+                          style={{ fontFamily: "var(--font-montserrat)" }}
                         >
                           {step.title}
                         </h3>
@@ -164,7 +164,7 @@ export default function ProcessSteps() {
             style={{
               background: "#4AFF00",
               boxShadow: "0 0 24px rgba(74,255,0,0.3)",
-              fontFamily: "var(--font-outfit)",
+              fontFamily: "var(--font-montserrat)",
             }}
           >
             Démarrer un projet →

@@ -20,7 +20,7 @@ export default function PhotoProfile() {
           </p>
           <h2
             className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: "var(--font-outfit)" }}
+            style={{ fontFamily: "var(--font-montserrat)" }}
           >
             Qui suis-je ?
           </h2>
@@ -64,7 +64,7 @@ export default function PhotoProfile() {
                 <div className="absolute bottom-5 left-5 right-5">
                   <p
                     className="text-lg font-bold text-white"
-                    style={{ fontFamily: "var(--font-outfit)" }}
+                    style={{ fontFamily: "var(--font-montserrat)" }}
                   >
                     Ange Akonde
                   </p>
@@ -133,7 +133,7 @@ export default function PhotoProfile() {
               <a
                 href="#contact"
                 className="inline-flex h-10 items-center gap-2 rounded-xl px-6 text-sm font-semibold text-black transition-all hover:opacity-90"
-                style={{ background: "#4AFF00", fontFamily: "var(--font-outfit)" }}
+                style={{ background: "#4AFF00", fontFamily: "var(--font-montserrat)" }}
               >
                 Me contacter →
               </a>
@@ -143,7 +143,7 @@ export default function PhotoProfile() {
                 style={{
                   borderColor: "rgba(255,255,255,0.1)",
                   color: "rgba(255,255,255,0.55)",
-                  fontFamily: "var(--font-outfit)",
+                  fontFamily: "var(--font-montserrat)",
                 }}
               >
                 <ArrowDownTrayIcon className="h-4 w-4" />

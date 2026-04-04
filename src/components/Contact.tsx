@@ -18,7 +18,7 @@ export default function Contact() {
           </p>
           <h2
             className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: "var(--font-outfit)" }}
+            style={{ fontFamily: "var(--font-montserrat)" }}
           >
             Construisons quelque chose.
           </h2>
