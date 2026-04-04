@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
-  { href: "#home", label: "Accueil" },
+  { href: "/", label: "Accueil" },
   { href: "/about", label: "À propos" },
   { href: "#skills", label: "Compétences" },
   { href: "#projects", label: "Projets" },
@@ -155,7 +155,7 @@ export default function Navbar() {
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
           <a
-            href="#home"
+            href="/"
             className="text-xl font-bold tracking-tight"
             style={{ color: "var(--c-text)", fontFamily: "var(--font-montserrat)" }}
           >
