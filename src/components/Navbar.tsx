@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -65,22 +65,22 @@ export default function Navbar() {
     if (onDone) onDone();
 
     if (!link.anchor) {
-      // Lien de page (/  ou /about)
+      // Lien de page (/ ou /about)
       if (link.href === "/" && isHome) {
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
-        router.push(link.href);
+        window.location.href = link.href;
       }
       return;
     }
 
     // Lien ancre (#skills, #contact, etc.)
-    const anchor = link.href; // ex: "#skills"
+    const anchor = link.href.slice(1); // ex: "skills"
     if (isHome) {
-      const el = document.getElementById(anchor.slice(1));
+      const el = document.getElementById(anchor);
       if (el) el.scrollIntoView({ behavior: "smooth" });
     } else {
-      router.push(`/${anchor}`);
+      window.location.href = `/#${anchor}`;
     }
   };
 
@@ -225,7 +225,7 @@ export default function Navbar() {
               if (isHome) {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               } else {
-                router.push("/");
+                window.location.href = "/";
               }
             }}
             className="text-xl font-bold tracking-tight"
@@ -255,7 +255,7 @@ export default function Navbar() {
                 if (isHome) {
                   document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
                 } else {
-                  router.push("/#contact");
+                  window.location.href = "/#contact";
                 }
               }}
               className="rounded-full border border-[#4AFF00] px-6 py-3 text-base font-semibold text-[#4AFF00] transition-all duration-200 hover:bg-[#4AFF00] hover:text-black"
