@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# replit local state (contains large log files, not needed in repo)
+.local/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
