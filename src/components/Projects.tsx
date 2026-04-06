@@ -64,6 +64,15 @@ const projects = [
     num: "07",
     img: "/project-agnes.png",
   },
+  {
+    title: "MediSens",
+    desc: "Plateforme médicale interactive de vulgarisation santé. Des modules dédiés à la compréhension des pathologies cardiovasculaires et rénales pour le grand public.",
+    techs: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    href: "https://djandou-store.vercel.app/",
+    linkText: "Voir le site →",
+    num: "08",
+    img: "/project-medisens.png",
+  },
 ];
 
 export default function Projects() {
