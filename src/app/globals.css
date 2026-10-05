@@ -23,7 +23,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; background: var(--ink); }
+html { scroll-behavior: smooth; background: var(--ink); overflow-x: hidden; }
 body {
   margin: 0;
   min-height: 100dvh;
@@ -129,9 +129,9 @@ button, input, textarea, select { font: inherit; }
 }
 .bg-portrait {
   position: absolute;
-  right: -5%;
+  right: 0;
   top: 8%;
-  width: 55%;
+  width: min(55%, 720px);
   height: 78%;
   pointer-events: none;
   z-index: 0;
@@ -331,8 +331,7 @@ button, input, textarea, select { font: inherit; }
 }
 .about-title, .contact-title { font-size: clamp(36px, 5vw, 52px); max-width: 720px; margin: 12px 0 0; }
 .contact-title { max-width: 640px; }
-.word { display: inline-block; margin-right: 0.28em; }
-.word:last-child { margin-right: 0; }
+.word { display: inline-block; }
 .hero-sub, .project-summary {
   margin: 20px auto 0;
   max-width: 540px;
