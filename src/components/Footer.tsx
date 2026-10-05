@@ -1,6 +1,20 @@
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
+import { revealInitial, revealTransition, revealViewport } from "@/lib/motion";
+
 export default function Footer() {
+  const reduce = useReducedMotion();
+
   return (
-    <footer className="border-t px-5 py-10" style={{ borderColor: "var(--c-border-sm)" }}>
+    <motion.footer
+      initial={revealInitial(reduce)}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={revealViewport}
+      transition={revealTransition(reduce)}
+      className="border-t px-5 py-10"
+      style={{ borderColor: "var(--c-border-sm)" }}
+    >
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left">
         <div className="text-base font-medium" style={{ color: "var(--c-subtle)" }}>
           © BigSixteen 2026. Tous droits réservés.
@@ -18,6 +32,6 @@ export default function Footer() {
           Cotonou, Bénin
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

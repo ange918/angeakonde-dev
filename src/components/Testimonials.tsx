@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { easeOutstand, revealInitial, revealTransition, revealViewport } from "@/lib/motion";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
 const testimonials = [
@@ -46,6 +47,7 @@ function Stars() {
 }
 
 export default function Testimonials() {
+  const reduce = useReducedMotion();
   const [active, setActive] = useState(0);
   const [direction, setDirection] = useState(1);
 
@@ -68,10 +70,10 @@ export default function Testimonials() {
     <section id="testimonials" className="py-24 px-5">
       <div className="mx-auto max-w-4xl">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={revealInitial(reduce)}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
+          viewport={revealViewport}
+          transition={revealTransition(reduce)}
           className="mb-16 text-center"
         >
           <p className="mb-3 text-sm font-semibold tracking-[0.3em] uppercase" style={{ color: "#4AFF00" }}>
@@ -101,10 +103,10 @@ export default function Testimonials() {
             <motion.div
               key={active}
               custom={direction}
-              initial={{ opacity: 0, x: direction * 60 }}
+              initial={reduce ? false : { opacity: 0, x: direction * 16 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: direction * -60 }}
-              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              exit={reduce ? { opacity: 1, x: 0 } : { opacity: 0, x: direction * -16 }}
+              transition={reduce ? { duration: 0 } : { duration: 0.5, ease: easeOutstand }}
               className="relative"
             >
               <div

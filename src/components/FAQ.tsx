@@ -1,7 +1,8 @@
 "use client";
 
-import { motion, AnimatePresence, type Variants } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion, type Variants } from "framer-motion";
 import { useState } from "react";
+import { easeOutstand, revealInitial, revealTransition, revealViewport } from "@/lib/motion";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 
 const faqs = [
@@ -33,16 +34,17 @@ const faqs = [
 
 const containerVariants: Variants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.08 } },
+  visible: { transition: { staggerChildren: 0.06 } },
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } },
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: easeOutstand } },
 };
 
 function Item({ faq }: { faq: (typeof faqs)[0] }) {
   const [open, setOpen] = useState(false);
+  const reduce = useReducedMotion();
 
   return (
     <motion.div variants={itemVariants} className="card overflow-hidden rounded-xl">
@@ -59,7 +61,7 @@ function Item({ faq }: { faq: (typeof faqs)[0] }) {
         </span>
         <motion.div
           animate={{ rotate: open ? 180 : 0 }}
-          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          transition={reduce ? { duration: 0 } : { duration: 0.35, ease: easeOutstand }}
           className="flex-shrink-0"
         >
           <ChevronDownIcon style={{ color: "#4AFF00", width: 18, height: 18 }} />
@@ -72,7 +74,7 @@ function Item({ faq }: { faq: (typeof faqs)[0] }) {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            transition={reduce ? { duration: 0 } : { duration: 0.35, ease: easeOutstand }}
           >
             <div
               className="border-t px-6 pb-5 pt-4 text-sm leading-relaxed"
@@ -91,14 +93,15 @@ function Item({ faq }: { faq: (typeof faqs)[0] }) {
 }
 
 export default function FAQ() {
+  const reduce = useReducedMotion();
   return (
     <section id="faq" className="py-24 px-5">
       <div className="mx-auto max-w-6xl">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={revealInitial(reduce)}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          viewport={revealViewport}
+          transition={revealTransition(reduce)}
           className="mb-16"
         >
           <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#4AFF00" }}>
@@ -114,10 +117,10 @@ export default function FAQ() {
 
         <motion.div
           className="grid gap-3 lg:grid-cols-2"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
+          variants={reduce ? undefined : containerVariants}
+          initial={reduce ? false : "hidden"}
+          whileInView={reduce ? undefined : "visible"}
+          viewport={revealViewport}
         >
           {faqs.map((faq, i) => (
             <Item key={i} faq={faq} />
@@ -125,10 +128,10 @@ export default function FAQ() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={revealInitial(reduce)}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          viewport={revealViewport}
+          transition={revealTransition(reduce, 0.16)}
           className="mt-10 card rounded-2xl p-8 text-center"
         >
           <p

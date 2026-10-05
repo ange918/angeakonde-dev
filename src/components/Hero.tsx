@@ -1,9 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { trackContactClick } from "@/lib/analytics";
+import { revealInitial, revealTransition } from "@/lib/motion";
 
 export default function Hero() {
+  const reduce = useReducedMotion();
   return (
     <section
       id="home"
@@ -43,9 +45,9 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-6xl w-full">
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={revealInitial(reduce)}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={revealTransition(reduce, 0.1)}
           className="mb-4 text-[2rem] font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-[5.5rem]"
           style={{
             fontFamily: "var(--font-montserrat)",
@@ -63,9 +65,9 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={revealInitial(reduce)}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={revealTransition(reduce, 0.18)}
           style={{
             fontSize: "1rem",
             color: "#AACBC4",
@@ -79,9 +81,9 @@ export default function Hero() {
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={revealInitial(reduce)}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={revealTransition(reduce, 0.28)}
           className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
         >
           <a
@@ -108,9 +110,9 @@ export default function Hero() {
       </div>
 
       <motion.div
-        initial={{ opacity: 0 }}
+        initial={reduce ? false : { opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
+        transition={revealTransition(reduce, 0.7)}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
         <div
@@ -118,8 +120,8 @@ export default function Hero() {
           style={{ borderColor: "var(--c-border-2xl)" }}
         >
           <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+            animate={reduce ? { y: 0 } : { y: [0, 8, 0] }}
+            transition={reduce ? { duration: 0 } : { repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
             className="h-1.5 w-1 rounded-full"
             style={{ background: "#4AFF00" }}
           />

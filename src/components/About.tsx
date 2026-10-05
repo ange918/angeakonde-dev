@@ -1,16 +1,18 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { revealInitial, revealTransition, revealViewport } from "@/lib/motion";
 
 export default function About() {
+  const reduce = useReducedMotion();
   return (
     <section id="about" className="py-24 px-5">
       <div className="mx-auto max-w-6xl">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={revealInitial(reduce)}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
+          viewport={revealViewport}
+          transition={revealTransition(reduce)}
         >
           <p className="mb-3 text-sm font-semibold tracking-[0.3em] uppercase" style={{ color: "#4AFF00" }}>
             À propos
@@ -27,10 +29,10 @@ export default function About() {
 
         <div className="grid gap-8 lg:grid-cols-2">
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={revealInitial(reduce, { opacity: 0, x: -20 })}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, delay: 0.15 }}
+            viewport={revealViewport}
+            transition={revealTransition(reduce, 0.08)}
             className="card rounded-2xl p-5 sm:p-8"
           >
             <p className="mb-6 text-lg leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
@@ -58,10 +60,10 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
+            initial={revealInitial(reduce, { opacity: 0, x: 20 })}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, delay: 0.25 }}
+            viewport={revealViewport}
+            transition={revealTransition(reduce, 0.14)}
             className="flex flex-col gap-4"
           >
             {[

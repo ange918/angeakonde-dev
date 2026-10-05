@@ -4,6 +4,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { MotionRoot } from "@/components/MotionRoot";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -128,7 +129,7 @@ export default function RootLayout({
         className={`${montserrat.variable} ${inter.variable} antialiased`}
         suppressHydrationWarning
       >
-        {children}
+        <MotionRoot>{children}</MotionRoot>
         <GoogleAnalytics />
         <Analytics />
         <SpeedInsights />

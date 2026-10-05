@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { revealInitial, revealTransition, revealViewport } from "@/lib/motion";
 
 const stats = [
   { value: 7, suffix: "+", label: "Projets livrés" },
@@ -10,11 +11,15 @@ const stats = [
   { value: 1, suffix: "an+", label: "D'expérience" },
 ];
 
-function useCountUp(target: number, duration: number, active: boolean) {
+function useCountUp(target: number, duration: number, active: boolean, reduce: boolean | null) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     if (!active) return;
+    if (reduce) {
+      setCount(target);
+      return;
+    }
     let start = 0;
     const startTime = performance.now();
     const step = (now: number) => {
@@ -26,7 +31,7 @@ function useCountUp(target: number, duration: number, active: boolean) {
       if (progress < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
-  }, [active, target, duration]);
+  }, [active, target, duration, reduce]);
 
   return count;
 }
@@ -37,21 +42,23 @@ function StatItem({
   label,
   active,
   delay,
+  reduce,
 }: {
   value: number;
   suffix: string;
   label: string;
   active: boolean;
   delay: number;
+  reduce: boolean | null;
 }) {
-  const count = useCountUp(value, 1200, active);
+  const count = useCountUp(value, 1000, active, reduce);
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={revealInitial(reduce)}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, delay }}
+      viewport={revealViewport}
+      transition={revealTransition(reduce, delay)}
       className="flex flex-col items-center gap-2"
     >
       <span
@@ -72,6 +79,7 @@ function StatItem({
 }
 
 export default function Statistics() {
+  const reduce = useReducedMotion();
   const [active, setActive] = useState(false);
   const ref = useRef<HTMLElement>(null);
 
@@ -105,7 +113,8 @@ export default function Statistics() {
               suffix={s.suffix}
               label={s.label}
               active={active}
-              delay={i * 0.1}
+              reduce={reduce}
+              delay={i * 0.06}
             />
           ))}
         </div>

@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { easeOutstand, revealInitial, revealTransition, revealViewport } from "@/lib/motion";
 
 const socials = [
   {
@@ -40,14 +41,15 @@ const formations = [
 ];
 
 export default function Futurcraft() {
+  const reduce = useReducedMotion();
   return (
     <section className="py-24 px-5">
       <div className="mx-auto max-w-6xl">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={revealInitial(reduce)}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
+          viewport={revealViewport}
+          transition={revealTransition(reduce)}
           className="card rounded-2xl p-8 sm:p-12 relative overflow-hidden"
         >
           <div
@@ -93,9 +95,9 @@ export default function Futurcraft() {
                     href={s.href}
                     target="_blank"
                     rel="noreferrer"
-                    whileHover={{ scale: 1.06, y: -2 }}
-                    whileTap={{ scale: 0.97 }}
-                    transition={{ type: "spring", stiffness: 350, damping: 20 }}
+                    whileHover={reduce ? undefined : { y: -2 }}
+                    whileTap={reduce ? undefined : { scale: 0.98 }}
+                    transition={reduce ? { duration: 0 } : { duration: 0.2, ease: easeOutstand }}
                     className="inline-flex items-center gap-2 rounded-full border px-5 py-3 text-base font-medium"
                     style={{
                       borderColor: "rgba(255,255,255,0.12)",
@@ -122,8 +124,8 @@ export default function Futurcraft() {
             </div>
 
             <motion.div
-              whileHover={{ scale: 1.05, rotate: 2 }}
-              transition={{ type: "spring", stiffness: 300, damping: 18 }}
+              whileHover={reduce ? undefined : { y: -4 }}
+              transition={reduce ? { duration: 0 } : { duration: 0.2, ease: easeOutstand }}
               className="flex h-32 w-32 shrink-0 items-center justify-center rounded-2xl self-start lg:self-center cursor-pointer"
               style={{ background: "rgba(74,255,0,0.06)", border: "1px solid rgba(74,255,0,0.15)" }}
             >

@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { easeOutstand } from "@/lib/motion";
 
 const links = [
   { href: "/", label: "Accueil", anchor: false },
@@ -21,6 +22,7 @@ export default function Navbar() {
   const [active, setActive] = useState("#home");
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const reduce = useReducedMotion();
   const pathname = usePathname();
   const isHome = pathname === "/";
 
@@ -115,9 +117,10 @@ export default function Navbar() {
       {open && (
         <>
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={reduce ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            exit={reduce ? { opacity: 1 } : { opacity: 0 }}
+            transition={reduce ? { duration: 0 } : { duration: 0.35, ease: easeOutstand }}
             onClick={() => setOpen(false)}
             style={{
               position: "fixed",
@@ -128,10 +131,10 @@ export default function Navbar() {
             }}
           />
           <motion.aside
-            initial={{ x: "100%" }}
+            initial={reduce ? false : { x: "100%" }}
             animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ type: "tween", duration: 0.25 }}
+            exit={reduce ? { x: 0 } : { x: "100%" }}
+            transition={reduce ? { duration: 0 } : { duration: 0.45, ease: easeOutstand }}
             style={{
               position: "fixed",
               top: 0,

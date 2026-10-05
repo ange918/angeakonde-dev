@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { revealInitial, revealTransition, revealViewport } from "@/lib/motion";
 import {
   ChatBubbleLeftRightIcon,
   DocumentCheckIcon,
@@ -62,14 +63,15 @@ const steps = [
 ];
 
 export default function ProcessSteps() {
+  const reduce = useReducedMotion();
   return (
     <section id="processus" className="py-24 px-5">
       <div className="mx-auto max-w-6xl">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={revealInitial(reduce)}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
+          viewport={revealViewport}
+          transition={revealTransition(reduce)}
           className="mb-16"
         >
           <p className="mb-3 text-xs tracking-[0.3em] uppercase" style={{ color: "#4AFF00" }}>
@@ -96,10 +98,10 @@ export default function ProcessSteps() {
             {steps.map((step, i) => (
               <motion.div
                 key={step.number}
-                initial={{ opacity: 0, x: -30 }}
+                initial={revealInitial(reduce, { opacity: 0, x: -16 })}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
+                viewport={revealViewport}
+                transition={revealTransition(reduce, i * 0.06)}
                 className="group flex gap-6"
               >
                 <div className="relative flex shrink-0 flex-col items-center">
@@ -152,10 +154,10 @@ export default function ProcessSteps() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={revealInitial(reduce)}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={revealViewport}
+          transition={revealTransition(reduce, 0.2)}
           className="mt-14 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
         >
           <a

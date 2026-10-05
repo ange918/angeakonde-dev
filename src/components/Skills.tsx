@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import type { Variants } from "framer-motion";
+import { easeOutstand, revealInitial, revealTransition, revealViewport } from "@/lib/motion";
 import {
   CodeBracketIcon,
   SwatchIcon,
@@ -47,24 +48,24 @@ const containerVariants: Variants = {
 };
 
 const cardVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.7, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
-    scale: 1,
     y: 0,
-    transition: { type: "spring" as const, stiffness: 260, damping: 18 },
+    transition: { duration: 0.7, ease: easeOutstand },
   },
 };
 
 export default function Skills() {
+  const reduce = useReducedMotion();
   return (
     <section id="skills" className="py-24">
       <div className="mx-auto max-w-6xl px-5">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={revealInitial(reduce)}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          viewport={revealViewport}
+          transition={revealTransition(reduce)}
           className="mb-16"
         >
           <p className="mb-3 text-sm font-semibold tracking-[0.3em] uppercase" style={{ color: "#4AFF00" }}>
@@ -83,22 +84,26 @@ export default function Skills() {
             <motion.div
               key={rowIdx}
               className="grid grid-cols-3 gap-4 sm:grid-cols-6"
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-40px" }}
+              variants={reduce ? undefined : containerVariants}
+              initial={reduce ? false : "hidden"}
+              whileInView={reduce ? undefined : "visible"}
+              viewport={revealViewport}
             >
               {row.map((skill) => (
                 <motion.div
                   key={skill.name}
                   variants={cardVariants}
-                  whileHover={{
-                    scale: 1.08,
-                    boxShadow: `0 0 20px ${skill.color}55`,
-                    borderColor: `${skill.color}99`,
-                    transition: { type: "spring", stiffness: 400, damping: 15 },
-                  }}
-                  whileTap={{ scale: 0.95 }}
+                  whileHover={
+                    reduce
+                      ? undefined
+                      : {
+                          y: -4,
+                          boxShadow: `0 0 20px ${skill.color}55`,
+                          borderColor: `${skill.color}99`,
+                          transition: { duration: 0.2, delay: 0, ease: easeOutstand },
+                        }
+                  }
+                  whileTap={reduce ? undefined : { scale: 0.98 }}
                   className="flex flex-col items-center gap-3 rounded-2xl px-4 py-5 cursor-default"
                   style={{
                     background: "var(--c-surface)",
@@ -108,7 +113,7 @@ export default function Skills() {
                   <motion.div
                     className="flex h-10 w-10 items-center justify-center rounded-xl"
                     style={{ background: `${skill.color}18`, border: `1px solid ${skill.color}35` }}
-                    whileHover={{ rotate: [0, -10, 10, -6, 6, 0], transition: { duration: 0.5 } }}
+                    whileHover={reduce ? undefined : { rotate: -6, transition: { duration: 0.2 } }}
                   >
                     <skill.Icon style={{ color: skill.color, width: 20, height: 20 }} />
                   </motion.div>

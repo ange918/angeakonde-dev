@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { revealInitial, revealTransition, revealViewport } from "@/lib/motion";
 import { trackWhatsAppClick } from "@/lib/analytics";
 
 export default function CTAWhatsApp() {
+  const reduce = useReducedMotion();
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
 
@@ -21,10 +23,10 @@ export default function CTAWhatsApp() {
     <section id="cta-whatsapp" className="py-24 px-5">
       <div className="mx-auto max-w-3xl">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={revealInitial(reduce)}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
+          viewport={revealViewport}
+          transition={revealTransition(reduce)}
           className="card rounded-2xl p-8 sm:p-12 relative overflow-hidden"
         >
           <div

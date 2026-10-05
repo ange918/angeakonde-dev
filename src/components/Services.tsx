@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { easeOutstand, revealInitial, revealTransition, revealViewport } from "@/lib/motion";
 import {
   Globe,
   ShoppingCart,
@@ -44,14 +45,15 @@ const services = [
 ];
 
 export default function Services() {
+  const reduce = useReducedMotion();
   return (
     <section id="services" className="py-24 px-5">
       <div className="mx-auto max-w-6xl">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={revealInitial(reduce)}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
+          viewport={revealViewport}
+          transition={revealTransition(reduce)}
           className="mb-16"
         >
           <p
@@ -80,10 +82,11 @@ export default function Services() {
             return (
               <motion.div
                 key={s.title}
-                initial={{ opacity: 0, y: 40 }}
+                initial={revealInitial(reduce)}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.55, delay: i * 0.08 }}
+                viewport={revealViewport}
+                transition={revealTransition(reduce, i * 0.06)}
+                whileHover={reduce ? undefined : { y: -4, transition: { duration: 0.2, delay: 0, ease: easeOutstand } }}
                 className="card group relative overflow-hidden rounded-2xl p-6 sm:p-8"
               >
                 <div

@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { revealInitial, revealTransition, revealViewport } from "@/lib/motion";
 import Image from "next/image";
 
 const reasons = [
@@ -27,6 +28,7 @@ const reasons = [
 ];
 
 export default function WhyMe() {
+  const reduce = useReducedMotion();
   return (
     <section id="why-me" className="py-24 px-5">
       <div className="mx-auto max-w-6xl">
@@ -34,10 +36,10 @@ export default function WhyMe() {
 
           {/* Colonne gauche — photo */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={revealInitial(reduce, { opacity: 0, x: -20 })}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6 }}
+            viewport={revealViewport}
+            transition={revealTransition(reduce)}
             className="relative mx-auto w-full max-w-sm lg:max-w-none"
           >
             <div
@@ -90,10 +92,10 @@ export default function WhyMe() {
 
           {/* Colonne droite — texte + arguments */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
+            initial={revealInitial(reduce, { opacity: 0, x: 20 })}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={revealViewport}
+            transition={revealTransition(reduce, 0.08)}
           >
             <p
               className="mb-3 text-sm font-semibold tracking-[0.3em] uppercase"
@@ -118,10 +120,10 @@ export default function WhyMe() {
               {reasons.map((r, i) => (
                 <motion.div
                   key={r.num}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={revealInitial(reduce)}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-80px" }}
-                  transition={{ duration: 0.45, delay: i * 0.08 }}
+                  viewport={revealViewport}
+                  transition={revealTransition(reduce, i * 0.06)}
                   className="flex gap-4"
                 >
                   <span
