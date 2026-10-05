@@ -1,87 +1,135 @@
 import type { Metadata } from "next";
-import { Manrope, Syne } from "next/font/google";
+import { Montserrat, Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { MotionRoot } from "@/components/MotionRoot";
 
-const syne = Syne({
-  variable: "--font-syne",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  weight: ["700", "800", "900"],
 });
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600"],
 });
-
-const siteUrl = "https://angeakonde-dev.vercel.app";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: {
-    default: "Ange Akonde | BigSixTeen — Développeur full-stack à Cotonou",
-    template: "%s · Ange Akonde",
-  },
+  title: "Ange Akonde | BigSixteen — Développeur Full Stack Cotonou Bénin",
   description:
-    "Ange Akonde (BigSixTeen / JRC DIGIT), développeur full-stack et formateur à Cotonou. Sites, applications et plateformes sur mesure.",
+    "Ange Akonde, développeur Full Stack basé à Cotonou, Bénin. Je crée des sites web modernes, applications mobiles Flutter et solutions digitales pour entreprises africaines et internationales.",
   keywords: [
     "développeur web Cotonou",
     "développeur full stack Bénin",
-    "BigSixTeen",
-    "JRC DIGIT",
+    "BigSixteen",
     "Ange Akonde",
     "création site web Bénin",
-    "Next.js",
+    "développeur React Next.js Afrique",
+    "application mobile Flutter Bénin",
+    "agence digitale Cotonou",
+    "développeur web Afrique de l'Ouest",
     "freelance développeur web Bénin",
   ],
-  authors: [{ name: "Ange Akonde", url: siteUrl }],
+  authors: [{ name: "Ange Akonde", url: "https://angeakonde-dev.vercel.app" }],
   creator: "Ange Akonde",
-  robots: { index: true, follow: true },
+  publisher: "Ange Akonde",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: siteUrl,
-    title: "Ange Akonde | BigSixTeen — Développeur full-stack",
+    url: "https://angeakonde-dev.vercel.app",
+    title: "Ange Akonde | BigSixteen — Développeur Full Stack Cotonou Bénin",
     description:
-      "Sites et applications sur mesure, pensés pour votre croissance. Cotonou, Bénin.",
-    siteName: "Ange Akonde — BigSixTeen",
+      "Développeur Full Stack basé à Cotonou, Bénin. Sites web, apps mobiles et solutions digitales pour l'Afrique et au-delà.",
+    siteName: "Ange Akonde — BigSixteen",
+    images: [
+      {
+        url: "https://angeakonde-dev.vercel.app/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Ange Akonde — Développeur Full Stack Cotonou Bénin",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ange Akonde | BigSixTeen",
-    description: "Développeur full-stack à Cotonou. Sites, apps et plateformes sur mesure.",
+    title: "Ange Akonde | BigSixteen — Développeur Full Stack",
+    description:
+      "Développeur Full Stack basé à Cotonou, Bénin. Sites web, apps mobiles et solutions digitales.",
+    images: ["https://angeakonde-dev.vercel.app/og-image.png"],
+    creator: "@bigsixteen",
   },
-  alternates: { canonical: siteUrl },
+  alternates: {
+    canonical: "https://angeakonde-dev.vercel.app",
+  },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Ange Akonde",
-  alternateName: ["BigSixTeen", "JRC DIGIT"],
-  url: siteUrl,
-  jobTitle: "Développeur full-stack",
+  alternateName: "BigSixteen",
+  url: "https://angeakonde-dev.vercel.app",
+  image: "https://angeakonde-dev.vercel.app/photo-ange.jpg",
+  jobTitle: "Développeur Full Stack",
+  worksFor: {
+    "@type": "Organization",
+    name: "Freelance",
+  },
   address: {
     "@type": "PostalAddress",
     addressLocality: "Cotonou",
     addressCountry: "BJ",
   },
-  email: "ange@jrcdigit.com",
+  email: "akondejunior18@gmail.com",
   telephone: "+22965291352",
-  sameAs: ["https://github.com/ange918", "https://linkedin.com/in/ange-akonde"],
+  sameAs: [
+    "https://github.com/ange918",
+    "https://linkedin.com/in/ange-akonde",
+  ],
+  knowsAbout: [
+    "Développement Web",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Flutter",
+    "TypeScript",
+    "Tailwind CSS",
+  ],
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="fr" className={`${syne.variable} ${manrope.variable}`}>
+    <html lang="fr" className="dark">
       <head>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
-      <body className="antialiased">
-        {children}
+      <body
+        className={`${montserrat.variable} ${inter.variable} antialiased`}
+        suppressHydrationWarning
+      >
+        <MotionRoot>{children}</MotionRoot>
         <GoogleAnalytics />
         <Analytics />
         <SpeedInsights />

@@ -1,28 +1,13 @@
-import type { Variants } from "framer-motion";
-
 export const easeOutstand = [0.44, 0, 0.56, 1] as const;
 
-export const fadeRise: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: easeOutstand },
-  },
-};
+export const revealViewport = { once: true, margin: "-80px" } as const;
 
-export function stagger(staggerChildren = 0.06, delayChildren = 0.08): Variants {
-  return {
-    hidden: {},
-    show: { transition: { staggerChildren, delayChildren } },
-  };
+export function revealInitial(reduce: boolean | null, from: { opacity: number; x?: number; y?: number } = { opacity: 0, y: 20 }) {
+  if (reduce) return false as const;
+  return from;
 }
 
-export const viewport = { once: true, amount: 0.25 } as const;
-
-export const hoverCard = {
-  y: -6,
-  borderColor: "rgba(24,232,107,0.4)",
-  boxShadow: "0 12px 40px rgba(24,232,107,0.12)",
-  transition: { duration: 0.2, ease: easeOutstand },
-};
+export function revealTransition(reduce: boolean | null, delay = 0) {
+  if (reduce) return { duration: 0 };
+  return { duration: 0.7, ease: easeOutstand, delay };
+}
